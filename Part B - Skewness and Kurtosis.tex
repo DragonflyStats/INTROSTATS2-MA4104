@@ -1,0 +1,56 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage{epsfig}
+\usepackage{subfigure}
+%\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{amsthm, amsmath}
+\usepackage{amsbsy}
+\usepackage[usenames]{color}
+%\usepackage{listings}
+
+\title{Descriptive Statistics}
+
+
+\begin{document}
+
+
+\section*{Skewness and Kurtosis}
+
+A fundamental task in many statistical analyses is to characterize the location and variability of a data set. A further characterization of the data includes skewness and kurtosis. 
+
+\begin{itemize}
+\item \textbf{Skewness} is a measure of symmetry, or more precisely, the lack of symmetry. A distribution, or data set, is symmetric if it looks the same to the left and right of the center point.
+
+\item \textbf{Kurtosis} is a measure of whether the data are peaked or flat relative to a normal distribution. That is, data sets with high kurtosis tend to have a distinct peak near the mean, decline rather rapidly, and have heavy tails. Data sets with low kurtosis tend to have a flat top near the mean rather than a sharp peak. A uniform distribution would be the extreme case.
+
+\item The histogram is a reasonably effective graphical technique for showing both the skewness and kurtosis of data set.
+
+\end{itemize}
+
+%-------------------------------------------------------------------------%
+\frame{
+\frametitle{Symmetric and Skewed Distributions }
+\begin{itemize}
+\item  A data set is said to be \textbf{\emph{symmetric}} when data values are distributed in the same way above and below the middle of the sample.
+\item Typically , but not necessarily, distributions are considered to symmetric because the data set does not contain any outliers. (Potentially a symmetric data set may contain outliers on either side of the mean. )
+\item When data sets are symmetrically distributed, the sample mean and median have values close to each other.
+\item Distributions are considered to \textbf{\emph{skewed}} when the data set contains an outlier, or cluster of outliers, distributed away from the main cluster of items, such as in our example.
+\item When data sets have skewed distribution, the sample mean and median have values different to each other.
+\end{itemize}
+}
+%-------------------------------------------------------------------------%
+\frame{
+\frametitle{Symmetric and Skewed Distributions }
+\begin{itemize}
+\item When a data set is \textbf{\emph{symmetric}}, the best measure of centrality is the sample mean.
+\item As the variance is computed using the sample mean, it is considered the best measure of dispersion for symmetrically distributed data. \bigskip
+\item When a data set is \textbf{\emph{skewed}}, the best measure of centrality is the median.
+\item The best measure of dispersion for data with skewed distribution is the IQR.
+\end{itemize}
+}
+
+\end{document}
+
