@@ -1,0 +1,179 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx}  % Font Family
+\usepackage{helvet}   % Font Family
+\usepackage{color}
+
+\mode<presentation> {
+ \usetheme{Default} % was
+ \useinnertheme{rounded}
+ \useoutertheme{infolines}
+ \usefonttheme{serif}
+ %\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+
+\setbeamercovered{dynamic}
+
+\title[Stats-Lab.com]{\LARGE Introduction to Statistics and Probability \\ {\Large Calculus For Random Variables}}
+\author[Kevin O'Brien]{Kevin O'Brien}
+\date{Spring 2014}
+
+
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+%------------------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+
+The random variables $X$ has the probability density function $f(X)$ given by:
+\[ f(x) = kx^2(1-x), \phantom{space} 0 \leq x \leq 1 \]
+
+\begin{itemize}
+\item[1.] Compute the value for $k$,
+\item[2.] Compute the mean and variance for $X$,
+\item[3.] Determine the cumulative distribution function $F(x)$,
+\item[4.] Compute the probability that X lies within one standard deviation of its mean.
+\end{itemize}
+\end{frame}
+%-------------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+\vspace{-2.8cm}
+\textbf{Part 1}\\
+The definite integral of $f(x)$ between 0 and 1 must equal 1.
+
+\[ \int^1_0 f(x)\;dx = \int^1_0 kx^2(1-x)\;dx = \int^1_0 kx^2-kx^3\;dx  \]
+\end{frame}
+
+%-------------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+\vspace{-0.5cm}
+\textbf{Part 1}\\
+The definite integral of $f(x)$ between 0 and 1 must equal 1.
+
+\[ \int^1_0 f(x)\;dx = \int^1_0 kx^2(1-x)\;dx = \int^1_0 kx^2-kx^3\;dx  \]
+
+\[ = \left[\frac{kx^3}{3} \right]^1_0  - \left[\frac{kx^4}{4} \right]^1_0
+\phantom{sce} = \frac{k}{3} - \frac{k}{4} \phantom{sce} = \frac{k}{12} \phantom{sce}(= 1)
+\] 
+
+\[ \boldsymbol{k = 12}\]
+\end{frame}
+
+%-------------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+\vspace{-0.5cm}
+\textbf{Part 2 :  Compute the Mean and Variance}\\
+\[ \mathrm{E}(x) = \int^1_0 x\; f(x)\;dx  \]
+
+\[ \mathrm{Var}(x) = \mathrm{E}(x^2)  - [\mathrm{E}(x)]^2   \]
+
+\[ \mathrm{E}(x^2) = \int^1_0 x^2\; f(x)\;dx \]
+\end{frame}
+%-------------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+\vspace{-2.6cm}
+\textbf{Part 2 :  Compute the Mean and Variance}\\
+\[ \mathrm{E}(x) \; = \; \int^1_0 x\; f(x)\;dx \;   \]
+\[ \mathrm{E}(x) \; = \int^1_0 x(12x^2-12x^3)\;dx  \; = \int^1_0 12x^3-12x^4\;dx  \]
+
+\end{frame}
+%-------------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+\vspace{-1.5cm}
+\textbf{Part 2 :  Compute the Mean and Variance}\\
+\[ \mathrm{E}(x) \; = \; \int^1_0 x\; f(x)\;dx \;   \]
+\[ \mathrm{E}(x) \; = \int^1_0 x(12x^2-12x^3)\;dx  \; = \int^1_0 12x^3-12x^4\;dx  \]
+
+\[ \mathrm{E}(x)  = \left[\frac{12x^4}{4}-\frac{12x^5}{5} \right]^1_0 = \frac{6}{5} \]
+\end{frame}
+%-------------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+\vspace{-2.6cm}
+\textbf{Part 2 :  Compute the Mean and Variance}\\
+\[ \mathrm{E}(x^2) \; = \; \int^1_0 x^2\; f(x)\;dx \;   \]
+\[ \mathrm{E}(x^2) \; = \int^1_0 x^2(12x^2-12x^3)\;dx  \; = \int^1_0 12x^4-12x^5\;dx  \]
+
+\end{frame}
+%-------------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+\vspace{-1.5cm}
+\textbf{Part 2 :  Compute the Mean and Variance}\\
+\[ \mathrm{E}(x^2) \; = \; \int^1_0 x^2\; f(x)\;dx \;   \]
+\[ \mathrm{E}(x^2) \; = \int^1_0 x^2(12x^2-12x^3)\;dx  \; = \int^1_0 12x^4-12x^5\;dx  \]
+
+\[ \mathrm{E}(x)  = \left[\frac{12x^5}{5}-\frac{12x^6}{6} \right]^1_0 = \frac{2}{5} \]
+\end{frame}
+
+\begin{frame}
+\Large
+\vspace{-1.5cm}
+\textbf{Part 2 :  Compute the Mean and Variance}\\
+
+\[ \mathrm{Var}(x) = \mathrm{E}(x^2)  - [\mathrm{E}(x)]^2   \]
+
+\[ \mathrm{Var}(x) = \frac{2}{5}  - \left(\frac{3}{5}\right)^2  \]
+\end{frame}
+%--------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+\vspace{-2.90cm}
+\textbf{Part 3 : Determine the cumulative distribution function $F(x)$.}
+
+\[F(x) = \int_o^x f(u) \;du  =  \int_o^x 12u^2-12u^3 \;du\]
+
+\end{frame}
+%--------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+\vspace{-0.8cm}
+\textbf{Part 3 : Determine the cumulative distribution function $F(x)$.}
+
+\[F(x) = \int_o^x f(u) \;du  =  \int_o^x 12u^2-12u^3 \;du\]
+
+\[ F(x) = \left[\frac{12u^3}{3} - \frac{12u^4}{4} \right]^x_0 \]
+
+\[ F(x) = \left[\frac{12x^3}{3} - \frac{12x^4}{4} \right] = \boldsymbol{ 4x^3 - 3x^4 } \]
+
+\end{frame}
+%--------------------------------- %
+\begin{frame}
+\frametitle{Calculus For Random Variables}
+\Large
+\vspace{-0.8cm}
+\textbf{Part 4 :}
+\[P(1 \leq X \leq 2)   \int_1^2 12x^2-12x^3 \;dx\]
+
+\end{frame}
+%-------------------------------- %
+\end{document}
