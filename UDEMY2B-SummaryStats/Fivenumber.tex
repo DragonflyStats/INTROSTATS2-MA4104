@@ -1,0 +1,131 @@
+\documentclass{beamer}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+\begin{document}
+
+\begin{frame}
+\Huge
+\[\mbox{Introduction to Statistics}\]
+\huge
+\[\mbox{The Five-number Summary, the IQR,  }\]
+\[\mbox{the Midhinge and the Trimean}\]
+\Large
+\[\mbox{www.Stats-Lab.com}\]
+\[\mbox{Twitter: @StatsLabDublin}\]
+\end{frame}
+%------------------------------------------------------------------------------- %
+\begin{frame}
+\frametitle{The Five-number Summary}
+\Large
+The five-number summary is a descriptive statistic that provides information about a set of observations. 
+
+It consists of the five most important sample percentiles:
+\begin{itemize}
+\item the sample minimum (smallest observation)
+\item the lower quartile or first quartile ($Q_1$)
+\item the median (middle value)
+\item the upper quartile or third quartile ($Q_3$)
+\item the sample maximum (largest observation)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Five-number Summary : Sample Data}
+\Large
+Suppose a sample has the following five-number summary: 
+\begin{itemize}
+\item the sample minimum = 11
+\item the lower quartile $Q_1$ = 25
+\item the median = 27
+\item the upper quartile $Q_3$ = 31
+\item the sample maximum $ = 38$
+\end{itemize}
+We will use these values for later examples.
+\end{frame}
+%------------------------------------- %
+\begin{frame}
+\frametitle{Interquartile Range}
+\vspace{-0.5cm}
+\Large
+The interquartile range (IQR) is a measure of statistical dispersion, being equal to the difference between the first and third quartiles,
+\[IQR = Q_3 -  Q_1. \]
+
+For our sample data, the interquartile range is 
+
+\[IQR = 31 -  25 = 6 \]
+
+(The median is the corresponding measure of location or central tendency.)
+\end{frame}
+\begin{frame}
+\frametitle{Interquartile Range and Outliers}
+\Large
+The interquartile range is often used to find outliers in data.
+
+ Using this approach, outliers are observations that fall below the \textbf{lower fence} \[\mbox{Lower fence} = Q1 - (1.5\times IQR)\] or above the \textbf{upper fence} \[\mbox{Upper fence} = Q3 + (1.5 \times IQR)\].
+\end{frame}
+%-------------------------------------------------- %
+\begin{frame}
+\frametitle{Interquartile Range and Outliers}
+\Large
+\textbf{Lower Fence}
+\begin{itemize}
+\item Lower fence $= Q1 - (1.5\times IQR)$
+\item Lower fence $= 25 - (1.5\times 6) = 25 - 9 = 16$
+\end{itemize}
+Any value less than 16 (for example, the minimum value 11) is considered an outlier.\\
+\vspace{0.5cm}
+\end{frame}
+%-------------------------------------------------- %
+\begin{frame}
+\frametitle{Interquartile Range and Outliers}
+\Large
+\textbf{Upper Fence}
+\begin{itemize}
+\item Upper fence$ = Q3 + (1.5 \times IQR)$
+\item Upper fence$= 31 + (1.5\times 6) = 31 + 9 = 40$
+\end{itemize}
+
+Any value greater than 40 would considered an outlier. However, as the maximum value is 38, there is no high-value outliers
+
+\end{frame}
+%-------------------------------------------------- %
+\begin{frame}
+\frametitle{Midhinge}
+\Large
+The midhinge is a measure of central location, determined as the average of the first and third quartiles.
+
+\[  \mbox{midhinge} = \frac{Q_1 + Q_3}{2}\]
+
+For the sample data, the midhinge is computed as
+
+\[  \mbox{midhinge} = \frac{25 + 31}{2} = \frac{56}{2} = 28 \]
+
+
+\end{frame}
+%-------------------------------------------------- %
+\begin{frame}
+\frametitle{Trimean}
+\Large
+The \textbf{trimean} (TM) is a measure of central location defined as a weighted average of the distribution's median and its two quartiles:
+\[TM= \frac{Q_1 + 2Q_2 + Q_3}{4}\]
+This is equivalent to the average of the median and the midhinge:
+\[TM= \frac{1}{2}\left(Q_2 + \frac{Q_1 + Q_3}{2}\right)\]
+
+\end{frame}
+%-------------------------------------------------- %
+\begin{frame}
+\frametitle{Trimean}
+\Large
+\[TM= \frac{Q_1 + 2Q_2 + Q_3}{4}\]
+
+For the sample data, the trimean is computed as
+\[TM= \frac{25 + (2\times 27) + 31}{4} = \frac{110}{4} = 27.5\]
+
+\end{frame}
+\begin{frame}
+
+\end{frame}
+\end{document}
