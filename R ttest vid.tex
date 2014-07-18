@@ -1,0 +1,38 @@
+
+
+
+
+\begin{frame}
+\frametitle{Example 2}
+
+Seven measurements of the pH of a buffer solution gave the
+following results:
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline
+5.12 & 5.20 & 5.15 & 5.17 & 5.16 & 5.19 & 5.15\\
+  \hline
+\end{tabular}
+
+Task 1: Calculate the 95\% confidence limits for the true pH
+utilizing $R$.
+
+\end{frame}
+\end{document}
+
+
+Solution. We are using Student t distribution with six degrees of
+freedom and the following code gives us the confidence interval
+for this problem.
+\begin{verbatim}
+>x <- c(5.12, 5.20, 5.15, 5.17, 5.16, 5.19, 5.15)
+>n =length(x)
+>alpha =0.05
+>stderr =sd(x)/sqrt(n)
+>LB=mean(x)+qt(alpha/2,6)* stderr
+>UB=mean(x)+qt(1-alpha/2,6)* stderr
+>LB
+#[1] 5.137975
+>UB
+#[1]5.187739
+\end{verbatim}

@@ -1,0 +1,52 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage{epsfig}
+\usepackage{subfigure}
+%\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{amsthm, amsmath}
+\usepackage{amsbsy}
+\usepackage[usenames]{color}
+%\usepackage{listings}
+
+\title{Descriptive Statistics}
+\begin{document}
+
+\section*{Part B - Alternative Measures of Centrality}
+
+
+\subsubsection{The trimmed mean}
+The trimmed mean looks to reduce the effects of outliers on the calculated average. This method is best suited for data with large, erratic deviations or extremely skewed distributions.  A trimmed mean is stated as a mean trimmed by X\%, where X is the sum of the percentage of observations removed from both the upper and lower bounds.
+
+For example, a figure skating competition produces the following scores: 6.0, 8.1, 8.3, 9.1, 9.9. A mean trimmed 40\% would equal 8.5 ( (8.1+8.3+9.1)/3 ), which is larger than the arithmetic mean of 8.28. To trim the mean by 40\%, we remove the lowest 20\% and highest 20\% of values, eliminating the scores of 6.0 and 9.1. As shown by this example, trimming the mean can reduce the effects of outlier bias in a sample.
+
+A trimmed mean is calculated by discarding a certain percentage of the lowest and the highest scores and then computing the mean of the remaining scores. For example, a mean trimmed 50\% is computed by discarding the lower and higher 25\% of the scores and taking the mean of the remaining scores.A trimmed mean is obviously less susceptible to the effects of extreme scores than is the arithmetic mean. Trimmed means are often used in Olympic scoring to minimize the effects of extreme ratings possibly caused by biased judges.
+
+
+\subsubsection{The winsorized mean}
+
+The winsorized mean is less sensitive to outliers because it replaces them with less influential values. This method of averaging is similar to the trimmed mean; however, instead of eliminating data, observations are altered, allowing for a degree of influence.
+
+Let's calculate the first winsorized mean for the following data set: 1, 5, 7, 8, 9, 10, 14. Because the winsorized mean is in the first order, we replace the smallest and largest values with their nearest observations. The data set now appears as follows: 5, 5, 7, 8, 9, 10, 10. Taking an arithmetic average of the new set produces a winsorized mean of 7.71 ( (5+5+7+8+9+10+10) / 7 ).
+
+
+\subsubsection{The trimean}
+The trimean is computed by adding the 25th percentile plus twice the 50th percentile plus the 75th percentile and dividing by four. What follows is an example of how to compute the trimean. The 25th, 50th, and 75th percentile of the dataset "Example 1" are 51, 55, and 63 respectively. Therefore, the trimean is computed as:
+The trimean is almost as resistant to extreme scores as the median.
+
+
+
+
+\begin{figure}[h!]
+\begin{center}
+  \includegraphics[width=100mm]{DescStats1.jpg}
+  \caption{SPSS Descriptive Statistics.}\label{DescStats}
+\end{center}
+\end{figure}
+Sampling fluctuation refers to the extent to which a statistic takes on different values with different samples. That is, it refers to how much the statistic's value fluctuates from sample to sample.
+
+A statistic whose value fluctuates greatly from sample to sample is highly subject to sampling fluctuation.
+
+\end{document}

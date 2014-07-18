@@ -1,0 +1,123 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+%\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx}  % Font Family
+\usepackage{helvet}   % Font Family
+\usepackage{color}
+
+\mode<presentation> {
+ \usetheme{Default} % was Frankfurt
+ \useinnertheme{rounded}
+ \useoutertheme{infolines}
+ \usefonttheme{serif}
+ %\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+
+\setbeamercovered{dynamic}
+
+\title[MA4704]{MA4413 Statistics for Computing \\ {\normalsize MA4413 Lecture 6A : Continuous Distributions}}
+\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize kevin.obrien@ul.ie}}
+\date{Autumn 2011}
+\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
+
+\renewcommand{\arraystretch}{1.5}
+
+%1. MA4104
+%2. MA4704
+%3. StatsLab
+%4. Check that variance and standard deviations are specified correctly.
+%--------------------------------------------------%
+\begin{document}
+
+
+%--------------------------------------------------%
+
+\begin{frame}
+\frametitle{Confidence Intervals for Sample Proportion}
+\Large
+\begin{itemize}
+\item The general structure of confidence intervals is as follows
+\[ \mbox{ Point Estimate } \pm \left[ \mbox{ Quantile } \times \mbox{ Standard Error } \right] \]
+\item The structure of a confidence interval for sample proportion is
+\[ \hat{p} \pm \left[ z_{(\alpha/2)} \times \mbox{S.E.}(\hat{p}) \right]\]
+
+%\item The standard error, in the case of sample proportions, is
+%\[ \mbox{S.E.}(\hat{p}) = \sqrt{\frac{\hat{p}\times (1-\hat{p})}{n}}\]
+
+\end{itemize}
+\end{frame}
+
+%--------------------------------------------------%
+\begin{frame}
+\frametitle{Confidence Intervals for Sample Proportion}
+\Large
+\textbf{Point Estimate}
+\begin{itemize}
+\item The point estimate is the sample proportion, denoted $\hat{p}$.  
+\item The sample proportion is calculated as the number of `successes' ($x$) divided by the total number of cases, in other words, the sample size $n$.
+\[  \hat{p} = \frac{x}{n}  \]
+\end{itemize}
+\end{frame}
+
+%--------------------------------------------------%
+\begin{frame}
+\frametitle{Confidence Intervals for Sample Proportion}
+\textbf{Quantile}
+\begin{itemize}
+\item In the cases of large samples ($ n > 30$) , the standard normal ( `Z' ) distribution is used.
+
+\end{itemize}
+\end{frame}
+
+
+%--------------------------------------------------%
+\begin{frame}
+\frametitle{Confidence Intervals for Sample Proportion}
+
+\begin{itemize}
+
+\item Complement Values:
+\begin{itemize} \item When working in terms of proportions, for the the value $\hat{p} =0.40$, the complement value is $1-\hat{p} =0.60$.
+\item When working in terms of percentages, for the value $\hat{p} = 40\%$, the complement value is $100-\hat{p} = 60\%$.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%--------------------------------------------------%
+
+\begin{frame}
+\frametitle{ Sample Proportion : Example}
+
+
+\begin{description}
+\item[Point Estimate] The sample proportion is computed as follows
+\[ \hat{p} = \frac{x}{n} = \frac{84}{120} = 0.70 \]
+\item[Quantile] We are asked for a 95\% confidence interval. We have a large sample ($n=120$). The quantile is therefore 1.96.
+\[ z_{\alpha/2} =1.96\]
+\item[Standard Error] The standard error, with sample size n=120 is computed as follows
+\[ \mbox{S.E.}(\hat{p}) = \sqrt{\frac{\hat{p} \times (1-\hat{p})}{n}} =  \sqrt{\frac{0.70 \times 0.30}{120}}\]
+
+\end{description}
+\end{frame}
+%--------------------------------------------------%
+\begin{frame}
+\frametitle{Confidence Intervals for Sample Proportion}
+\Large
+\begin{itemize}
+
+\item It is often easier to work in terms of percentages, rather than proportions.
+If you are working in terms of percentages, remember to use the appropriate \textbf{\textit{complement value}} in the standard error formula (i.e. $100 - \hat{p}$)
+
+\item The standard error, in the case of sample proportions, is
+\[ \mbox{S.E.}(\hat{p}) = \sqrt{\frac{\hat{p}\times (100-\hat{p})}{n}}\]
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,447 @@
+\documentclass[a4paper,12pt]{report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{eurosym}
+\usepackage{vmargin}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{chngpage}
+%\usepackage{bigints}
+
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{LastRevised=Wednesday, February 23, 2011 13:24:34}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\pagestyle{fancy}
+%\setmarginsrb{20mm}{0mm}{20mm}{25mm}{12mm}{11mm}{0mm}{11mm}
+%\lhead{MA4413} \rhead{Mr. Kevin O'Brien}
+%\chead{Statistics For Computing}
+%\input{tcilatex}
+
+
+
+
+\begin{document}
+
+\title{Probability Lecture Notes}
+\author{Kevin O'Brien}
+
+\tableofcontents \setcounter{tocdepth}{2}
+
+\chapter{Probability Distributions : Discrete Distributions}
+\section{Discrete Probability Distributions}
+
+\subsection{Overview of Module: Probability Distributions}
+First we will look at Discrete probability distributions
+\begin{enumerate}
+\item[3a] Binomial
+\item[3b] Poisson
+\item[3c] Geometric
+\item[3c] Hypergeometric
+\item[3e] Bayes Theorem
+\item[3f] Counting
+\end{enumerate}
+\begin{itemize}
+\item The Binomial Distribution
+\item The Poisson Distribution
+\end{itemize}
+
+%http://stattrek.com/Lesson2/Binomial.aspx
+%http://stattrek.com/Lesson2/Normal.aspx
+%http://www.intmath.com/counting-probability/12-binomial-probability-distributions.php
+%http://www.elderlab.yorku.ca/~aaron/Stats2022/BinomialDistribution.htm
+%http://www.mathsisfun.com/combinatorics/combinations-permutations.html
+
+\begin{itemize}
+\item There are n independent trials
+ \item
+ There are just two possible outcomes to each trial, success and failure, with fixed probabilities of p and q respectively, where $q = 1 - p$.
+\end{itemize}
+%------------------------------------------------------------------------------------------------%
+%------------------------------------------------------------------------------------------------%
+%------------------------------------------------------------------------------------------------%
+
+\begin{itemize}
+\item Hypergeometric Distribution \item Binomial Distribution \item Poisson Distribution \item
+Uniform Distibution \item Normal Distribution \item Hypergeometric
+Distribution
+\end{itemize}
+
+\section{Hypergeometric Distribution}
+
+In probability theory , the ``hypergeometric distribution'' is a
+discrete probability distribution  that describes the number of
+successes in a sequence of ``n'' draws from a finite population
+``without'' replacement, just as the binomial distribution
+describes the number of successes for draws``with'' replacement.
+
+
+
+
+
+
+\chapter{Probability Distributions}
+\section{Introduction to Distributions}
+\begin{itemize}
+\item A random variable is a variable whose value is determined by the outcome of a random phenomenon.
+The statistical techniques we've learned so far deal with variables, not events, so we need to define a
+variable in order to analyze a random phenomenon.
+\item A discrete random variable has a finite number of possible values, while a continuous random variable
+can take all values in a range of numbers.
+\item The probability distribution of a random variable tells us the possible values of the variable and how
+probabilities are assigned to those values.
+\item The probability distribution of a discrete random variable is typically described by a list of the
+values and their probabilities. Each probability is a number between 0 and 1, and the sum of the
+probabilities must be equal to 1.
+\item The probability distribution of a continuous random variable is typically described by a density
+curve. The curve is defined so that the probability of any event is equal to the area under the
+curve for the values that make up the event, and the total area under the curve is equal to 1. One
+example of a continuous probability distribution is the normal distribution.
+\item We use the term parameter to refer to a number that describes some characteristic of a population. We
+rarely know the true parameters of a population, and instead estimate them with statistics. Statistics
+are numbers that we can calculate purely from a sample. The value of a statistic is random, and will
+depend on the specific observations included in the sample.
+\item The law of large numbers states that if we draw a bunch of numbers from a population with mean ¹,
+we can expect the mean of the numbers $\bar{y}$ to be closer to $\mu$ as we increase the number we draw. This
+means that we can estimate the mean of a population by taking the average of a set of observations
+drawn from that population.
+\end{itemize}
+\chapter{Discrete Probability Distributions}
+\section{Binomial Distribution}
+The binomial distribution is a discrete probability distribution
+that is applicable as a model for decision making situations in
+which a sampling process can be assumed to conform to a Bernoulli
+process.
+
+A Bernoulli process is a sampling process in which
+\begin{enumerate} \item Only two mutually exclusive possible outcomes are
+possible in each trial, or observation. For convenience these are
+called success and failure. \item The outcomes in the series of
+trials, or observations, constitute independent events. \item The
+probability of success in each trial, denoted by p, remains
+constant from trial to trial. That is, the process is stationary.
+
+\end{enumerate}
+
+The binomial distribution can be used to determine the probability
+of obtaining a designated number of successes in a Bernoulli
+process.
+
+Three values are required: the designated number of successes (X);
+the number of trials, or observations (n); and the probability of
+success in each trial (p).
+
+
+
+%---------------------------------------------------------------------------------------%
+\section{The Binomial Distribution}
+%
+%http://www.wbs.eu.com/SharedFiles/Maths/statistics%201%20revision/introducing%20binomial.pdf
+Binomial probability function formula
+\begin{equation*}
+f\left( x\right) =\left(
+\begin{array}{c}
+n \\
+x%
+\end{array}%
+\right) p^{x}\left( 1-p\right) ^{n-x}\qquad \text{where}\qquad \left(
+\begin{array}{c}
+n \\
+x%
+\end{array}%
+\right) =\frac{n!}{x!\left( n-x\right) !}.
+\end{equation*}
+
+The binomial distribution is a particular example of a probability distribution involving a discrete random variable. It is important that you can identify situations which can be modelled using the binomial distribution.
+
+The discrete random variable X is the number of successes in the n trials. X is modelled by the binomial distribution $B(n, p)$. You can write $X \sim B(n, p)$.
+
+\subsection{Worked Example 1}
+Quality control on batches of random access memory chips involves
+selecting a random sample of chips from each batch and subjecting
+each selected chip to tests of reliability.  Suppose in a batch of
+20 chips, there are four defectives.  A sample of five chips is
+selected from the batch (without replacement) and inspected.
+
+
+
+\subsection{Worked Example 2}
+
+\begin{itemize}
+\item What is the probability that none of the chips drawn are
+defective? \item If more than one defective chip is found in the
+sample, then the whole batch is rejected. \item Calculate the
+probability that a batch is rejected. \end{itemize}
+
+\subsection{Worked Example 3}What is the probability that you win exactly 4 times in a sequence of thirty games?
+
+\begin{itemize}
+\item \[P(X=4) =  { 30 \choose 4} (1/6)^4 (5/6)^{26}   \]
+\item \[{ 30 \choose 4} = {30! \over 4! \times (30-4)!}\]
+
+\item $30! =30 \times 29 \times 28 \times 27 \times 26!$
+\item \[{ 30 \choose 4} = {30 \times 29 \times 28 \times 27 \over 24 } = 27405 \]
+\item $(1/6)^4 = 0.000771605$
+\item $(5/6)^{26} = 0.008735497$
+\item \[P(X=4) =  0.18472   \]
+\end{itemize}
+
+
+
+\subsection{Worked Example 4} Using recent data provided by the low-cost
+arriving on time is estimated to be 0.9.
+
+On four different occasions I am taking a flight with Brianair.
+(i) What is the probability that I arrive on time on all four flights?
+(ii) What is the probability that I arrive on time on exactly two occasions?
+
+
+\section{The Poisson Distribution}
+
+A Poisson distribution is the probability distribution that results from a Poisson experiment.
+
+\subsection{Attributes of a Poisson Experiment}
+A Poisson experiment is a statistical experiment that has the following properties:
+\begin{itemize}
+\item The experiment results in outcomes that can be classified as successes or failures.
+\item The average number of successes ($µ$) that occurs in a specified region is known.
+\item The probability that a success will occur is proportional to the size of the region.
+\item The probability that a success will occur in an extremely small region is virtually zero.
+\end{itemize}
+Note that the specified region could take many forms. For instance, it could be a length, an area, a volume, a period of time, etc.
+
+
+\newpage Poisson probability function
+\begin{equation*}
+f\left( x\right) =\frac{m^{x}\mathrm{e}^{-m}}{x!}.
+\end{equation*}
+
+
+Notation
+The following notation is helpful, when we talk about the Poisson distribution.
+
+e: A constant equal to approximately 2.71828. (Actually, e is the base of the natural logarithm system.)
+$\mu$: The mean number of successes that occur in a specified region.
+x: The actual number of successes that occur in a specified region.
+P(x; $\mu$): The Poisson probability that exactly x successes occur in a Poisson experiment, when the mean number of successes is $\mu$.
+\subsection{Poisson Distribution}
+A Poisson random variable is the number of successes that result from a Poisson experiment. The probability distribution of a Poisson random variable is called a Poisson distribution.
+
+Given the mean number of successes ($\mu$) that occur in a specified region, we can compute the Poisson probability based on the following formula:
+
+\textbf{Poisson Formula} Suppose we conduct a Poisson experiment, in which the average number of successes within a given region is $\mu$. Then, the Poisson probability is:
+\[ P(x; \mu) = e^{-\mu} { (\mu x) \over x!} \]
+
+where x is the actual number of successes that result from the experiment, and e is approximately equal to 2.71828.
+The Poisson distribution has the following properties:
+
+The mean of the distribution is equal to µ .
+The variance is also equal to µ .
+Example 1
+
+The average number of homes sold by the Acme Realty company is 2 homes per day. What is the probability that exactly 3 homes will be sold tomorrow?
+
+Solution: This is a Poisson experiment in which we know the following:
+
+µ = 2; since 2 homes are sold per day, on average.
+x = 3; since we want to find the likelihood that 3 homes will be sold tomorrow.
+e = 2.71828; since e is a constant equal to approximately 2.71828.
+We plug these values into the Poisson formula as follows:
+
+P(x; $\mu$) = (e-µ) (µx) / x!
+P(3; 2) = (2.71828-2) (23) / 3!
+P(3; 2) = (0.13534) (8) / 6
+P(3; 2) = 0.180
+Thus, the probability of selling 3 homes tomorrow is 0.180 .
+\subsection{Poisson example}
+
+On average, four people per hour conduct transactions at a special
+services desk in a commercial bank. Assuming that the arrival of
+such people is independently distributed and equally likely
+throughout the period of concern, what is the probability that
+more than 9 people will wish to conduct transactions at the
+special services desk during a particular hour?
+
+
+\subsection{Poisson example}
+
+An average of 0.5 customer per minute arrives at a checkout stand. What is the probability that five or
+more customers will arrive in a given 5-min interval? \\
+Average per minute = 0.5\\
+average for 5 min  = 2.5\\
+$P(X \geq 5 | \lambda = 2.5) = 0.0668 + 0.0278 + 0.0099 + 0.0031 + 0.0009 + 0.0002 = 0.1087$
+
+\section{The Poisson Random Variable}
+
+ A random variable X, taking on one of
+the values 0, 1, 2, ... , is said to be a Poisson random variable
+with parameter $\lambda$, if for some $\lambda > 0 $,
+
+$p(k)= P{X = k} = e^{-\lambda}\frac{\lambda^{k}}{k!},  i= 0, 1, .$
+\newpage
+\section{Poisson Approximation of Binomial Probabilities }
+
+When the number of observations or trials n in a Bernoulli process
+is large, computations are quite tedious. Further, tabled
+probabilities for very small values of p are not generally
+available.
+
+Fortunately, the Poisson distribution is suitable as an
+approximation of binomial probabilities when n is large and p or q
+is small. A convenient rule is that such approximation can be made
+when $n > 30$, and either $np < 5$ or $nq < 5$.
+
+Different texts use somewhat different rules for determining when
+such approximation is appropriate. The mean for the Poisson
+probability distribution that is used to approximate binomial
+probabilities is $\lambda = np$.
+
+\subsection{Poisson Questions}
+
+A computer server breaks down on average once every three months.
+
+\begin{itemize}
+\item What is the probability that the server breaks down three times in a quarter?
+\item What is the probability that a server breaks down exactly five times in one year?
+\end{itemize}
+\chapter{Continuous Probability Distributions}
+%---------------------------------------------------------------------%
+\section{The Exponential distribution}
+
+
+The exponential distribution is often concerned with the amount of time until some specific event occurs. For example, the amount of time (beginning now) until an earthquake occurs has an exponential distribution. Other examples include the length, in minutes, of long distance business telephone calls, and the amount of time, in months, a car battery lasts. It can be shown, too, that the amount of change that you have in your pocket or purse follows an exponential distribution.
+
+Values for an exponential random variable occur in the following way. There are fewer large values and more small values. For example, the amount of money customers spend in one trip to the supermarket follows an exponential distribution. There are more people that spend less money and fewer people that spend large amounts of money.
+
+The exponential distribution is widely used in the field of \textbf{\emph{reliability}}. Reliability deals with the amount of time a product lasts.
+Exponential probability distribution
+\begin{equation*}
+P\left( X \leq k \right) = 1 - e^{-k/\mu}
+\end{equation*}
+
+Where l is the mean number of occurrences for the interval of interest, the exponential
+probability that the first event will occur within the designated interval of time or space is
+\[ P(T \leq t)= 1 - e^{-\lambda} \]
+
+Similarly, the exponential probability that the first event will not occur within the designated interval of
+time or space is
+\[ P(T \geq t)=  e^{-\lambda} \]
+
+The expected value and the variance of an exponential probability distribution, where the variable is
+designated as time T and l is for one unit of time or space (such as one hour or day), are
+\[\mbox{E}(T) =\frac{1}{\lambda} \]
+\[\mbox{Var}(T) =\frac{1}{\lambda^2} \]
+
+The formula for the mean can be re-arranged as $ \lambda = 1 / \mbox{E}(T) $
+
+
+
+\subsection{Exponential distribution: Example}
+The mean or expected value of an exponentially distributed random variable X with rate parameter $\lambda$ is given by
+
+$ \mathrm{E}[X] = \frac{1}{\lambda}. $
+
+In light of the examples given above, this makes sense: if you receive phone calls at an average rate of 2 per hour, then you can expect to wait half an hour for every call.
+
+The variance of X is given by
+
+$\mathrm{Var}[X] = \frac{1}{\lambda^2}.$
+\subsection*{Worked Example}
+
+On average, a ship arrives at a certain dock every second day. What is the probability that after the
+departure of a ship four days will pass before the arrival of the next ship?
+\begin{itemize}
+\item Average per 2 days = 1.0
+\item Average per day $= 0.5$
+\item $\lambda =$ average per 4-day period $ = 4 \times 0.5 = 2.0$
+\item $P(T \geq 4)= e^{-\lambda} = e^{-2} = $ \textbf{0.13534}
+\end{itemize}
+
+
+%---------------------------------------------------------------------%
+\section{Uniform Distribution}
+
+A random variable is said to be uniformly distributed over the interval (0, 1) if its probability
+density function is given by
+
+\begin{itemize}
+\item mean $ = \frac{1}{2}(a+b)$
+\item variance $ = \frac{1}{12}(b-a)^2$
+\end{itemize}
+
+\begin{equation}
+            f(x) = \begin{cases}
+                  \frac{1}{b - a} & \mbox{for} x \in [a,b]  \\
+                  0               & \mbox{otherwise}
+            \end{cases}
+\end{equation}
+
+\newpage
+
+\chapter{Exercises}
+\begin{enumerate}
+
+\item An electronics assembly subcontractor receives resistors from two suppliers: Deltatech provides
+70\% of the subcontractors's resistors while another company, Echelon, supplies the remainder.
+1\% of the resistors provided by Deltatech fail the quality control test, while 2\% of the
+chips from Echelon also fail the quality control test.
+
+\begin{enumerate}
+\item (5 marks)What is the probability that a resistor will fail the quality control test?
+
+
+\item (4 marks)What is the probability that a resistor that fails the quality control test was supplied by Echelon?
+\end{enumerate}
+
+
+\vspace{0.25cm}
+
+
+\item It is estimated by a particular bank that 25\% of credit card customers pay only the minimum amount due on their monthly credit card bill and do not pay the total amount due. 50 credit card customers are randomly selected.
+\begin{enumerate}
+\item (3 marks)	What is the probability that 9 or more of the selected customers pay only the minimum amount due?
+\item (3 marks) What is the probability that less than 6 of the selected customers pay only the minimum amount due?
+\item (3 marks)	What is the probability that more than 5 but less than 10 of the selected customers pay only the minimum amount due?
+\end{enumerate}
+
+
+
+\vspace{0.25cm}
+\item The average lifespan of a PC monitor is 6 years. You may assume that the lifespan of monitors follows an exponential probability distribution.
+    \begin{enumerate}
+    \item (3 marks) What is the probability that the lifespan of the monitor will be at least 5 years?
+    \item (3 marks) What is the probability that the lifespan of the monitor will not exceed 4 years?
+    \item (3 marks) What is the probability of the lifespan being between 5 years and 7 years?
+    \end{enumerate}
+\vspace{0.25cm}
+\item A machine is used to package bags of potato chips.  Records of the packaging machine indicate that its fill weights are normally distributed with a mean of 455 grams per bag and a standard deviation of 10 grams.
+
+    \begin{enumerate}
+    \item (5 marks) What proportion of bags filled by this machine will contain more than 470 grams in the long run?
+    \item (5 marks)	What proportion of bags filled by this machine will contain less than 445 grams in the long run?
+    \item (3 marks)	What proportion of bags filled by this machine will be between 465 grams and 475 grams in the long run?
+    \end{enumerate}
+    
+\vspace{0.25cm}
+\item Each 500-ft roll of sheet steel includes two flaws on average. What is the probability that as the sheet
+steel is unrolled the first flaw occurs within the first 50-ft segment?
+
+\begin{itemize}
+\item Average number of flaws per 500-ft roll $= 2.0$
+\item $\lambda =$ average per 50-ft segment$ = 0.2$
+\item $P(T \leq 50) = 1 - e^{-\lambda} = 1- e^{-0.2} = 1 - 0.81873 $  = \textbf{0.18127}
+\end{itemize}
+\end{enumerate}
+
+\end{document}

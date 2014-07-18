@@ -1,0 +1,193 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx}  % Font Family
+\usepackage{helvet}   % Font Family
+\usepackage{color}
+
+\mode<presentation> {
+ \usetheme{Default} % was
+ \useinnertheme{rounded}
+ \useoutertheme{infolines}
+ \usefonttheme{serif}
+ %\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+
+\setbeamercovered{dynamic}
+
+\title[Stats-Lab.com]{\LARGE Introduction to Statistics and Probability \\ {\Large Chi-Square Test : }}
+\author[Kevin O'Brien]{Kevin O'Brien}
+\date{Spring 2014}
+
+
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+
+\Large
+Expected Value for a Cell
+
+\[ = \frac{\mbox{Column Total}  \times \mbox{Row Total} } {\mbox{Overall Total}}  \]
+
+\end{frame}
+%---------------------------------------------%
+
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+
+\Large
+
+
+
+
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+
+\Large
+\begin{itemize}
+\item Compute the expected values for each cell in the following table.
+\item One of the expected values (both A and Y) is given.
+\end{itemize}
+\begin{center}
+\Large
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Cat X & Cat Y & Cat Z & Total  \\ \hline
+Cat A & & 60 &  & 200\\ \hline
+Cat B & &  &  & 400 \\ \hline
+Total & 150 & 180 & 270 &  \textbf{600}\\ \hline
+\end{tabular} 
+\end{center}
+
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+% Writing
+
+\Large
+\textbf{Cell$_{(1,1)}$}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline & Cat X & Cat Y & Cat Z & Total  \\ \hline
+Cat A & \alert{\ldots}& 60 &  & 200\\ \hline
+Cat B & \phantom{space}& \phantom{space} & \phantom{space} & 400 \\ \hline
+Total & 150 & 180 & 270 &  \textbf{600}\\ \hline
+
+\end{tabular} 
+\end{center}
+
+\end{frame}
+%---------------------------------------------%
+
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+\Large
+\textbf{Cell$_{(1,1)}$}
+\begin{itemize}
+\item Row 1 : Row Total = 200
+\item Column 1 : Column Total = 150
+\item Overall Total = 600
+\end{itemize}
+\bigskip
+
+
+Expected value for Cell$_{(1,1)}$
+
+\[ E_{(1,1)} = \frac{200 \times 150}{600} = \frac{30,000}{600} = 50 \]
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+% Writing
+
+\Large
+Expected values for all of the other cells can be computed the same way.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline & Cat X & Cat Y & Cat Z & Total  \\ \hline
+Cat A & 50 & 60 &  & 200\\ \hline
+Cat B & \phantom{space}& \phantom{space} & \phantom{space} & 400 \\ \hline
+Total & 150 & 180 & 270 &  \textbf{600}\\ \hline
+
+\end{tabular} 
+\end{center}
+
+
+\end{frame}
+
+%---------------------------------------------%
+
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+
+\textbf{Cell$_{(2,1)}$}\
+\begin{itemize}
+\item Row 2 : Row Total = 400
+\item Column 1 : Column Total = 150
+\item Overall Total = 600
+\end{itemize}
+
+Expected value for Cell$_{(2,1)}$
+
+\[ E_{(2,1)} = frac{400 \times 150}{600} = \frac{60,000}{600} = 100 \]
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+% Writing
+
+\LARGE
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & Cat X & Cat Y & Cat Z & Total  \\ \hline
+Cat A & 50 & 60 &  & 200\\ \hline
+Cat B & \phantom{s}100\phantom{s}& \phantom{space} & \phantom{space} & 400 \\ \hline
+Total & 150 & 180 & 270 &  \textbf{600}\\ \hline
+\end{tabular} 
+\end{center}
+
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+% Writing
+
+\LARGE
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+ & Cat X & Cat Y & Cat Z & Total  \\ \hline
+Cat A & 50 & 60 & 90  & 200\\ \hline
+Cat B & \phantom{s}100\phantom{s}& \phantom{s}120\phantom{s} & \phantom{s}180\phantom{s} & 400 \\ \hline
+Total & 150 & 180 & 270 &  \textbf{600}\\ \hline
+\end{tabular} 
+\end{center}
+\end{frame}
+%---------------------------------------------%
+\begin{frame}
+\frametitle{Chi-Square Test of Association}
+% Writing
+\end{frame}
+%---------------------------------------------%
+
+\end{document}

@@ -1,0 +1,81 @@
+\documentclass{beamer}
+
+\usepackage{amsmath}
+\usepackage{framed}
+
+\begin{document}
+%------------------------------------------------------------------------------------ %
+\begin{frame}
+\bigskip
+{
+\Huge
+\[ \mbox{Probability Distributions with \texttt{R}} \]
+\huge
+\[ \mbox{Poisson Random Variables} \]
+}
+{
+\huge
+\[ \mbox{www.Stats-Lab.com} \]
+\[ \mbox{Twitter: @StatsLabDublin} \]
+}
+\end{frame}
+\begin{frame}
+\frametitle{Poisson Random Variables}
+\noindent\textbf{Question:}\\
+Suppose that random variable X follows a Poisson distribution with rate parameter \texttt{\textbf{L}}. \\
+If we increase the value of \texttt{\textbf{L}}, which of the following is true?
+
+
+\bigskip
+\noindent\textbf{Options:}
+\begin{enumerate}
+\item The spread increases but the center remains unchanged.
+\item Both the spread and the center increase.
+\item The center increases but the spread decreases.
+\item The spread increases but the center decreases.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Poisson Random Variables}
+\vspace{0.5cm}
+\Large
+\noindent \textbf{Comments:}
+\begin{itemize}
+\item center - i.e. the measures of centrality, such as mean and median.
+\item spread - i.e. measures of disperion, such as variance and range.
+\end{itemize} 
+\end{frame}
+%----------------------------------------------------------- %
+\begin{frame}[fragile] 
+\textbf{Exercise}
+\begin{itemize}
+\item Generate 100 random numbers from the Poisson distribution - specifying a value for \texttt{lambda} (i.e. what the rate parameter is called when using \texttt{R}) .
+\item Compute the mean and variance for this set of numbers.
+\item Repeat the process a few times, each time increasing the value of lambda.
+\end{itemize}
+\begin{framed}
+\begin{verbatim}
+#generate three data sets
+X1 <- rpois(100, lambda= 4)
+X2 <- rpois(100, lambda= 8)
+X3 <- rpois(100, lambda= 18)
+\end{verbatim}
+\end{framed}
+\end{frame}
+%----------------------------------------------- %
+\begin{frame}[fragile]
+\frametitle{Poisson Random Variables}
+\begin{framed}
+\begin{verbatim}
+#Now get the mean and variance for each data set
+mean(X1);var(X1)
+mean(X2);var(X2)
+mean(X3);var(X3)
+\end{verbatim}
+\end{framed}
+\end{frame}
+\begin{frame}
+END
+\end{frame}
+\end{document}

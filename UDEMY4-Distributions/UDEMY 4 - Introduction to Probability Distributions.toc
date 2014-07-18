@@ -1,0 +1,2 @@
+\beamer@endinputifotherversion {3.26pt}
+\beamer@sectionintoc {1}{Introduction to Distributions}{1}{0}{1}
