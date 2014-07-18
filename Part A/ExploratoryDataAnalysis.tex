@@ -1,0 +1,99 @@
+IntroNotes.tex
+
+
+\chapter{Exploratory Data Analysis}
+
+\section{Introduction}
+In this course, we shall be looking at Quantitative data analysis specifically.
+
+
+
+Exploratory Data Analysis (EDA) is an approach/philosophy for data analysis that employs a variety of techniques (mostly graphical) to
+\begin{itemize}
+\item maximize insight into a data set;
+\item uncover underlying structure;
+\item extract important variables;
+\item detect outliers and anomalies;
+\item test underlying assumptions;
+\item develop parsimonious models; and
+\item determine optimal factor settings.
+\end{itemize}
+
+The seminal work in EDA is Exploratory Data Analysis, Tukey, (1977).
+
+Most EDA techniques are graphical in nature with a few quantitative techniques. The reason for the heavy reliance on graphics is that by its very nature the main role of EDA is to open-mindedly explore, and graphics gives the analysts unparalleled power to do so, enticing the data to reveal its structural secrets, and being always ready to gain some new, often unsuspected, insight into the data. In combination with the natural pattern-recognition capabilities that we all possess, graphics provides, of course, unparalleled power to carry this out.
+
+EDA techniques are subjective and depend on interpretation which may differ from analyst to analyst, although experienced analysts commonly arrive at identical conclusions. The particular graphical techniques employed in EDA are often quite simple, consisting of various techniques of:
+\begin{itemize}
+\item Plotting the raw data (such as data traces, histograms, bihistograms, probability plots, lag plots, block plots, and Youden plots.
+
+\item Plotting simple statistics such as mean plots, standard deviation plots, box plots, and main effects plots of the raw data.
+
+\item Positioning such plots so as to maximize our natural pattern-recognition abilities, such as using multiple plots per page.
+\end{itemize}
+
+\newpage
+
+
+\subsection{Summary Analysis}
+A summary analysis is simply a numeric reduction of a historical data set. It is quite passive. Its focus is in the past. Quite commonly, its purpose is to simply arrive at a few key statistics (for example, mean and standard deviation) which may then either replace the data set or be added to the data set in the form of a summary table.
+
+\section{Revision of basic measures}
+
+\subsection{Measures of Centrality}
+The most common measures of centrality are the mean and median.
+
+\textbf{Median} Another measure of location just like the mean. The value that divides the frequency distribution in half when all data values are listed in order. It is insensitive to small numbers of extreme scores in a distribution. Therefore, it is the preferred measure of central tendency for a skewed distribution (in which the mean would be biased) and is usually paired with the \textbf{interquartile range} (IQR) as the accompanying measure of dispersion.
+
+\subsection{Variance and Covariance}
+Covariance is a measure of how much two variables change together. 
+
+Variance can be considered as a special case of the covariance when the two variables are identical.
+$var(x) = cov(X,X)$
+
+Covariance can be computed as product of the variance of two datasets, multiplied by their correlation.
+
+\[
+cov(X,Y) = std.dev (x) std.dev(y) cor(x,y)
+\]
+
+A covariance matrix is a useful tool for assessing variances in multiple data sets.
+
+
+If X and Y are independent, then their covariance is zero. However it is possible for X and Y to have covariance zero when they are not independent.
+
+
+
+
+
+
+\subsection{Measures of Dispersion}
+
+The most common measures of dispersion are the variance and standard deviation. The range is also quite useful.
+
+\textbf{Variance} is the major measure of variability for a data set. To calculate the variance, all data values, their mean, and the number of data values are required. It is expressed in the squared unit of measurement. Its square root is the \textbf{standard deviation}. It is symbolized by $\sigma^2$ for a population and $s^2$ for a sample
+
+
+%-----------------------------------------------------------------------------------------%
+\newpage
+\section{Other measures}
+%-----------------------------------------------------------------------------------------%
+\section{Simpson's Paradox}
+
+\subsection{Example}
+\begin{itemize}
+\item Say a company tests two treatments for an illness. In trial No. 1, treatment A cures 20\% of its cases (40 out of 200) and treatment B cures 15\% of its cases (30 out of 200). In trial No. 2, treatment A cures 85\% of its cases (85 out of 100) and treatment B cures 75\% of its cases (300 out of 400)....
+\item
+So, in two trials, treatment A scored 20\% and 85\%. Also in two trials, treatment B scored only 15\% and 75\%. No matter how many people were in those trials, treatment A (at 20\% and 85\%) is surely better than treatment B (at 15\% and 75\%)?
+\item
+No, Treatment B performed better. It cured 330 (300+30) out of the 600 cases.
+\item
+(200+400) in which it was tried--a success rate of 55\%. By contrast, treatment A cured 125 (40+85) out of the 300 cases (200+100) in which it was tried, a success rate of only about 42\%.
+\end{itemize}
+
+%-----------------------------------------------------------------------------------------%
+
+\section{The Ecological Fallacy}
+Ecological fallacy: The aggregation bias, which is the unfortunate consequence of making inferences for individuals from aggregate data. It results from thinking that relationships observed for groups necessarily hold for individuals. The problem is that it is not valid to apply group statistics to an individual member of the same group.
+
+%-----------------------------------------------------------------------------------------%
