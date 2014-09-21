@@ -1,0 +1,74 @@
+Hypergeometric Distribution[edit]
+Hypergeometric
+Notation	h(k) = {{{m \choose k} {{N-m} \choose {n-k}}}\over {N \choose n}} 
+Parameters	 ???
+Support	 ???
+Unknown type	 ???
+CDF	 ???
+Mean	 ???
+Median	 ???
+Mode	 ???
+Unknown type	 ???
+Skewness	 ???
+Ex. kurtosis	 ???
+Entropy	 ???
+MGF	 ???
+CF	 ???
+PGF	 ???
+Fisher information	 ???
+The hypergeometric distribution describes the number of successes in a sequence of n draws without replacement from a population of N that contained m total successes.
+
+It's probability mass function is:
+
+f(k) = {{{m \choose k} {{N-m} \choose {n-k}}}\over {N \choose n}}\text{ for all }x \in[0,n]
+Technically the support for the function is only where x∈[max(0, n+m-N), min(m, n)]. In situations where this range is not [0,n], f(x)=0 since for k>0, {0\choose k}=0.
+
+Probability Density Function[edit]
+We first check to see that f(x) is a valid pmf. This requires that it is non-negative everywhere and that it's total sum is equal to 1. The first condition is obvious. For the second condition we will start with Vandermonde's identity
+
+\sum_{x=0}^n{a \choose x}{b \choose n-x}={a+b \choose n}
+\sum_{x=0}^n{{a \choose x}{b \choose n-x} \over {a+b \choose n}}=1
+We now see that if a=m and b=N-m that the condition is satisfied.
+
+Mean[edit]
+We derive the mean as follows:
+
+\operatorname{E}[X] = \sum^n_{x=0} x \cdot f(x;n,m,N)  = \sum^n_{x=0} x \cdot {{{m \choose x} {{N-m} \choose {n-x}}}\over {N \choose n}}
+\operatorname{E}[X] = 0\cdot {{{m \choose 0} {{N-m} \choose {n-0}}}\over {N \choose n}}+\sum^n_{x=1} x \cdot {{{m \choose x} {{N-m} \choose {n-x}}}\over {N \choose n}}
+We use the identity  \binom{a}{b} = \frac{a}{b} \binom{a-1}{b-1} in the denominator.
+
+\operatorname{E}[X] = 0+\sum^n_{x=1} x \cdot {{{m \choose x} {{N-m} \choose {n-x}}}\over {{N \over n}{{N-1} \choose {n-1}}}}
+\operatorname{E}[X] = {n \over N}\sum^n_{x=1} x \cdot {{{m \choose x} {{N-m} \choose {n-x}}}\over {{N-1} \choose {n-1}}}
+Next we use the identity b \binom{a}{b} = a \binom{a-1}{b-1} in the first binomial of the numerator.
+
+\operatorname{E}[X] = {n \over N}\sum^n_{x=1} {m {{m-1 \choose x-1} {{N-m} \choose {n-x}}}\over {{N-1} \choose {n-1}}}
+Next, for the variables inside the sum we define corresponding prime variables that are one less. So N′=N−1, m′=m−1, x′=x−1, n′=n-1.
+
+\operatorname{E}[X] = {m n \over N}\sum^{n'}_{x'=0} {{{m' \choose x '} {{N'-m'} \choose {n'-x'}}}\over {{N'} \choose {n'}}}
+\operatorname{E}[X] = {m n \over N}\sum^{n'}_{x'=0} f(x';n',m',N')
+Now we see that the sum is the total sum over a Hypergeometric pmf with modified parameters. This is equal to 1. Therefore
+
+\operatorname{E}[X] = {n m\over N}
+
+
+Variance[edit]
+We first determine E(X2).
+
+\operatorname{E}[X^2] = \sum_{x=0}^n f(x;n,m,N) \cdot x^2 = \sum_{x=0}^n {{{m \choose x} {{N-m} \choose {n-x}}}\over {N \choose n}} \cdot x^2
+\operatorname{E}[X^2] = {{{m \choose 0} {{N-m} \choose {n-0}}}\over {N \choose n}} \cdot 0^2+\sum_{x=1}^n {{{m \choose x} {{N-m} \choose {n-x}}}\over {N \choose n}} \cdot x^2
+\operatorname{E}[X^2] = 0+\sum_{x=1}^n {{m {m-1 \choose x-1} {{N-m} \choose {n-x}}}\over {{N \over n}{{N-1} \choose {n-1}}}} \cdot x
+\operatorname{E}[X^2] = {mn \over N} \sum_{x=1}^n {{{m-1 \choose x-1} {{N-m} \choose {n-x}}}\over {{{N-1} \choose {n-1}}}} \cdot x
+We use the same variable substitution as when deriving the mean.
+
+\operatorname{E}[X^2] = {mn \over N} \sum_{x'=0}^{n'} {{{m' \choose x'} {{N'-m'} \choose {n'-x'}}}\over {{{N'} \choose {n'}}}} (x'+1)
+\operatorname{E}[X^2] = {mn \over N} \left[\sum_{x'=0}^{n'} {{{m' \choose x'} {{N'-m'} \choose {n'-x'}}}\over {{{N'} \choose {n'}}}} x'+\sum_{x'=0}^{n'} {{{m' \choose x'} {{N'-m'} \choose {n'-x'}}}\over {{{N'} \choose {n'}}}}\right]
+The first sum is the expected value of a hypergeometric random variable with parameteres (n',m',N'). The second sum is the total sum that random variable's pmf.
+
+\operatorname{E}[X^2] = {mn \over N} \left[{n'm' \over N'}+1\right]
+\operatorname{E}[X^2] = {mn \over N} \left[{(n-1)(m-1) \over (N-1)}+1\right]={mn \over N} \left[{{(n-1)(m-1) +(N-1)}\over (N-1)}\right]
+We then solve for the variance
+
+\operatorname{Var}(X) = \operatorname{E}[X^2]-(\operatorname{E}[X])^2
+\operatorname{Var}(X) = {mn \over N} \left[{{(n-1)(m-1) +(N-1)}\over (N-1)}\right]-\left({mn \over N}\right)^2
+\operatorname{Var}(X) = {Nmn \over N^2} \left[{{(n-1)(m-1) +(N-1)}\over (N-1)}\right]-{(N-1)(mn)^2 \over (N-1)N^2}
+\operatorname{Var}(X) = {nm(N-n)(N-m)\over N^2(N-1)}
