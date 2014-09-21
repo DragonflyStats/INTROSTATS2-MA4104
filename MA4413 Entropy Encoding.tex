@@ -1,0 +1,508 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+%\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx}  % Font Family
+\usepackage{helvet}   % Font Family
+\usepackage{color}
+
+\mode<presentation> {
+ \usetheme{Default} % was Frankfurt
+ \useinnertheme{rounded}
+ \useoutertheme{infolines}
+ \usefonttheme{serif}
+ %\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+
+\setbeamercovered{dynamic}
+
+\title[MA4413t]{Statistics for Computing \\ {\normalsize Lecture 10B}}
+\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize kevin.obrien@ul.ie}}
+\date{Summer 2011}
+\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
+
+\renewcommand{\arraystretch}{1.5}
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Information Theory and Source Coding}
+
+\textbf{ Introduction : } Information theory provides a quantitative measure of the information contained in message signal and allows us to determine the capacity of a communication system to transfer this information from source to destination.
+ ln this section we brietly explore some basic ideas involved in information theory and source coding.
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Measure of Information}
+
+\textbf{1) Informatiion sources:}\\
+
+An information source is an object that produces an event. the outcome of which is selected at
+ random accorrding to a probability distribution. A practical source in a communication system is a
+device that produces messages. and it can be either analog or discrete.\\ In this chapter we deal mainly
+with the discrete sources, since analog sources can be transformed to discrete sources through the DSC
+of sampling and quantization techniques, described in Chap. 5. \\ \bigskip A discrete information source is a
+source that has only a finite set of symbols as possible outputs. The set of source symbols is called the
+\textbf{source alphabet}, and the elements of the set are called \emph{ symbols} or \emph{letters}.
+\end{frame}
+%----------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Memory}
+Information sources can be classiflied as having memory or being memoryless. A source with
+memoray is one for which a current symbol depends on the previous symbols. A memoryless source is
+one for which each symbol produced is independent of the previous symbols.
+\\ \bigskip
+A discrete memoryless sources- (DMS) can be characterized by the list of the symbols, the
+probability assignment to these symbols, and the specification ofthe rate of generating these symbols by the source.
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{ Information content of a Discrete Memoryless Source}
+The amount of infomation contained in an event is closely related to its uncertainty.
+Messages containing  knowledge of high probability ofoecurrence convey relatively little infomation. 
+We note that if an event is certain (that is, the event occurs with probability 1), it conveys zero information.
+
+
+Thus, a mathematical measure of information should be a function of the probability of the outcome and should satisfy the following axioms:
+\begin{itemize}
+\item[1.] Information should be proportional to the uncertainty of an outcome.
+\item[2.] Information contained in independent outcomes should add.
+\end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{ Information Content of a Symbol:}
+
+Consider a DMS, denoted by X, with alphabet ${x,.x2. ...,x_n}$. The information content ofa symbol
+$x_l$, denoted by $I(x_i)$, is defineed by
+
+\[  I(x_i)  = log_b({1 \over P(x_i)}) =  -log_b( P(x_i) ) \]
+
+
+where $P(x_i)$ is the probability of occurrence of symbol $x_i$,.
+\end{frame}
+
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+Note that $I(x_i)$ satisfies the following properties;
+\begin{itemize}
+\item % i [(.r,) Z 0 for P(x() Z l (/0.2)
+\item %KX.} Z 0 (I0-3)
+\item %I(x,) > I(x/) if P(x,) < P(x,) (10.4)
+\item %I(x,x]) Z l(x)) + I(x/) if x, and x, are independent (10.5)
+\end{itemize}
+\end{frame}
+
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+\begin{frame}
+\frametitle{Channel Capacity}
+
+\textbf{A. Channel Capacity per Symbol C:}\\
+The channel cizpucily per symbol of a DMC is detined as
+\[ 
+C. = \mbox{max}I(X; Y) \qquad \mbox{ b/symbol }
+\]
+where the maxiniization is over all possible input probability distributions {P(x,)} on X. Note that the
+channel capacity CA is a function of only the channel transition probabilities that define the channel.
+\end{frame}
+%---------------------------------------------------------------------------------------------------------------------------------------------------%
+
+\begin{frame}
+\frametitle{Channel Capacity}
+\textbf{B. Channel Capacity per Second C:}\\
+If r symbols are being transmitted per second, then the maximum rate of transmission of
+information per second is rC>.. This is the channel capacity per secvml and is denoted by C (bls):
+C : rC, b/s (10.34)
+\end{frame}
+%---------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{C. Capacities of Special Channels:}
+\textbf{ 1. Lossless Channel:}\\
+For a lossless channel, H(X|Y) Z 0 % (Prob. 10.10) and '
+$I(X; Y):1—1(X) $
+Thus, the mutual information (information transfer) is equal to the input (source) entropy, and no
+source infomation is lost in transmission. Consequently. the channel capacity per symbol is
+\[
+Cs : max H(X) = logzm %(10.36)
+\]
+where m is the number of symbols in X.
+\end{frame}
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+2. Deterministic Channel:
+For a deterministic channel, H( Y|X) = 0 for all input distributions Pm), and
+I(X; Y) : H(Y) (10.37)
+Thus. the information transfer is equal to the output cntropy. The channel capacity per symbol is
+
+C. : max H(Y) = 1og2 yi (10.38)
+iron)
+where ri is the number of symbols in Y.
+\end{frame}
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\textbf{3. Naireless Channel:}\\
+Since a noiseless channel is both lossless and deterministic, we have
+I(X; Y) : H(X) = H(Y) (l0.39)
+and the channel capacity per symbol is
+C, : logzm :1ogZ n (10440)
+\textbf{4. Binary Symmetric Channel:}\\
+For the BSC o1`Fig. 10-5. the mutual infomation is (Prob. 10.16)
+1(X: Y) ; 11(Y)-l-p1¤g;1¤+(1·1>)l<>2;;(l—p) (1041)
+and the channel capacity per symbol is
+Ci = 1 +¤1¤>z21¤+(l —p)l<>g2(1 ~p) (10.42)
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}
+The unit of I(x)) is the bit (binary unit) if b Z 2, Hartley or decit if b = 10, and nat (natural unir) if
+b Z at It is standard to use b Z 2. Here the unit bit (abbreviated "b“) is a measure ofinlbrrnation
+content and is not to bc confused with the term hit meaning "binary digit." The conversion of these
+units to other units can be achieved by the following relationships.
+
+\[   \]
+\end{frame}
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+%  page
+\begin{frame}
+\frametitle{Average Information or Entropy}
+\begin{itemize}
+\item In a practical communication system, we usually transmit long sequences of symbols from an
+information source. \item Thus, we are more interested in the average infornation that a source produces
+than the information content of a single symbol.
+\item The mean value of $ l(x_i)$ over the alphabet of source X with tn different symbols is given by
+\[ \]
+\end{itemize}
+\end{frame}
+%\end{document}
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Entropy}
+\begin{itemize}
+\item The quantity $H(X)$ is called the entropy of source X. \item It is a measure of the average information content per random symbol. 
+\item The source entropy H(X) can be considered as the average amount of uncertainty
+within source X that is resolved by use of the alphabet.
+
+\item Note that for if  binary source X that generates independent symbols $0$ and $1$ with equal probability, the source entropy $H(X)$ is
+%\[II(X ) Z Zglogz g Z élogg { = 1 n/symbol (ma) \]
+\item The source entropy$ H(X)$ satisfies the following relation:
+0 Z H(X) Z log; in (l0.9) where in is the size (number of symbols) of the alphabet of source X ). 
+\item  The lower bound corresponds to no uncertainty, which occurs when one symbol has probability $P(>:,)Zl $while 
+P(x,) = 0 for j ye i, so X emits the same symbol x, all the time. \item The upper bound corresponds to the maximum uncertainty which occurs when P(x,) : l /1n for all 1. that is, when all symbols are equally likely to be emitted by X.
+ \end{itemize}
+\end{frame}
+
+%-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+
+
+% page 247 
+
+\begin{frame}
+\frametitle{Information Rate}
+If the time rate at which source X emits symbols is r (symbols/s), the lnformation rate R of the
+source is given by
+
+%\[R ; r11(X) b/s (10.10)\]
+
+\end{frame}
+
+
+
+\begin{frame} \frametitle{DISCRETE MEMORYLESS CHANNELS}
+\textbf{A. Channel Representation:}\\
+\begin{itemize}
+\item A communication channel is the path or medium through which the symbols flow to the receiver. \item A discrete memoryless channel (DMC) is a statistical model with an input X and an output Y.
+During each unit ofthe time (signaling interval), the channel accepts an input symbol from X, and iu
+response it generates an output symbol from Y.\item  The channel is "discrete" when the alphabets of X and
+Y are both finite.\item It is ``memoryless" when the current output depends on only the current input and
+not on any of the previous inputs.\end{itemize}
+\end{frame}
+%r. - · yi
+%XI: X Ptytnt ykzyr
+%rn,. · yn
+
+\begin{frame}
+\frametitle{Discrete memoryless channel}
+A diagram of a DMC with nt inputs and n outputs is illustrated in Fig. l0-1. The input X consists
+of input symbols ir, , X2,   xm. 
+The a priori probabilities of these source symbols P(.x,) are assumed to be known. 
+The output Y consists of output symbols $\{y_1,y_2,\ldots, y_i \}$
+
+Each possible input-to-output path is indimted along with a conditional probability $P(y_i|x_i)$, where$P(y_i|x_i)$  is the conditional probability of
+obtaining output $y_i$ given that the input is $x_i$, and is called a \textbf{\emph{channel transition probability}}.
+\end{frame}
+
+\begin{frame}
+\frametitle{ Channel Matrix}
+
+A channel is completely specified by the complete set of transition probabilities. Accordingly, the
+channel of Fig. 10-l is ol` ten speciiied by the matrix of transition probabilities [P(YlX)l, given by
+%P<yilxi> P<yc|Xt>   !’<ytl¤<i>
+%W YIXM = P(yllXz> Plyzlxs)   i’<yiI~¤s> (NUI)
+%/’<yi|xm) P<ysI·rm>   P<ytI><ml
+
+The matrix [P(YlX)] is called thc channel matrix. Since each input to the channel results in some
+output, each row of the channel matrix niust snm to unity. that is,
+%ZP(yylx;) : l lor all 1 (10.12)
+ \end{frame}
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{ MUTUAL INFORMATION}
+\textbf{A. Conditional and Joint Entropies:}\\
+Using the input probabilities P(x,), output probabilities $P(y_i)$, transition probabilities P(yJ|>r,),
+and joint probabilities P(x,, yy), we can define the following various entropy functions for a channel
+with m inputs and n outputs:
+ 
+\begin{itemize}
+\item H(X) = - X P(xi) log %; P(x;) (10.21)
+\item H(Y) = -2P(yj)]%<>gz Pty;) UU-22)
+\item H<X I Y) = - X X %P<>¤r,yy)1<¤gz Ptmlyj) <10.23)
+\item H = -2 ZP%(>¢..y,) 1022 P(y,|X.) (10-24)
+\item H(X, Y) - -2 Z F%<><..y,)1¤zz P(><r.y;) <10·25)
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Conditional and Joint Entropy}
+These entropies can be interpreted as follows: H(X) is the average uncertainty of the channel input,
+and H(Y) is the average uncertainty of the channel output. The conditional entropy H(X]Y) is a
+measure of the average uncertainty remaining about the channel input after the channel output has
+been observed. And H(X] Y) is sometimes called the equivncation of X with respect to Y. \begin{itemize} \item The
+conditional entropy H(Y|X) is the average uncertainty of the channel output given that X was
+transmitted.\item  The joint entropy H(X, Y) is the average uncertainty of the communication channel as a
+whole.\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------------------------------------%
+\begin{frame}
+Two useful relationships among the above various entropies are
+\begin{itemize} \item
+$H(X, Y)=H(X|Y)+H(Y) (10,26)$
+$H(X,Y)=H(Y|X)+H(X) (10.27)$
+\end{itemize}
+B. Mutual Information:
+The mutual information 1(X; Y) of a channel is deiined by
+I(X; Y) = H(X)— H(X|Y) b/symbol (10.28)
+\end{frame}
+
+%-----------------------------------------------------------------------------------------------%
+\begin{frame} % ULCIS 
+\frametitle{Self Information}Self-information
+This is defined by the following mathematical formula:$I(A) = −logb P(A)$
+
+The self-information of an event measures the amount of one’s surprise
+evoked by the event. The negative logarithm $−logb P(A)$ can also be written as \[
+log_b  {1 \over P(A)} \]
+Note that log(1) = 0, and that $| − log(P(A))|$ increases as P(A) decreases
+from 1 to 0. This supports our intuition from daily experience. For example,
+a low-probability event tends to cause more ``surprise".
+\end{frame}
+%---------------------------------------------------------------------------------------------------------------------------------------%
+
+
+
+\begin{frame}
+\frametitle{Code efficiency and Code redundancy}
+% Pg 253/254
+The parameter $L$ represents the average number of bits per source symbol used in the source coding process.
+The code efficiency is defined as \[\nu = {L_{min} \over L} \]where $L_{min}$ is the minimum possiblve value of $L$. When $\nu$ approaches unity, the codes is said to be efficient. 
+The code redundancy $\gamma$ is defined as $\gamma = 1- \nu$.
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+%page 254
+\frametitle{Source Coding Theorem}
+The source coding theorem states that for zi DMS X with entropy $H(X)$, the average code word length $L$ per symbol is bounded as
+L 2 H(X) (10.52)
+
+and further, L can bc made as close to H(X) as dcsircd for some suitably chosen code.
+Thus, with$ L_{min} \geq H(X)$.
+
+The code efficiency can be rewritten as
+\[\nu = {H(X) \over L} \]
+\end{frame}
+
+%---------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{ Classification of Codes}
+Classification of codes is best illustrated by an example. Consider Table 10-1 where a source of
+size 4 has been encoded in binary codes with symbol 0 and 1.\\ \bigskip
+% Table 10-I Binary Codes
+\begin{tabular}{c c c c c c c}
+X& Code l& Code 2& Code 3 &Code 4& Code 5& Code 6\\
+a& 01& 01 &1 &10 &01 &01\\
+b& 01& 01 &1 &10 &01 &01\\
+c &00 &10& 00& 110& 011 &001\\
+d &11& 11& 11& 111 &0111 &0001\\
+\end{tabular}
+\end{frame}
+
+%---------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Categorisation of Codes}
+\begin{enumerate}
+\item Fixed Length Codes
+\item Variable Length Codes
+\item Distinct Codes
+\item Prefix-Free Codes
+\item Uniquely decodable codes
+\item Instantaneous Codes
+\item Optimal Codes
+\end{enumerate}
+\end{frame}
+%---------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\begin{itemize}
+\item[1.] Fixed-Length Codes: A fixed-length code is one whose code word length is fixed. Code l and code Z of Table 10»l are
+fixed-length codes with length 2.
+\item[2.] Variable-Length Codes: A variable-length code is one whose code word length is not Exed, All codes of Table l0-l except
+codes 1 and 2 are variable-length codes.
+\item[3.] Distinct Codes:
+A code is distinct if each code word is distinguishable from other code words. All codes of Table
+10-1 except code 1 arc distinct codes—notice the codes for xl and xi.
+\item[4.] Prefix-Free Codes:
+A code in which no code word can be formed by adding code symbols to another code word is
+called a prefixghoa code. Thus, in a prefix»frce code no code word is a prcfx of another. Codes 2, 4,
+and 6 of Table 10-l are prefix-free codes.
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\textbf{5. Uniquely Decodable Codes}
+A distinct code is uniquely devudable if the original source sequence can be reconstructed perfectly
+from the encoded binary sequence. Note that code 3 of Table 10-1 is not a uniquely decodable code.
+For example, the binary sequence 1001 may correspond to the source sequences xzxgxz orxzxlxlxz.
+\\ \bigskip
+A sufticient condition to ensure that a code is uniquely decodable is that no code word is a prefix of
+another. Thus, the prefix-free codes 2, 4, and 6 are uniquely decodable codes. Note that the pretix—t`ree
+condition is not a necessary condition for unique decodability. \i\bigskip For example, code 5 of Table l0-l does
+not satisfy the prefix-free condition, and yet it is uniquely decodable since the bit 0 indicates the
+beginning of each code word of the code.
+\end{frame}
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\textbf{6. Instantaneous Codes}
+A uniquely decodable code is cmlled an inrtanruneous code if the end of any code word is
+recognizable without examining subsequent code symbols. The instantaneous codes have the property
+previously mentioned that no code word is a pretix of another code word. For this reason, prefix-free
+codes are sometimes called instantaneous codes.
+\textbf{7. Optimal Codes}
+A code is said to be optimal if it is instantaneous and has mini.mu.rn average length L for a given
+source with a given probability assignment for the source symbols.
+\end{frame}
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{ Kraft inequality}
+\begin{itemize}
+\item Let X be a DMS with alphabet ($x _i = \{1, 2, . . . ,m\}$). Assume that the length of the assigned binary
+code word corresponding to x, is n,.
+\item A necessary and sufficient condition for the existence of an instantaneous binary code is
+ 
+ \[ K = \sum^{m}_{i=1}2^{-n_i} \leq 1 \]
+which is known as the \textbf{Kraft inequality}.
+\item Note that the Kraft inequality assures us of the existence of an instantaneously decodable code
+with code word lengths that satisfy the inequality. But it does not show us how to obtain these code
+words, nor does it say that any code that satisfies the inequality is automatically uniquely decodable
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{ ENTROPY CODING}
+The design of a variable-length code such that its average code word length approaches the
+entropy of the DMS is often referred to as enlmpy coding. In this section we present two examples of
+entropy coding.
+\begin{itemize}
+\item Shannon- Fano Coiding
+\item Huffman Coding
+\end{itemize}
+\end{frame}
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+% Page 255
+\frame{A. Shannon-Fun Coding:}
+An efficient code can be obtained by the following simple procedure, known as
+Shannon- Fano algorithm:
+\begin{itemize}
+\item[1.] List the source symbols in order of decreasing probability.
+\item[2.] Partition the set into two sets that are as close to equiprobable as possible, and assign 0 to the
+upper set and 1 to the lower set.
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
+% Page 256 Bottom
+\begin{frame}\frametitle{B. Huffman Encoding:}
+In general, Huffman encoding results in an optimum code. Thus, it is the code that has the highest
+efliciency.\\ The Huffman encoding procedure is as follows:
+\begin{itemize}\item[1.] List the source symbols in order of decreasing probability.
+\item[2.] Combine the probabilities of the two symbols having the lowest probabilities, and reorder
+the resultant probabilities; this step is called reduction 1. The same procedure is repeated until
+there are two ordered probabilities remaining.
+\item[3.] Start encoding with the last reduction, which consists of exactly two ordered probabilities. Assign
+0 as the first digit in the code words for all the source symbols associated with the first probability;
+assign 1 to the second probability.
+\item[4.] Now go back and assign 0 and 1 to the second digit for the two probabilities that were combined
+in the previous reduction step, retaining all assignments made in Step 3.
+\item[5.] Keep regressing this way until the first column is reached.
+\end{itemize}
+\end{frame}
+
+%An example of Huffman encoding is shown in Table 10-3.
+%H(X) = 2.36b/symbol
+%L = 2.38 b/symbol
+%\nu = 0.99
+
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------------------%
+\begin{frame}
+10.5. A high-resolution black—and-white TV picture consists of about $2 \times 10^6$  picture elements and 16
+different brightness levels. Pictures are repeated at a rate of 32 per second. All picture elements
+are assumed to be independent, and all levels have equal likelihood of occurrence. Calculate the
+average rate of information conveyed by this TV picture source.\\ \bigskip
+
+%Hm — -§ img L — 4 11/111e111e111
+%P, 16 Z is
+%1 : 2(l0§)(32) : 64(l0°) elements/s
+%Hence, by Eq. (10.10)
+%R = rH(X) : 64(l0°)(4) = 256(l0°) b/s Z 256 Mb/s
+
+\end{frame}
+
+\end{document}

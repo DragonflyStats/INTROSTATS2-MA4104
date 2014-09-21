@@ -1,0 +1,408 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+%\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx}  % Font Family
+\usepackage{helvet}   % Font Family
+\usepackage{color}
+
+\mode<presentation> {
+ \usetheme{Default} % was
+ \useinnertheme{rounded}
+ \useoutertheme{infolines}
+ \usefonttheme{serif}
+ %\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+
+\setbeamercovered{dynamic}
+
+\title[MA4413]{Statistics for Computing \\ {\normalsize Lecture 1B}}
+\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize Kevin.obrien@ul.ie}}
+\date{Autumn Semester 2012}
+\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
+
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\frame{
+
+\begin{enumerate}
+\item Contingency Tables
+\item Conditional Probability: Worked Examples
+\item Joint Probability Tables
+\item The Multiplication Rule
+\item Law of Total Probability
+\item Bayes' Theorem
+\item Exam standard Probability Question
+\item Random Variables
+\end{enumerate}
+
+}
+%-------------------------------------------------------%
+\frame{
+\frametitle{Contingency Tables}
+Suppose there are 100 students in a first year college intake.  \begin{itemize} \item 44 are male and are studying computer science, \item 18 are male and studying engineering \item 16 are female and studying computer science, \item 22 are female and studying engineering. \end{itemize}
+
+We assign the names $M$, $F$, $C$ and $E$ to the events that a student, randomly selected from this group, is male, female, studying computer science, and studying engineering respectively.
+}
+%-------------------------------------------------------%
+\frame{
+\frametitle{Contingency Tables}
+The most effective way to handle this data is to draw up a table. We call this a \textbf{\emph{contingency table}}.
+A contingency table is a table in which all possible events (or outcomes) for one variable are listed as
+row headings, all possible events for a second variable are listed as column headings, and the value entered in
+each cell of the table is the frequency of each joint occurrence.
+
+
+\begin{center}
+\begin{tabular}{|c||c|c||c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+    & C & E & Total \\ \hline \hline
+  M & 44 & 18 & 62 \\ \hline
+  F & 16 & 22 & 38 \\ \hline \hline
+  Total & 60 & 40 & 100 \\ \hline
+\end{tabular}
+\end{center}
+
+}
+%-------------------------------------------------------%
+\frame{
+\frametitle{Contingency Tables}
+It is now easy to deduce the probabilities of the respective events, by looking at the totals for each row and column.
+\begin{itemize}
+\item P(C) = 60/100 = 0.60
+\item P(E) = 40/100 = 0.40
+\item P(M) = 62/100 = 0.62
+\item P(F) = 38/100 = 0.38
+\end{itemize}
+\textbf{Remark:}\\
+The information we were originally given can also be expressed as:
+\begin{itemize}
+\item $P(C \cap M) = 44/100 = 0.44$
+\item $P(C \cap F) = 16/100 = 0.16$
+\item $P(E \cap M) = 18/100 = 0.18$
+\item $P(E \cap F) = 22/100 = 0.22$
+\end{itemize}
+}
+%-------------------------------------------------------%
+\frame{
+\frametitle{Joint Probability Tables}
+
+A \textbf{\emph{joint probability table}} is similar to a contingency table, but for that the value entered in
+each cell of the table is the probability of each joint occurrence. Often, the probabilities in such a table are based
+on observed frequencies of occurrence for the various joint events.
+\begin{center}
+\begin{tabular}{|c||c|c||c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+    & C & E & Total \\ \hline \hline
+  M & 0.44 & 0.18 & 0.62 \\ \hline
+  F & 0.16 & 0.22 & 0.38 \\ \hline \hline
+  Total & 0.60 & 0.40 & 1.00 \\ \hline
+\end{tabular}
+\end{center}
+}
+%-------------------------------------------------------%
+\frame{
+\frametitle{Marginal Probabilities}
+\begin{itemize}
+\item In the context of joint probability tables, a  \textbf{\emph{marginal probability}} is so named because it is a marginal total of
+a row or a column. \item Whereas the probability values in the cells of the table are probabilities of joint occurrence, the marginal
+probabilities are the simple (i.e. unconditional) probabilities of particular events.
+\item From the first year intake example, the marginal probabilities are $P(C)$, $P(S)$, $P(M)$ and $P(F)$ respectively.
+\end{itemize}
+
+}
+%-------------------------------------------------------%
+\frame{
+\frametitle{Conditional Probabilities : Example 1}
+
+Recall the definition of conditional probability:
+\[ P(A|B) = \frac{P(A \cap B)}{P(B)} \]
+
+Using this formula, compute the following:
+\begin{enumerate}
+\item $P(C|M)$ : Probability that a student is a computer science student, given that he is male.
+\item $P(E|M)$ : Probability that a student studies engineering, given that he is male.
+\item $P(F|E)$ : Probability that a student is female, given that she studies engineering.
+\item $P(E|F)$ : Probability that a student studies engineering, given that she is female.
+\end{enumerate}
+Refer back to the contingency table to appraise your results.
+}
+%-------------------------------------------------------%
+\frame{
+\frametitle{Conditional Probabilities : Example 1}
+
+\textbf{Part 1)} Probability that a student is a computer science student, given that he is male.
+\[ P(C|M) = \frac{P(C \cap M)}{P(M)}  = \frac{0.44}{0.62} = 0.71 \]
+\textbf{Part 2)} Probability that a student studies engineering, given that he is male.
+\[ P(E|M) = \frac{P(E \cap M)}{P(M)}  = \frac{0.18}{0.62} = 0.29 \]
+
+}
+
+%-------------------------------------------------------%
+\frame{
+\frametitle{Conditional Probabilities : Example 1}
+
+\textbf{Part 3)} Probability that a student is female, given that she studies engineering.
+\[ P(F|E) = \frac{P(F \cap E)}{P(E)}  = \frac{0.22}{0.40} = 0.55 \]
+
+\textbf{Part 4)} Probability that a student studies engineering, given that she is female.
+\[ P(E|F) = \frac{P(E \cap F)}{P(F)}  = \frac{0.22}{0.38} = 0.58 \]
+
+
+Remark: $P(E \cap F)$ is the same as $P(F \cap E)$.
+
+
+}
+%-------------------------------------------------------%
+\frame{
+\frametitle{Multiplication Rule}
+The multiplication rule is a result used to determine the probability that two events, $A$ and $B$, both occur.
+The multiplication rule follows from the definition of conditional probability.\\ \bigskip
+
+The result is often written as follows, using set notation:
+\[ P(A|B)\times P(B) = P(B|A)\times P(A) \qquad \left( = P(A \cap B) \right) \]
+
+Recall that for independent events, that is events which have no influence on one another, the rule simplifies to:
+\[P(A \cap B)  = P(A)\times P(B) \]
+}
+%-------------------------------------------------------%
+\frame{
+\frametitle{Multiplication Rule}
+From the first year intake example, check that
+\[ P(E|F)\times P(F) = P(F|E)\times P(E)\]
+\begin{itemize}
+\item $P(E|F)\times P(F) = 0.58 \times 0.38  = 0.22$
+\item $P(F|E)\times P(E) = 0.55 \times 0.40  = 0.22$
+\end{itemize}
+}
+%------------------------------------------------------------%
+\frame{
+\frametitle{Law of Total Probability}
+The law of total probability is a fundamental rule relating marginal probabilities to conditional probabilities. The result is often written as follows, using set notation:
+\[ P(A)  = P(A \cap B) + P(A \cap B^c) \]
+
+where $P(A \cap B^c)$ is probability that event $A$ occurs and $B$ does not.\\ \bigskip
+
+
+Using the multiplication rule, this can be expressed as
+\[ P(A) = P(A | B)\times P(B) + P(A | B^{c})\times P(B^{c}) \]
+}
+%------------------------------------------------------------%
+\frame{
+\frametitle{Law of Total Probability}
+From the first year intake example , check that
+\[ P(E)  = P(E \cap M) + P(E \cap F) \]
+with $ P(E) = 0.40$, $ P(E \cap M) = 0.18$ and  $ P(E \cap F) = 0.22$
+\[ 0.40  = 0.18 + 0.22 \]
+\textbf{Remark:}  $M$ and $F$ are complement events.
+
+}
+
+%------------------------------------------------------------%
+\frame{
+\frametitle{Bayes' Theorem}
+Bayes' Theorem is a result that allows new information to be used to update the conditional probability of an event.
+\bigskip
+
+Recall the definition of conditional probability:
+\[ P(A|B) = \frac{P(A \cap B)}{P(B)} \]
+
+
+Using the multiplication rule, gives Bayes' Theorem in its simplest form:
+
+\[ P(A|B) = \frac{P(B|A)\times P(A)}{P(B)} \]
+
+}
+
+%------------------------------------------------------------%
+
+\frame{
+\frametitle{Probability: Worked Example }
+An electronics assembly subcontractor receives resistors from two suppliers: Deltatech provides
+70\% of the subcontractors's resistors while another company, Echelon, supplies the remainder.
+\\
+1\% of the resistors provided by Deltatech fail the quality control test, while 2\% of the
+resistors from Echelon also fail the quality control test.
+
+\begin{enumerate}
+\item What is the probability that a resistor will fail the quality control test?
+\item What is the probability that a resistor that fails the quality control test was supplied by Echelon?
+\end{enumerate}
+}
+
+%------------------------------------------------------------%
+
+\frame{
+\frametitle{Probability: Worked Example}
+Firstly, let's assign names to each event.
+\begin{itemize}
+\item $D$ : a randomly chosen resistor comes from Deltatech.
+\item $E$ : a randomly chosen resistor comes from Echelon.
+\item $F$ : a randomly chosen resistor fails the quality control test.
+\item $P$ : a randomly chosen resistor passes the quality control test.
+\end{itemize}
+\bigskip
+We are given (or can deduce) the following probabilities:
+\begin{itemize}
+\item $P(D) = 0.70$,
+\item $P(E) = 0.30$.
+\end{itemize}
+
+}
+%------------------------------------------------------------%
+
+\frame{
+\frametitle{Probability: Worked Example}
+
+We are given two more important pieces of information:
+\begin{itemize}
+\item The probability that a randomly chosen resistor fails the quality control test, given that it comes from Deltatech: $P(F|D) = 0.01 $.
+\item The probability that a randomly chosen resistor fails the quality control test, given that it comes from Echelon: $P(F|E) = 0.02$.
+\end{itemize}
+
+}
+%------------------------------------------------------------%
+
+\frame{
+\frametitle{Probability: Worked Example}
+
+The first question asks us to compute the probability that a randomly chosen resistor fails the quality control test. i.e. $P(F)$.\\
+\bigskip
+All resistors come from either Deltatech or Echelon. So, using the \textbf{\emph{law of total probability}}, we can express $P(F)$ as follows:
+
+\[ P(F)  = P(F \cap D) + P(F \cap E) \]
+
+}
+
+%------------------------------------------------------------%
+
+\frame{
+\frametitle{Probability: Worked Example}
+
+Using the \textbf{\emph{multiplication rule}}  i.e. $P(A \cap B) = P(A|B) \times P(B)$, we can re-express the formula as follows
+
+\[ P(F)  = P(F|D) \times P(D) + P(F|E) \times P(E) \]
+
+We have all the necessary probabilities to solve this.
+
+\[ P(F)  = 0.01 \times 0.70 + 0.02 \times 0.30   = 0.007 + 0.006  = 0.013\]
+
+}
+
+%------------------------------------------------------------%
+
+\frame{
+\frametitle{Probability: Worked Example}
+
+\begin{itemize}
+\item
+The second question asks us to compute probability that a resistor that fails the quality control test was supplied by Echelon.
+\item In other words; of the resistors that did fail the quality test only, what is the probability that a randomly selected resistor was supplied by Echelon?
+\item We can express this mathematically as $P(E|F)$.
+\item We can use \textbf{\emph{Bayes' theorem}} to compute the answer.
+\end{itemize}
+
+
+}
+%------------------------------------------------------------%
+
+\frame{
+\frametitle{Probability: Worked Example}
+Recall Bayes' theorem
+\[ P(A|B) = \frac{P(B|A)\times P(A)}{P(B)} \]
+\bigskip
+
+\[ P(E|F) = \frac{P(F|E)\times P(E)}{P(F)}  =  \frac{0.02 \times 0.30}{0.013} = 0.046\]
+
+}
+
+%------------------------------------------------------------%
+\frame{
+\frametitle{Random Variables}
+\begin{itemize} \item The outcome of an experiment need not be a number, for example, the outcome when a coin is tossed can be `heads' or `tails'. \item
+However, we often want to represent outcomes as numbers. \item
+A \textbf{\emph{random variable}} is a function that associates a unique numerical value with every outcome of an experiment.
+\item The value of the random variable will vary from trial to trial as the experiment is repeated.
+\item Numeric values can be assigned to outcomes that are not usually considered numeric. \item For example, we could assign a `head' a value of $0$, and a `tail' a value of $1$, or vice versa.
+\end{itemize}
+}
+%------------------------------------------------------------%
+\frame{
+\frametitle{Random Variables}
+There are two types of random variable - discrete and continuous. The distinction between both types will be important later on in the course.\\ \bigskip
+
+\textbf{Examples}
+\begin{itemize}
+\item A coin is tossed ten times. The random variable X is the number of tails that are noted.
+X can only take the values $\{0, 1, ..., 10\}$, so $X$ is a discrete random variable.
+\item A light bulb is burned until it burns out. The random variable Y is its lifetime in hours.
+Y can take any positive real value, so Y is a continuous random variable.
+\end{itemize}
+}
+
+%--------------------------------------------------------------------------------%
+\frame{
+\frametitle{Discrete Random Variable}
+\begin{itemize}
+\item A discrete random variable is one which may take on only a countable number of distinct values such as $\{0, 1, 2, 3, 4, ... \}$.\item Discrete random variables are usually (but not necessarily) counts. \item If a random variable can take only a finite number of distinct values, then it must be discrete. \item Examples of discrete random variables include the number of children in a family, the Friday night attendance at a cinema, the number of patients in a doctor's surgery, the number of defective light bulbs in a box of ten.
+    \end{itemize}
+}
+
+
+%--------------------------------------------------------------------------------%
+\frame{
+\frametitle{Continuous Random Variable}
+\begin{itemize} \item
+A continuous random variable is one which takes an infinite number of possible values. \item Continuous random variables are usually measurements. \item Examples include height, weight, the amount of sugar in an orange, the time required to run a computer simulation. \end{itemize}
+
+}
+\end{document}
+%--------------------------------------------------------------------------------%
+\frame{
+\frametitle{The Monty Hall Problem}
+\begin{itemize} \item Three cups. One contains the prize, the other two are empty
+\item Choose one of the cups
+\item What is the probability you have selected the right cup?
+\end{itemize}
+
+}
+%--------------------------------------------------------------------------------%
+\frame{
+\frametitle{The Monty Hall Problem}
+\begin{itemize} \item I am going to remove one of the empty cups, but not the one just selected.
+\item There are two cups on the table, one with the prize, and one empty.
+\item I offer you the choice to stick with your choice, or to switch you choice to the other remaining cup.
+\item What is the best strategy here?
+\end{itemize}
+}
+%--------------------------------------------------------------------------------%
+\frame{
+\frametitle{The Monty Hall Problem}
+Strategies
+\begin{itemize} \item It is better to stick with what you have chosen.
+\item It is better to switch to the other cup.
+\item It is doesn't matter.
+\end{itemize}
+}
+%--------------------------------------------------------------------------------%
+\frame{
+\frametitle{The Monty Hall Problem}
+
+The best strategy is to switch.
+}
+

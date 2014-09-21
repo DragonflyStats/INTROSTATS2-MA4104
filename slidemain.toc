@@ -1,0 +1,2 @@
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {1}{Chi Square Distribution}{22}{0}{1}

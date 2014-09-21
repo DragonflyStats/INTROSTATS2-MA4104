@@ -1,0 +1,722 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+%\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx}  % Font Family
+\usepackage{helvet}   % Font Family
+\usepackage{color}
+
+\mode<presentation> {
+ \usetheme{Default} % was Frankfurt
+ \useinnertheme{rounded}
+ \useoutertheme{infolines}
+ \usefonttheme{serif}
+ %\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+
+\setbeamercovered{dynamic}
+
+\title[MathsCast]{Statistics for Computing \\ {\normalsize MA4413}}
+\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize Kevin.obrien@ul.ie}}
+\date{Autumn Semester 2011}
+\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
+
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Today's Class}
+\begin{itemize}
+\item Permutations
+\item Combinations
+\item Descriptive Statistics
+\item Relative Frequency and Frequency tables
+\item Histograms
+\item Sample mean and Population mean
+\item Measures of dispersion
+\item Expected Values
+\end{itemize}
+
+}
+
+\section{sampling}
+\frame{
+
+\begin{itemize}
+\item sampling without replacement
+
+\item sampling with replacement.
+\end{itemize}
+}
+
+\frame{
+\frametitle{ Guess a pin number }
+What is the probability of guessing a pin number for an ATM card at the first attempt.
+
+For example $1337$ is a valid pin number,where $3$ appears twice.
+
+We have a one in ten chance of picking the first digit correctly, a one-in-ten chance of the guessing the second, and so on.
+
+All of these events are independent, so the probability of guess the correct PIN is 0.1 \times 0.1 \times 0.1 \times 0.1 = 0.0001$
+
+
+
+}
+
+%--------------------------------------------------------%
+\section{ Combinations and Permutations }
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Factorials Numbers}
+
+A factorial is a positive whoe numnber, based on a number $n$ , and which is written as $``n!"$. The factorial $n!$ is defined as follows:
+
+\[n!  =n \times (n-1) \times (n-2) \times \ldots \times 2 \times 1 \]
+
+Remark $n!  =n \times (n-1)!$\\ \bigskip
+
+\textbf{ Example: }
+
+\begin{itemize}
+\item $3!  = 3 \times 2  \times 1 = 6 $
+
+\item $4!  = 4 \times 3! = 4 \times 3 \times 2 \times 1 = 24$
+\end{itemize}
+Remark $0! = 1$ not $0$.
+
+
+}
+
+\frame{
+
+\frametitle{The Permutation Formula}
+
+Oftne we are concerned with computing the number of ways of selecting and arranging groups of items. A \textbf{combination} when describing the selection of items from a larger group of items. A \textbf{Permutation} is a combination that is arranged in a particular way.
+
+}
+\frame{
+
+The number of different permutations of r items from n unique items is written as $^n P_r$
+
+
+\[ ^n P_r = \frac{n!}{(n-r)!}\]
+}
+
+\frame{
+\frametitle{permutations}
+\textbf{Example:}
+How many ways are there of arranging 3 different jobs, between 5 workers, where each worker can only do one job?
+
+
+\[ ^5 P_3 = \frac{5!}{(5-3)!}  = {5! \over 2! = 60}\]
+
+}
+
+\frame{
+\frametitle{Permutations and Combinations}
+
+\textbf{Combinations: }
+The number of ways of selecting $k$ objects from $n$ unique objects is:
+
+\[ {n \choose k} = {n!  \over k! \times (n-k)!} \]
+
+}
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Example of Combinations}
+How many ways are there of selecting two items from possible 5? 
+
+\[ {5 \choose 2} = {5!  \over 2! \times 3!} =  {5 \times 4 \times 3!  \over 2 \times 1 \times 3!} = 10  \]
+
+Discuss how this can be used to compute the number of rugby matches for each group in the Rugby World Cup.
+
+}
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Example of Combinations}
+
+A committee of 4 must be chosen from 3 engineers and 4 computer scientists. 
+\begin{itemize}
+\item In how many ways can the comittee be chosen
+\item in how many cans 2 males and 2 females be chosen
+\item compute the probability of a committee of 2males and 2 females ris
+\item compute the probability of at least two females.
+\end{itemize}
+}
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Example of Combinations}
+
+\textbf{Part 1}
+
+We need to choose 4 people from 7:
+
+This can be done in 
+
+\[
+{7 \choose 4} = {7!  \over 4! \times 3!} =  {7 \times 6 \times 5 \times 4!  \over 4! \times 3!} = 35 \mbox{ ways.}
+\]
+
+
+\textbf{Part 2}
+
+With 4 men to choose from, 2 men can be selected in \[
+{4 \choose 2} = {4!  \over 2! \times 2!} =  {4 \times 3 \times 2!  \over 2! \times 2!} = 6\mbox{ ways.}
+\]
+
+Similarly  2 women can be selected from 3 in 
+\[
+{3 \choose 2} = {3!  \over 2! \times1!} =  {3 \times 2!  \over 2! \times 1!} = 3\mbox{ ways.}
+\]
+
+}
+%--------------------------------------------------------%
+\frame{
+\frametitle{Example of Combinations}
+
+\textbf{Part 2}
+
+Thus a comittee of 2 men and 2 women can be selected in $ 6 \times 3  = 18 $ ways.\\
+\bigskip
+\textbf{Part 3}
+
+The probability of two men and two women on a comittee is 
+\[ {\mbox{Number of ways of selecting 2 men and 2 women} \over \mbox{Number of ways of selecting 4 from 7}} = {6 \over 35 }\]
+
+}
+
+
+%--------------------------------------------------------%
+
+\frame{
+
+\frametitle{ Frequency Table }
+\begin{itemize}
+\item A frequency table is a way of summarising a set of data. It is a record of how often each value (or set of values) of the variable in question occurs. \item  It may be enhanced by the addition of percentages that fall into each category.
+
+\item A frequency table is used to summarise categorical, nominal, and ordinal data. 
+
+\item 
+It may also be used to summarise continuous data once the data set has been divided up into sensible groups.
+\item
+When we have more than one categorical variable in our data set, a frequency table is sometimes called a contingency table because the figures found in the rows are contingent upon (dependent upon) those found in the columns.
+\end{itemize}
+}
+
+\frame{
+Example 
+Suppose that in thirty shots at a target, a marksman makes the following scores: 
+5 2 2 3 4 4 3 2 0 3 0 3 2 1 5 
+1 3 1 5 5 2 4 0 0 4 5 4 4 5 5 
+
+The frequencies of the different scores can be summarised as: 
+Score  Frequency Relativa Frequency (%)  
+0 4 13% 
+1 3 10% 
+2 5 17% 
+3 5 17% 
+4 6 20% 
+5 7 23% 
+
+
+
+}
+
+%--------------------------------------------------------%
+
+\section{Descriptive Statistics}
+
+\frame{
+
+\frametitle{Descriptive Statistics}
+
+\begin{itemize}
+\item Measures of Centrality
+\begin{itemize}
+\item Mean
+\item Median
+\end{itemize}
+\item Measures of Dispersion
+\begin{itemize}
+\item Range
+\item Variance
+\item Standard Deviation
+\end{itemize}
+\item Quantiles
+\item Distribution of data ( Skewed or Symmetric )
+\end{itemize}
+
+}
+%--------------------------------------------------------%
+\frame{
+\frametitle{Measures of Centrality}
+
+\begin{itemize}
+\item Measures of centrality give one representative number for the location of the centre of the distribution of data.
+\item 
+The most common measures are the \textbf{\emph{mean}} and the \textbf{\emph{ median }}.
+\item We must make a distinction between a sample mean and a population mean.
+\end{itemize}
+
+}
+%----------------------------------------------------------------%
+\frame{
+\frametitle{Sample Mean}
+
+\begin{itemize} 
+\item The sample mean is an estimator available for estimating the population mean . It is a measure of location, commonly called the average, often denoted $\bar{x}$, where $x$ is the data set.
+\item 
+Its value depends equally on all of the data which may include outliers. It may not appear representative of the central region for skewed data sets.
+\item
+It is especially useful as being representative of the whole sample for use in subsequent calculations.
+\item The sample mean of a data set is defined as :
+\[ \bar{x} = { \sum x_i\over n}\]
+\item $\sum x_i$ is the summation of al the elements of $x$, and $n$ is the sample size.
+\end{itemize}
+}
+%----------------------------------------------------------------%
+\frame{
+\frametitle{Computing the sample mean}
+
+Suppose we roll a die 8 times and get the following scores: $x = \{ 5, 2, 1, 6, 3, 5, 3, 1\}$ \\ \bigskip
+
+What is the sample mean of the scores $\bar{x}$?
+\[ \bar{x}  = {5 + 2 +  1 +  6 +  3 +  5 +  3 +  1 \over 8 } = {26 \over 8} =  3.25 \]
+
+
+
+}
+
+%----------------------------------------------------------------%
+\frame{
+\frametitle{Median}
+\begin{itemize}
+\item The other commonly used measure of centrality is the median.
+
+\item The median is the value halfway through the ordered data set, below and above which there lies an equal number of data values.
+\item For an odd sized data set, the median is the middle element of the ordered data set.
+\item For an even sized data set, the median is the average of the middle pair of elements of an ordered data set.
+\item It is generally a good descriptive measure of the location which works well for skewed data, or data with outliers.
+
+\item For later, the median is the 0.5 quantile, and the second quartile $Q_2$.
+\end{itemize}
+}
+
+%----------------------------------------------------------------%
+\frame{
+\frametitle{Computing the median}
+\textbf{Example:}
+
+
+With an odd number of data values, for example nine, we have: 
+\begin{itemize}
+\item Data  $\{96, 48, 27, 72, 39, 70, 7, 68, 99 \}$
+\item Ordered Data  $\{7, 27, 39, 48, 68, 70, 72, 96, 99\}$
+\item Median  68, leaving four values below and four values above 
+\end{itemize}
+\bigskip
+With an even number of data values, for example 8, we have: 
+\begin{itemize}
+\item Data  $\{96, 48 ,27 ,72, 39, 70, 7, 68  \}$
+\item Ordered Data  $\{7, 27, 39, 48, 68, 70, 72, 96\}$
+\item Median  Halfway between the two 'middle' data points - in this case halfway between 48 and 68, and so the median is 58 
+\end{itemize}
+}
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Dispersion }
+
+\begin{itemize}
+\item The data values in a sample are not all the same. This variation between values is called \textbf{ \emph{dispersion}}.
+
+\item When the dispersion is large, the values are widely scattered; when it is small they are tightly clustered. 
+
+%The width of diagrams such as dot plots, box plots, stem and leaf plots is greater for samples with more dispersion and vice versa.
+
+\item 
+There are several measures of dispersion, the most common being the variance and  standard deviation. These measures indicate to what degree the individual observations of a data set are dispersed or 'spread out' around their mean.
+
+\item
+In engineering and science, high precision is associated with low dispersion.
+\end{itemize}
+}
+
+
+
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Range}
+
+\begin{itemize}
+\item The range of a sample (or a data set) is a measure of the spread or the dispersion of the observations. \item It is the difference between the largest and the smallest observed value of some quantitative characteristic and is very easy to calculate.
+
+\item A great deal of information is ignored when computing the range since only the largest and the smallest data values are considered; the remaining data are ignored.
+
+\item The range value of a data set is greatly influenced by the presence of just one unusually large or small value in the sample (outlier).
+\end{itemize}
+
+\textbf{Example}
+ 
+
+The range of $\{65,73,89,56,73,52,47\}$ is $ 89-47 = 42$. 
+
+% If the highest score in a 1st year statistics exam was 98 and the lowest 48, then the range would be 98-48 = 50. 
+
+}
+
+
+%--------------------------------------------------------%
+
+
+\frame{
+\frametitle{Introducing Variance}
+
+Consider the three data sets $X$, $Y$ and $Z$
+\begin{itemize}
+\item $X= \{900,925,950,975,1025,1050,1075,1100 \}$
+\item $Y=\{900,905,910,920,1080,1090,1095,1100\}$
+\item $Z=\{900,985,990,995,1005,1010,1015,1100\}$
+\end{itemize} 
+
+For each of the data sets, the following statements can be verified
+
+\begin{itemize}
+\item The mean of each data set is 1000
+\item There are 8 elements in each data set
+\item The minima and maxima are 900 and 1100 for each set
+\item The range is 200.
+\end{itemize}
+
+From the plot on the next slide, notice how different the three data sets are in terms of dispersion around the mean value.
+
+}
+
+%--------------------------------------------------------%
+
+\frame{
+\frametitle{Introducing Variance}
+
+Variance plot here.
+}
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Variance}
+
+
+\begin{itemize}
+
+\item The (population) variance of a random variable is a non-negative number which gives an idea of how widely spread the values of the random variable are likely to be; the larger the variance, the more scattered the observations on average.
+
+\item Stating the variance gives an impression of how closely concentrated round the expected value the distribution is; it is a measure of the 'spread' of a distribution about its average value.
+
+\item For probability distributions, Variance is symbolised by $V(X)$ or $Var(X)$ 
+
+\end{itemize}
+
+} 
+%--------------------------------------------------------%
+\frame{
+\frametitle{Variance}
+
+The variance of the random variable X is defined to be: 
+\[ V(X) = \sigma^2 = E(X^2) - E(X)^2 \]
+where E(X) is the expected value of the random variable X. 
+
+Notes 
+
+\begin{itemize}
+\item the larger the variance, the further that individual values of the random variable (observations) tend to be from the mean, on average; 
+\item the smaller the variance, the closer that individual values of the random variable (observations) tend to be to the mean, on average; 
+\item the variance and standard deviation of a random variable are always non-negative (i.e. almost always positive, but theoretically you can get a result of zero). 
+\end{itemize}
+
+}
+
+%-------------------------------------------------------------------------%
+\frame{
+
+\frametitle{Sample Variance}
+
+\begin{itemize}
+
+\item Sample variance is a measure of the spread of or dispersion within a set of sample data.
+
+\item The sample variance is the sum of the squared deviations from their mean divided by one less than the number of observations in the data set. 
+
+\item For example, for $n$ observations $x1, x2, x3, \ldots , xn$  with sample mean $\bar{x}$, the sample variance is given by 
+
+
+ \[ s^2 = { \sum (x-\bar{x})^2  \over n-1}\]
+
+
+\item The sample standard deviation is simply the square root of this value.
+
+\end{itemize}
+}
+%-------------------------------------------------------------------------%
+
+\section{Skewness and Outliers}
+
+
+\frame{
+\frametitle{Symmetry }
+Symmetry is implied when data values are distributed in the same way above and below the middle of the sample.
+
+Symmetrical data sets: 
+
+\begin{itemize}
+\item are easily interpreted; 
+\item allow a balanced attitude to outliers, that is, those above and below the median can be considered by the same criteria; 
+\item allow comparisons of spread or dispersion with similar data sets. 
+\end{itemize}
+
+Many standard statistical techniques are appropriate only for a symmetric distributional form.
+For this reason, attempts are often made to transform skew-symmetric data so that they become roughly symmetric.
+
+}
+
+
+%----------------------------------------------------------%
+
+\frame{ 
+\frametitle{Skewness} 
+Skewness is defined as asymmetry in the distribution of the sample data values. Values on one side of the distribution tend to be further from the 'middle' than values on the other side.
+
+For skewed data, the usual measures of location will give different values, for example, mode<median<mean would indicate positive (or right) skewness.
+
+Positive (or right) skewness is more common than negative (or left) skewness.
+}
+
+%----------------------------------------------------------%#
+\section{Quantile Statistics}
+
+\frame{
+
+\frametitle{Quartiles}
+
+ \begin{itemize}
+\item Quartiles are values that divide a sample of data into four groups containing (as far as possible) equal numbers of observations.
+\item 
+A data set has three quartiles. References to quartiles often relate to just the outer two, the upper and the lower quartiles; the second quartile being equal to the median. \item The lower quartile$Q_1$  is the data value a quarter way up through the ordered data set; the upper quartile $Q_3$ is the data value a quarter way down through the ordered data set. \item The middle quartile is median.
+\end{itemize}
+
+\textbf{Example}
+ 
+\begin{itemize}
+\item Data  $\{6, 47, 49, 15, 43, 41, 7, 39, 43, 41, 36\}$ 
+\item Ordered Data $\{ 6, 7 ,15, 36, 39, 41, 41 ,43, 43, 47, 49 \}$
+\item Median  41 
+\item Upper quartile $Q_3$ = 43 
+\item Lower quartile  $Q_1$  = 15
+\end{itemize} 
+}
+
+%--------------------------------------------------%
+\frame{
+\frametitle{Sample Standard Deviation}
+\begin{itemize}
+\item Standard deviation is the square root of variance
+\item Standard deviation is commonly used in preference to variance becuase it is denominated in the same units as the mean.
+\item For example, if dealing with time units, we could have a variance of something like $25 square minutes$, whereas the equivalent standard deviation is 5 minutes.
+\item Standard deviation is denoted  $\sigma$.
+\item Sample standard deviation is denoted $s$.
+\end{itemize}
+}
+ 
+%--------------------------------------------------%
+\frame{
+\frametitle{Frame Title}
+\Large
+}
+
+ %--------------------------------------------------%
+\frame{
+\frametitle{Frame Title}
+\Large
+\begin{description}[Second Item]
+\item[First Item] Description of first item
+\item[Second Item] Description of second item
+\item[Third Item] Description of third item
+\item[Forth Item] Description of forth item
+\end{description}
+} %--------------------------------------------------%
+\frame{
+\frametitle{Frame Title}
+\begin{description}[Second Item]
+\item[First Item] Description of first item
+\item[Second Item] Description of second item
+\item[Third Item] Description of third item
+\item[Forth Item] Description of forth item
+\end{description}
+} %--------------------------------------------------%
+\frame{
+\frametitle{Frame Title}
+
+
+} %--------------------------------------------------%
+
+
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Measures of Dispersion}
+
+\textbf{Range}\\
+\begin{itemize}
+\item The range is a very simple measure of dispersion.
+\item It is simply the difference between the maximum and minimum values.
+\end{itemize}
+
+Consider the following data set
+\[ X= \{3,5,6,7,8,9\}\]
+
+Range =  Max - Min \\ i.e. 9-3 = 6
+
+} %--------------------------------------------------------%
+\frame{
+
+\frametitle{Expected Value for Discrete Random Variables}
+The expected value of a random variable X is symbolised by E(X) or $mu$.
+
+
+If X is a discrete random variable with possible values $\{ x1, x2, x3,\ldots , xn\}$, and$ p(x_i)$ denotes P(X = xi), then the expected value of X is defined by: 
+
+DEFINITION
+
+where the elements are summed over all values of the random variable X. 
+
+}
+%--------------------------------------------------------%
+\frame{
+
+\frametitle{Expected Value for Continuous Random Variables}
+The expected value of a random variable X is symbolised by E(X) or $mu$.
+
+
+If X is a discrete random variable with possible values x1, x2, x3, ..., xn, and p(xi) denotes P(X = xi), then the expected value of X is defined by: 
+
+DEFINITION
+
+where the elements are summed over all values of the random variable X. 
+
+}
+%--------------------------------------------------------%
+\frame{
+
+When a die is thrown, each of the possible faces 1, 2, 3, 4, 5, 6 (the xi's) has a 
+probability of 1/6 (the p(xi)'s) of showing.\\ The expected value of the face showing is therefore: 
+
+\[\mu = E(X) = (1 x 1/6) + (2 x 1/6) + (3 x 1/6) + (4 x 1/6) + (5 x 1/6) + (6 x 1/6) = 3.5 \]
+
+Notice that, in this case, E(X) is 3.5, which is not a possible value of X. 
+
+
+}
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Expected Values}
+
+\begin{itemize}
+\item If some variable X has its values specfied with associated probabilities, then the expected value $E(x)$is
+\item Expected value ( or expectation ) is the arithmetic mean of the a given sum of values.
+\item It is calculated using probabilities insteead of frequencues.
+\end{itemize}
+
+\[
+E(X) = \sum x p(x)
+\]
+}
+
+
+
+
+%--------------------------------------------------------%
+\frame{
+\frametitle{Measures of Dispersion}
+
+\textbf{Examples of Quantiles}\\
+Quartiles are just one type of quantile.
+\begin{itemize}
+\item Percentiles
+\item Deciles
+\end{itemize}
+
+}
+
+
+
+%--------------------------------------------------------%
+\end{document}
+%--------------------------------------------------%
+\frame{
+\frametitle{Frame Title}
+
+
+\begin{itemize}
+\item
+\item
+\item
+\end{itemize}
+} %--------------------------------------------------%
+\frame{
+\frametitle{Frame Title}
+\Large
+
+
+} 
+%--------------------------------------------------%
+\frame{
+\frametitle{Frame Title}
+
+
+} 
+%--------------------------------------------------------------------------------------------------%
+X=c(900,925,950,975,1025,1050,1075,1100)
+Y=c(900,905,910,920,1080,1090,1095,1100)
+Z=c(900,985,990,995,1005,1010,1015,1100)
+
+
+Z.y = rep(5,8)
+Y.y = rep(4,8)
+X.y = rep(3,8)
+
+plot(Z,Z.y,pch=16,col="red",ylim=c(2.5,5.5),main=c("Variance") )
+
+points(Y,Y.y,pch=16,col="blue" )
+points(X,X.y,pch=16,col="green" )
+points(c(1000,1000,1000),c(3,4,5),pch=18,cex=1.2)
+lines(c(1000,1000),c(2.75,5.25),lty=3)
+
+%--------------------------------------------------------------------------------------------------%
+%--------------------------------------------------------%
+
+\frame{
+\frametitle{Expected Values}
+A box contains two gold balls and three silver balls. You are allowed to choose
+successively balls from the box at random. You win 1 dollar each time you
+draw a gold ball and lose 1 dollar each time you draw a silver ball. After a
+draw, the ball is not replaced. Show that, if you draw until you are ahead by
+1 dollar or until there are no more gold balls, this is a favorable game.
+
+}

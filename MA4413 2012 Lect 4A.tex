@@ -1,0 +1,477 @@
+\documentclass[a4]{beamer}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{newlfont}
+\usepackage{amsmath,amsthm,amsfonts}
+%\usepackage{beamerthemesplit}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{mathptmx}  % Font Family
+\usepackage{helvet}   % Font Family
+\usepackage{color}
+
+\mode<presentation> {
+ \usetheme{Default} % was Frankfurt
+ \useinnertheme{rounded}
+ \useoutertheme{infolines}
+ \usefonttheme{serif}
+ %\usecolortheme{wolverine}
+% \usecolortheme{rose}
+\usefonttheme{structurebold}
+}
+
+\setbeamercovered{dynamic}
+
+\title[MA4413]{Statistics for Computing \\ {\normalsize MA4413 Lecture 4A}}
+\author[Kevin O'Brien]{Kevin O'Brien \\ {\scriptsize Kevin.obrien@ul.ie}}
+\date{Autumn Semester 2012}
+\institute[Maths \& Stats]{Dept. of Mathematics \& Statistics, \\ University \textit{of} Limerick}
+
+\renewcommand{\arraystretch}{1.5}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\frame{
+\frametitle{The Binomial Probability Distribution}
+A Quick Review of the Binomial Distribution
+\begin{itemize}
+\item The number of independent trials is denoted $n$.
+\item The outcome of interest is known as a ``Success".
+\item The other outcome is known as a ``failure".  
+\item Often the applications of these names is counter-intuitive, i.e. defective components being the ``success".
+\item The probability of a `success' is $p$ 
+\item The expected number of `successes' from $n$ trials is $E(X) = np$
+\item The \texttt{binom} family of commands in \texttt{R} are what we use to compute necessary values.
+\end{itemize}
+}
+%---------------------------------------------------------------------------%
+\frame{
+\frametitle{Characteristics of a Poisson Experiment}
+A Poisson experiment is a statistical experiment that has the following properties:
+\begin{itemize}
+\item The experiment results in outcomes that can be classified as successes or failures.
+\item The average number of successes (m) that occurs in a specified region is known.
+\item The probability that a success will occur is proportional to the size of the \textbf{\emph{region}}.
+\item The probability that a success will occur in an extremely small region is virtually zero.
+\item The \texttt{pois} family of functions are used to compute probabilities and quantiles.
+\end{itemize}
+Note that the specified region could take many forms. For instance, it could be a length, an area, a volume, a period of time, etc.
+}
+
+
+%---------------------------------------------------------------------------%
+\frame{
+\frametitle{The Poisson Probability Distribution}
+\begin{itemize}
+\item A Poisson random variable is the number of successes that result from a Poisson experiment.
+\item The probability distribution of a Poisson random variable is called a Poisson distribution.
+\item This distribution describes the number of occurrences in a unit period (or space)
+\item The expected number of occurrences is $m$.
+\item \text{R} refers to the mean number of occurrences as \texttt{lambda} rather than \texttt{m}. 
+\end{itemize}
+}
+
+%---------------------------------------------------------------------------%
+\frame{
+\frametitle{Poisson Formulae}
+The probability that there will be $k$ occurrences in a unit time period is denoted $P(X=k)$, and is computed as below. Remark: This is known as the probability density function. The corresponding \texttt{R} command is \texttt{dpois()}.
+\Large
+\[ P(X = k)=\frac{m^k e^{-m}}{k!} \]
+
+
+}
+%---------------------------------------------------------------------------%
+\frame{
+\frametitle{Poisson Formulae}
+Given that there is on average 2 occurrences per hour, what is the probability of no occurrences in the next hour? \\ i.e. Compute $P(X=0)$ given that $m=2$
+\Large
+\[ P(X = 0)=\frac{2^0 e^{-2}}{0!} \]
+\normalsize
+\begin{itemize}
+\item $2^0$ = 1
+\item $0!$ = 1
+\end{itemize}
+The equation reduces to
+\[ P(X = 0)=e^{-2} = 0.1353\]
+}
+%---------------------------------------------------------------------------%
+\frame{
+\frametitle{Poisson Formulae}
+What is the probability of one occurrences in the next hour? \\ i.e. Compute $P(X=1)$ given that $m=2$
+\Large
+\[ P(X = 1)=\frac{2^1 e^{-2}}{1!} \]
+\normalsize
+\begin{itemize}
+\item $2^1$ = 2
+\item $1!$ = 1
+\end{itemize}
+The equation reduces to
+\[ P(X = 1) = 2 \times e^{-2} = 0.2706\]
+}
+%---------------------------------------------------------------%
+\frame{
+\frametitle{Poisson Distribution (Example)}
+\begin{itemize}
+
+\item Suppose that electricity power failures occur according to a Poisson distribution
+with an average of 2 outages every twenty weeks. \item Calculate the probability that there will
+not be more than one power outage during a particular week.
+\end{itemize}
+
+\textbf{Solution:}
+
+\begin{itemize}
+\item The average number of failures per week is: $m = 2/20 = 0.10$
+
+\item ``Not more than one  power outage" means we need to compute and add the probabilities for ``0 outages" plus ``1 outage".
+\end{itemize}
+
+}
+
+%---------------------------------------------------------------%
+\frame{
+\frametitle{Poisson Distribution (Example)}
+
+Recall: \[P(X = k) = e^{-m}\frac{m^k}{k!}\]
+
+
+\begin{itemize}
+
+\item $P(X = 0)$
+
+\[P(X = 0) = e^{-0.10}\frac{0.10^0}{0!} = e^{-0.10} = 0.9048\]
+
+
+\item $P(X = 1)$
+
+\[P(X = 1) = e^{-0.10}\frac{0.10^1}{1!} = e^{-0.10}\times 0.1 = 0.0905\]
+
+\item $P(X \leq 1)$
+
+\[P(X \leq 1) = P(X = 0) + P(X = 1) = 0.9048 + 0.0905 = 0.995\]
+
+\end{itemize}
+}
+
+\frame{
+\frametitle{Implementation using \texttt{R}}
+
+\begin{itemize}
+\item Probability Density Function $P(X = k)$
+\begin{itemize}
+\item For a given poisson mean $m$, which in \texttt{R} is specified as \texttt{lambda} 
+\item \texttt{dpois(k,lambda = ...)} 
+\end{itemize}
+\item Cumulative Density Function $P(X \leq k)$
+\begin{itemize}
+\item \texttt{ppois(k,lambda = ...)}
+\end{itemize}
+\end{itemize}
+
+}
+
+
+\begin{frame}[fragile]
+\frametitle{Implementation using \texttt{R}}
+From before: $P(X = 0)$ given than the mean number of occurrences is 2.
+
+\begin{verbatim}
+> dpois(0,lambda=2)
+[1] 0.1353353
+> dpois(1,lambda=2)
+[1] 0.2706706
+> dpois(2,lambda=2)
+[1] 0.2706706
+\end{verbatim}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Implementation using \texttt{R}}
+Compute the cumulative distribution functions for the values $k=\{0,1,2\}$, given that the mean number of occurrences is 2
+
+\begin{verbatim}
+> ppois(0,lambda=2)
+[1] 0.1353353
+> ppois(1,lambda=2)
+[1] 0.4060058
+> ppois(2,lambda=2)
+[1] 0.6766764
+\end{verbatim}
+
+\end{frame}
+%---------------------------------------------------------------%
+\frame{
+\frametitle{Poisson Approximation of the Binomial}
+\begin{itemize}
+\item The Poisson distribution can sometimes be used to approximate the binomial distribution
+\item When the number of observations n is large, and the success probability p is small, the $\mbox{Bin}(n,p)$ distribution approaches the Poisson distribution with the parameter given by $m = np$.
+\item This is useful since the computations involved in calculating binomial probabilities are greatly reduced.
+\item As a rule of thumb, n should be greater than 50 with p very small, such that $np$ should be less than 5.
+\item If the value of $p$ is very high, the definition of what constitutes a ``success" or ``failure" can be switched.
+\end{itemize}
+}
+%---------------------------------------------------------------%
+\frame{
+\frametitle{Poisson Approximation: Example}
+
+Suppose we sample 1000 items from a production line that is producing, on average, 0.1\% defective components.\\
+
+
+\bigskip
+
+Using the binomial distribution, the probability of exactly 3 defective items in our sample is
+
+\[P(X=3) = ^{1000}C_3 \times (0.001)^3 \times 0.999^{997} \]
+
+}
+%---------------------------------------------------------------%
+\frame{
+\frametitle{Poisson Approximation: Example}
+Lets compute each of the component terms individually.
+
+
+\begin{itemize}
+\item $^{1000}C_3$
+
+\[ ^{1000}C_3 = \frac{1000 \times 999 \times 998}{3 \times 2 \times 1} =
+166,167,000 \]
+
+\item $0.001^3$
+
+\[0.001^3 = 0.000000001 \]
+
+
+\item $0.999^{997}$
+
+\[0.999^{997} = 0.36880 \]
+
+\end{itemize}
+Multiply these three values to compute the binomial probability \[P(X=3) = 0.06128 \]
+
+}
+%---------------------------------------------------------------%
+%---------------------------------------------------------------%
+\frame{
+\frametitle{Poisson Approximation: Example}
+\begin{itemize}
+\item Lets use the Poisson distribution to approximate a solution.
+
+\item First check that $n \geq 50$ and $np <5$ (Yes to both).
+
+\item We choose as our parameter value $m = np = 0.001 \times 1000  = 1$
+
+\[P(X=3) = e^{-1}\frac{1^3}{3!} = \frac{e^{-1}}{6} = \frac{0.36787}{6} =  0.06131\]
+\item Compare this answer with the Binomial probability \\ $P(X=3) = 0.06128$.
+\item Very good approximation, with much less computation effort.
+\end{itemize}
+}
+
+\begin{frame}[fragile]
+\frametitle{Implementation using \texttt{R}}
+
+
+\begin{verbatim}
+> # Poisson Mean m = 1000 * 0.001 = 1
+> dbinom(3,size=1000,prob=0.001)
+[1] 0.06128251
+>
+> dpois(3,lambda=1)
+[1] 0.06131324
+\end{verbatim}
+
+\end{frame}
+
+\end{document}
+%---------------------------------------------------------------------------%
+\frame{
+\frametitle{Continuous Random Variables}
+
+\begin{itemize}
+\item Probability Density Function
+\item Cumulative Density Function
+\end{itemize}
+
+
+If X is a continuous random variable then we can say that the probability of obtaining a \textbf{precise} value $x$ is infinitely small, i.e. close to zero.
+
+\[P(X=x) \approx 0 \]
+
+Consequently, for continuous random variables (only),  $P(X \leq x)$ and $P(X < x)$ can be used interchangeably.
+
+\[P(X \leq x) \approx P(X < x) \]
+
+
+}
+
+%---------------------------------------------------------------------------%
+\frame{
+\frametitle{Continuous Uniform Distribution}
+A random variable X is called a continuous uniform random variable over the interval $(a,b)$ if it's probability density function is given by
+
+\[ f_{X}(x)  =  { 1 \over b-a}   \hspace{2cm}  \mbox{ when } a \leq x \leq b\]
+
+The corresponding cumulative density function is
+
+\[ F_x(x) = { x-a \over b-a}   \hspace{2cm}  \mbox{ when } a \leq x \leq b\]
+
+}
+
+%-----------------------------------------------------------------------------%
+
+\frame{
+
+The mean of the continuous uniform distribution is
+
+\[ E(X) = {a+b \over 2}\]
+
+\[ V(X) = {(b-a)^2\over12}\]
+}
+
+%-----------------------------------------------------------------------------%
+
+\frame{
+\frametitle{The Memoryless property}
+The most interesting property of the exponential distribution is the \textbf{\emph{memoryless}} property. By this , we mean that if  the lifetime of a component is exponentially distributed, then an item which has been in use for some time is a good as a brand new item with regards to the likelihood of failure.
+
+The exponential distribution is the only distribution that has this property.
+}
+
+%--------------------------------------------------------%
+
+\frame{
+\frametitle{Random Variables}
+A pair of dice is thrown. Let X denote the minimum of the two numbers which occur.
+Find the distributions and expected value of X.
+}
+%-------------------------------------------------------------%
+\frame{
+\frametitle{Random Variables}
+A fair coin is tossed four times.
+Let X denote the longest string of heads.
+Find the distribution and expectation of X.}
+%-------------------------------------------------------------%
+\frame{\frametitle{Random Variables}
+A fair coin is tossed until a head or five tails occurs.
+Find the expected number E of tosses of the coin.}
+%-------------------------------------------------------------%
+\frame{\frametitle{Random Variables}A coin is weighted so that P(H) = 0.75 and P(T ) = 0.25
+
+The coin is tossed three times. Let X denote the number of
+heads that appear.
+\begin{itemize}
+\item (a) Find the distribution f of X.
+\item (b) Find the expectation E(X).
+\end{itemize}
+}
+
+%-------------------------------------------------------------%
+\frame{
+\begin{itemize}
+\item Now consider an experiment with only two outcomes. Independent repeated trials of such an experiment are
+called Bernoulli trials, named after the Swiss mathematician Jacob Bernoulli (1654–1705). \item The term \textbf{\emph{independent
+trials}} means that the outcome of any trial does not depend on the previous outcomes (such as tossing a coin).
+\item We will call one of the outcomes the ``success" and the other outcome the ``failure".
+\end{itemize}
+}
+
+%-------------------------------------------------------------%
+\frame{
+\begin{itemize}
+ \item
+Let $p$ denote the probability of success in a Bernoulli trial, and so $q = 1 - p$ is the probability of failure.
+A binomial experiment consists of a fixed number of Bernoulli trials. \item A binomial experiment with $n$ trials and
+probability $p$ of success will be denoted by
+\[B(n, p)\]
+\end{itemize}
+}
+%-------------------------------------------------------------%
+
+%---------------------------------------------------------------------------%
+\frame{
+\frametitle{Probability Mass Function}
+\begin{itemize} \item a probability mass function (pmf) is a function that gives the probability that a discrete random variable is exactly equal to some value. \item The probability mass function is often the primary means of defining a discrete probability distribution \end{itemize}
+}
+%------------------------------------------------------------------%
+\frame{
+Thirty-eight students took the test. The X-axis shows various intervals of scores (the interval labeled 35 includes any score from 32.5 to 37.5). The Y-axis shows the number of students scoring in the interval or below the interval.
+
+\textbf{\emph{cumulative frequency distribution}}A  can show either the actual frequencies at or below each interval (as shown here) or the percentage of the scores at or below each interval. The plot can be a histogram as shown here or a polygon.
+}
+
+
+
+%---------------------------------------------------------------%
+\frame{
+\frametitle{Notation for Poisson Distribution}
+A discrete random variable $X$ is said to follow a Poisson distribution with parameter $m$, written $X \sim \mbox{Po}(m)$, if it has probability distribution
+
+
+\[ P(X=k) = e^{-m} {m^k \over k!} \]
+
+where
+\begin{itemize}
+\item $k = 0, 1, 2, \ldots$
+\item $m > 0$.
+\end{itemize}
+
+
+}
+
+
+\end{document}
+
+
+
+%---------------------------------------------------------------------------------------------------------------%
+%----R Code ----
+%---------------------------------------------------------------------------------------------------------------%
+n=60000
+Y=numeric(n)
+for ( i in 1:n){
+
+X=floor(runif(100,1,7))
+Y[i]=sum(X)
+}
+
+Y
+hist(Y,breaks=seq(300,400,by=10),main=c("Totals of 100 Die Throws"),cex.lab=1.4,font.lab=2,xlab=c("Total Score"))
+
+hist(Y,breaks=seq(300,400,by=20),main=c("Totals of 100 Die Throws"),cex.lab=1.4,font.lab=2,xlab=c("Total Score"))
+
+
+
+Z=seq(1:n)
+Y/Z
+
+plot(Y/Z,type="l",col="red",main=c("Die Rolls: Running Average"),font.lab=2,ylab="Average Value", xlab=
+" Number of Throws")
+abline(h=3.5,col="green")
+
+
+#####################################################
+
+plot(Z,Z.y,pch=16,col="red",ylim=c(2.5,5.5),main=c("Variance"),font.lab=2,ylab=" ", xlab="X: Green  Y: Blue  Z: Red" )
+
+points(Y,Y.y,pch=16,col="blue" )
+points(X,X.y,pch=16,col="green" )
+points(c(1000,1000,1000),c(3,4,5),pch=18,cex=1.2)
+lines(c(1000,1000),c(2.75,5.25),lty=3)
+
+
+
+n=100000
+Y=numeric(n)
+for ( i in 1:n){
+
+X=floor(runif(100,1,7))
+Y[i]=sum(X)
+}
+
+Y
+hist(Y,breaks=seq(270,430,by=2),main=c("Totals of 100 Die Throws (n= 100,000)"),cex.lab=1.4,font.lab=2,xlab=c("Total Score")) 
