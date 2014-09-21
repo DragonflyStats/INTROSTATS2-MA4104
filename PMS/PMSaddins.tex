@@ -1,0 +1,47 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+
+
+\begin{document}
+
+
+
+\begin{itemize}
+\item The gamma distribution can be parameterized in terms of a shape parameter $\alpha$ = k and an inverse scale parameter $\beta$, called a rate parameter.
+\item A random variable X that is gamma-distributed with shape $\alpha$ and rate $\beta$ is denoted
+\[
+X \sim  \textrm{Gamma}(\alpha,\beta)
+\]
+\end{itemize}
+
+{
+\LARGE
+\[\scriptstyle\mathbf{E}[ X] = \frac{\alpha}{\beta}\]
+}
+
+{
+\LARGE
+\[
+\scriptstyle \operatorname{Var}[ X] = \frac{\alpha}{\beta^2}
+\]
+}
+\bigskip
+\begin{itemize}
+\item
+By the central limit theorem, if $\alpha$ is large, then gamma distribution can be approximated by the normal distribution with mean and standard deviation\[\mu = \frac{\alpha}{\beta}\] 
+ \[\sigma=\frac{\sqrt{\alpha}}{\beta}\]
+
+
+\item That is, the distribution of the variable  
+{
+\LARGE
+\[Z=\frac{X-\frac{\alpha}{\beta}}{\frac{\sqrt{\alpha}}{\beta}}\]} tends to the standard normal distribution as $ \alpha \longrightarrow \infty$.
+\end{itemize}
+\newpage
+{
+\Huge
+\[
+\scriptstyle \mbox{ Point Estimate } \pm  \left[ \operatorname{ Quantile } \times \operatorname{Standard Error } 
+ \right] 
+\]}
+\end{document}
