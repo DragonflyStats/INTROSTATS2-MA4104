@@ -1,152 +1,203 @@
- 
-Exam : Wednesday March 16th at 9pm
- 
-45 minutes long
-Worth 15% of the overall module grade
-No calculators allowed.
-15 multiple choice questions
- 
- 
-Qualitative Data
-Quantitative Data
- 
-Discrete v Continuous
- 
-An experiment is
- 
-An observational study is
- 
-This is an experiment because the outcomes are a response to conditions set by the study.
- 
- 
-Ratio v Interval
- 
-The difference between ratio and interval is most evident in how a value of zero is treated.
- 
-For Ratio values – a value of zero means the complete absence.
-For interval values
- 
-Consider that 0 degrees centigrade is 32 degrees Fahrenheit.
- 
-ordinal
-nominal (Categorical)
- 
-For example consider a variable”origin” where the outcomes are Limerick /Rest of Munster/Rest of Ireland/Rest of World.
- 
-ordinal – contains a hierarchy
- 
-Discrete:
- 
-Number of Children in a class
-Number of faulty components per batch
- 
-Continuous
- 
-Length of time between cars arriving at a petrol station pump.
- 
- 
-It  is not possible have 24.5 children in any class, but it is possible to have an average of 24.5 per class.
- 
-Definitions
-Population
-Sample
-Statistic: value based on a sample. Commonly used as an estimate for the parameter value.
- 
-Parameter value
-Sampling Frame:
-Databases
- 
-Section 2 Graphical methods
- 
-Pie Charts – hard to make out what is going on.
-Some aesthetic use i.e. breaking up a long page of text.
- 
-Section 3: Probability
-Law of total probability
- 
-Independent events
- 
-Conditional probability
- 
-Given that event B has already occurred ,   what is the probability of event A
- 
-P( A | B)  “probability of A given B”
- 
-P( A and B) “ probability of A and B”
- 
-Complement event
- 
-What is the probability of A not happening
-What is the probability of outcomes not included in A.
- 
-Section 4: Probability Distributions
- 
-Expected value of the outcome
- 
-E[X]
- 
-By definition the expected value is the value that 50% of the the outcomes are greater than.By extension 50% of values are less than the Expected value.
- 
-P( X \geq E[X])  = 0.50  P(X \leq E[X]) = 0.50
- 
-Binomial Distribution
-Number of independent trials
- 
-A coin is tossed eight times. – the number of trials is therefore 8.
- 
-A group of people or a batch of items can also be considered as a series of independent trials.
- 
-Probability of a success
- 
-A “success” is dependent on how the question is framed, or what is being estimated.
- 
-Continuous Uniform distribution
- 
-L :lower bound of an interval
-U: upper bound of an interval
- 
-Probability of an outcome being between lower bound L and upper bound U
-P( L \leq X \leq U)  =  { U - L \over  b – a }
- 
- 
-Reminder
- 
-" \leq" is less than or equal to
- 
-" \geq" is greater than or equal to
- 
- 
-L \leq X \leq U
- 
-simply states that X is between L and U inclusively.
- 
-("inclusively" mean that X could be exactly L or U also, although the probability of this is extremely low)
- 
- 
-The probability density function is given as
- 
-f(x) = {1 \over b-a} for a \leq x \leq b
- 
-For any value "c" between the minimum value a and the maximum value b
- 
-P(X \ geq c) = {b-c \over b-a}
- 
-here b is the upper bound while c is the lower bound
- 
- 
-P(X \ leq c) = {c-a \over b-a}
- 
-here c is the upper bound while a is the lower bound
- 
- 
- 
-Exercises on Murdoch Barnes table 6
- 
-Find the following
- 
-e^{-0.6}
- 
-e^{-1.4}
- 
-e^{-3.2}
+\documentclass{beamer}
 
+\usepackage{default}
+
+\begin{document}
+	
+	
+	Exam : Wednesday March 16th at 9pm
+	
+	45 minutes long
+	Worth 15% of the overall module grade
+	No calculators allowed.
+	15 multiple choice questions
+	
+	
+	Qualitative Data
+	Quantitative Data
+	
+	Discrete v Continuous
+	
+\end{frame}
+%============================================================ %
+\begin{frame}
+	An experiment is
+	
+	An observational study is
+	
+	This is an experiment because the outcomes are a response to conditions set by the study.
+	
+\end{frame}
+%============================================================ %
+\begin{frame} 
+	
+	Ratio v Interval
+	
+	The difference between ratio and interval is most evident in how a value of zero is treated.
+	
+	For Ratio values – a value of zero means the complete absence.
+	For interval values
+	
+	Consider that 0 degrees centigrade is 32 degrees Fahrenheit.
+	
+	ordinal
+	nominal (Categorical)
+	
+	For example consider a variable”origin” where the outcomes are Limerick /Rest of Munster/Rest of Ireland/Rest of World.
+	
+	ordinal – contains a hierarchy
+	
+	Discrete:
+	
+	Number of Children in a class
+	Number of faulty components per batch
+	
+	Continuous
+	
+	Length of time between cars arriving at a petrol station pump.
+	
+	
+	It  is not possible have 24.5 children in any class, but it is possible to have an average of 24.5 per class.
+\end{frame}
+%============================================================ %
+\begin{frame}
+	
+	Definitions
+	Population
+	Sample
+	Statistic: value based on a sample. Commonly used as an estimate for the parameter value.
+	
+	Parameter value
+	Sampling Frame:
+	Databases
+	
+\end{frame}
+%============================================================ %
+\begin{frame}
+	
+	Section 2 Graphical methods
+	
+	Pie Charts – hard to make out what is going on.
+	Some aesthetic use i.e. breaking up a long page of text.
+
+\end{frame}
+%============================================================ %
+\section{Probability}
+\begin{frame}
+	
+\begin{itemize}
+\item Law of total probability
+	
+\item Independent events
+	
+\item Conditional probability
+\end{itemize}	
+
+\end{frame}
+%============================================================ %
+\begin{frame}
+	
+	Given that event B has already occurred ,   what is the probability of event A
+	
+	P( A | B)  “probability of A given B”
+	
+	P( A and B) “ probability of A and B”
+	
+	\textbf{Complement event}\\
+	
+	What is the probability of A not happening
+	What is the probability of outcomes not included in A.
+	
+\end{frame}
+%============================================================ %
+\begin{frame}
+	
+	Section 4: Probability Distributions
+	
+	Expected value of the outcome
+	
+	E[X]
+	
+	By definition the expected value is the value that 50% of the the outcomes are greater than.By extension 50% of values are less than the Expected value.
+	\[
+	P( X \geq E[X])  = 0.50 \]
+	\[ P(X \leq E[X]) = 0.50\]
+\end{frame}
+%============================================================ %
+\section{Binomial Distribution}
+\begin{frame}	
+
+	Number of independent trials
+	
+	A coin is tossed eight times. – the number of trials is therefore 8.
+	
+	A group of people or a batch of items can also be considered as a series of independent trials.
+\end{frame}
+%============================================================ %
+\begin{frame} 
+	Probability of a success
+	
+	A “success” is dependent on how the question is framed, or what is being estimated.
+
+\end{frame}
+%============================================================ %
+\begin{frame}	
+	Continuous Uniform distribution
+	
+\begin{description}
+\item[L] lower bound of an interval
+\item[U] upper bound of an interval
+\end{description}
+	Probability of an outcome being between lower bound L and upper bound U
+	\[P( L \leq X \leq U)  =  { U - L \over  b – a }\]
+\end{frame}
+%============================================================ %
+\begin{frame} 
+	
+	Reminder
+	
+	" $\leq$" is less than or equal to
+	
+	" $\geq$" is greater than or equal to
+	
+	
+	\[L \leq X \leq U\]
+	
+	simply states that X is between L and U inclusively.
+	
+	("inclusively" mean that X could be exactly L or U also, although the probability of this is extremely low)
+	
+\end{frame}
+%============================================================ %
+\begin{frame} 
+	The probability density function is given as
+	
+	\[f(x) = {1 \over b-a} for a \leq x \leq b\]
+	
+	For any value "c" between the minimum value a and the maximum value b
+	
+	\[P(X \ geq c) = {b-c \over b-a}\]
+	
+	here b is the upper bound while c is the lower bound
+	
+	
+	\[P(X \ leq c) = {c-a \over b-a}\]
+	
+	here c is the upper bound while a is the lower bound
+	
+\end{frame}
+%============================================================ %
+\begin{frame}
+	
+	Exercises on Murdoch Barnes table 6
+	
+	Find the following
+	
+	$e^{-0.6}$
+	
+	$e^{-1.4}$
+	
+	$e^{-3.2}$
+	
+\end{frame}
+\end{document}

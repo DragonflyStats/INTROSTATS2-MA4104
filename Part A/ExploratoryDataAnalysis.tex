@@ -56,27 +56,6 @@ The most common measures of centrality are the mean and median.
 
 \end{frame}
 
-%================================================================================================================ %
-\begin{frame}
-\frametitle{Variance and Covariance}
-Covariance is a measure of how much two variables change together. 
-
-Variance can be considered as a special case of the covariance when the two variables are identical.
-$var(x) = cov(X,X)$
-
-Covariance can be computed as product of the variance of two datasets, multiplied by their correlation.
-
-\[
-cov(X,Y) = std.dev (x) std.dev(y) cor(x,y)
-\]
-
-A covariance matrix is a useful tool for assessing variances in multiple data sets.
-
-
-If X and Y are independent, then their covariance is zero. However it is possible for X and Y to have covariance zero when they are not independent.
-
-
-\end{frame}
 
 %================================================================================================================ %
 \begin{frame}
@@ -90,23 +69,6 @@ The most common measures of dispersion are the variance and standard deviation. 
 %-----------------------------------------------------------------------------------------%
 \newpage
 \section{Other measures}
-%-----------------------------------------------------------------------------------------%
-\section{Simpson's Paradox}
 
-\subsection{Example}
-\begin{itemize}
-\item Say a company tests two treatments for an illness. In trial No. 1, treatment A cures 20\% of its cases (40 out of 200) and treatment B cures 15\% of its cases (30 out of 200). In trial No. 2, treatment A cures 85\% of its cases (85 out of 100) and treatment B cures 75\% of its cases (300 out of 400)....
-\item
-So, in two trials, treatment A scored 20\% and 85\%. Also in two trials, treatment B scored only 15\% and 75\%. No matter how many people were in those trials, treatment A (at 20\% and 85\%) is surely better than treatment B (at 15\% and 75\%)?
-\item
-No, Treatment B performed better. It cured 330 (300+30) out of the 600 cases.
-\item
-(200+400) in which it was tried--a success rate of 55\%. By contrast, treatment A cured 125 (40+85) out of the 300 cases (200+100) in which it was tried, a success rate of only about 42\%.
-\end{itemize}
-
-%-----------------------------------------------------------------------------------------%
-
-\section{The Ecological Fallacy}
-Ecological fallacy: The aggregation bias, which is the unfortunate consequence of making inferences for individuals from aggregate data. It results from thinking that relationships observed for groups necessarily hold for individuals. The problem is that it is not valid to apply group statistics to an individual member of the same group.
 
 %-----------------------------------------------------------------------------------------%

@@ -1,0 +1,32 @@
+\begin{frame}
+\frametitle{Nearest rank}
+One definition of percentile, often given in texts, is that the P-th percentile (0 \le P \le 100) of 
+ordered values (arranged from least to greatest) is obtained by first calculating the (ordinal) rank
+ \[n = \frac{P}{100} \times N + \frac{1}{2}\]
+rounding the result to the nearest integer, and then taking the value that corresponds to that rank. (Note that the rounded value of n is just the least integer which exceeds  \frac{P}{100} \times N .)
+\end{frame}
+%------------------------------------------------------------%
+\begin{frame}
+For example, by this definition, given the numbers
+15, 20, 35, 40, 50
+the rank of the 30th percentile would be
+\[n = \frac{30}{100} \times 5 + \frac{1}{2} = 2.\]
+Thus the 30th percentile is the second number in the sorted list, 20.
+\end{frame}
+%------------------------------------------------------------%
+\begin{frame}
+The 35th percentile would have rank
+\[n = \frac{35}{100} \times 5 + \frac{1}{2} = 2.25,\]
+so the 35th percentile would be the second number again (since 2.25 rounds down to 2) or 20
+The 40th percentile would have rank
+\[n = \frac{40}{100} \times 5 + \frac{1}{2} = 2.5\]
+so the 40th percentile would be the third number (since 2.5 rounds up to 3), or 35.
+\end{frame}
+%------------------------------------------------------------%
+\begin{frame}
+
+The 100th percentile is defined to be the largest value. (In this case we do not use the above definition with P=100, because the rank n would be greater than the number N of values in the original list.)
+In lists with fewer than 100 values the same number can occupy more than one percentile group.
+\end{frame}
+%------------------------------------------------------------%
+\end{document}

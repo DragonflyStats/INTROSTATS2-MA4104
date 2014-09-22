@@ -1,0 +1,47 @@
+\documentclass{beamer}
+
+\usepackage{framed}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+%------------------------------------------------------------------- %
+
+\begin{frame}
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline 
+Type 1 & Type 2 \\ \hline \hline
+$n_1$ = 100 & $n_2$ = 100 \\ \hline
+$\bar{x}_1$ = 25 hours & $\bar{x}_1$ = 23 hours \\ \hline
+$s_1$ = 4 hours & $s_1$ = 3 hours \\ \hline
+\end{tabular} 
+\end{center}
+\end{frame}
+%-------------------------------- %
+\begin{frame}
+\[ S.E.(\bar{x}_1 - \bar{x}_2)  = \sqrt{\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2}}\]
+
+\[ S.E.(\bar{x}_1 - \bar{x}_2)  = \sqrt{\frac{4^2}{100} + \frac{3^2}{100}}\]
+
+\[ S.E.(\bar{x}_1 - \bar{x}_2)  =\sqrt{ 25/100}\]
+\end{frame}
+%------------------------------------------------------------------- %
+
+\begin{frame}
+\frametitle{Two Sample Tests}
+\noindent \textbf{\emph{Test Statistic}}
+\[TS = \frac{(25-23) - 0}{?} = 2.?\]
+
+\noindent \textbf{\emph{Critical Value}}\\
+The crtical value is 1.645.
+\begin{itemize}
+\item Large aggregate sample
+\item One-tailed procedure
+\item Significance level $\alpha=0.05$
+\end{itemize}
+
+\end{frame}
+%-------------------------------------------------------------------- %
+
+\end{document}
