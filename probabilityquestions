@@ -1,0 +1,520 @@
+
+MA4505 Week 9   Questions from Tutorial Sheets 3 and 4.
+
+ 
+%% Posted on youtube Channel Early December 2014
+
+ 
+
+%================================================================================%
+Question 3.1
+
+
+A driver passes through 3 traffic lights. The chance he/she will stop at the first is 1/2 , at the second 1/3 and at the third ¼ independently of what happens at any of the other lights. What is the probability that
+
+
+i)    the driver makes the whole journey without being stopped at any of the lights
+
+ii)   the driver is only stopped at the first and third lights
+
+iii)  the driver is stopped at just one set of lights.
+
+
+P[F] = 0.5           P[Fc] = 0.5            P[S] = 0.333        P[Sc] = 0.666
+
+P[T] = 0.25         P[Tc] = 0.75
+
+
+
+ 
+
+Probability of not getting stopped at all three lights
+
+
+P[0] =P[Fc]P[Sc]P[Tc] = 0.50.6660.75 = 0.25
+
+
+
+Probability of only getting stopped at first  lights
+
+
+P[F only] = P[F]P[Sc]P[Tc] = 0.50.6660.75 = 0.25
+
+
+Probability of only getting stopped at second lights
+
+
+P[S only] =P[Fc]P[S]P[Tc] = 0.50.3330.75 = 0.125
+
+
+
+
+
+
+ 
+
+Probability of only getting stopped at third  lights
+
+P[T only] =P[Fc]P[Sc]P[T] = 0.50.6660.25 = 0.083
+
+
+Probability of getting stopped at one lights only 
+
+
+P[1 only] =P[F only]+P[S only]+ P[T only]
+
+
+P[1 only] = 0.125 + 0.25 + 0.083 = 0.458
+
+
+ 
+%================================================================================%
+
+
+
+Question 3.2 
+
+
+What is the probability of getting a number divisible by 3 in each of 3 throws of a dice?
+
+
+
+
+Solution
+
+
+
+Numbers divisible by 3 : 3 and 6            probability of throwing 3 or 6:   
+
+
+
+Probability of throwing 3 or 6 three times in a row  ( Each throw of a dice is an independent event.)
+
+
+
+P[3T] = P[T]P[T]P[T]=133=127
+
+%================================================================================%
+ 
+
+
+ 
+
+Question 3.3 
+
+
+Which are the following pairs of events are mutually exclusive?
+
+i.
+Two dice are thrown: A is the event the sum is 10, B is the event the sum is 11
+
+
+ai.
+A hand of two cards is dealt: A is the event that the hand includes at least one red card, B is the event that the hand includes at least one black card.
+
+
+bi.
+ student is chosen from the class at random: A is the event that the student is female, B is the event that a student is left-handed.
+
+
+
+
+
+ 
+
+
+
+Solution
+
+
+(i) is mutually exclusive. cant throw 10 and 11 in same throw of two dice.
+
+
+(ii) not mutually exlusive: can have one red card and one black card.
+
+
+(iii) not mutually exclusine: can have a lefthanded female
+
+
+%================================================================================%
+
+
+ 
+
+Question 3.4 
+
+
+The following contingency table shows the age and sex of derby winners
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+age =3
+ 
+
+age =4 
+ 
+
+age =5
+ 
+
+Total
+ 
+
+
+
+Stallion
+ 
+
+10
+ 
+
+30
+ 
+
+20
+ 
+
+60
+ 
+
+
+
+Filly
+ 
+
+20
+ 
+
+20
+ 
+
+10
+ 
+
+50
+ 
+
+
+
+Total
+ 
+
+30
+ 
+
+50
+ 
+
+30
+ 
+
+110
+ 
+
+ 
+
+A winner is chosen at random. Calculate the probability that
+
+i) the horse is a filly
+
+ii) the horse won as a 5-year old.
+
+iii) the horse was a stallion, given it won as a 3-year old
+
+iv) the horse was a 4-year old, given it was a filly.
+
+ 
+
+
+Solutions
+
+
+110 derby winners. 50 winners were fillies.                                              answer (i) = 50/110 = 45.45 %
+
+
+30 winners were 5 years old                                                    answer (ii) = 30/110 = 27.27%
+
+    
+
+30 winners were three year olds. Of that 30, 10 were stallions.       
+
+                                   answer (iii) = 10/30 = 33.33%
+
+
+     50 winners were fillies. Of that 50, 20 were 4 year olds                                                  answer (iv) = 20/50 = 40%
+
+%================================================================================%
+
+
+ 
+
+Question 3.5 
+
+A card is drawn at random from a standard pack of playing cards. It is an ace. What is the probability that it is the ace of diamonds?
+
+
+Solution
+•
+What is the probability the ace picked is the ace of diamonds (given that we know that it is an ace). 
+
+•
+Wording of this question is very important.
+
+•
+There are four card suits ( hearts, diamonds, clubs, spades)
+
+•
+The card has a 'one in four' chance of being an ace of diamonds.
+
+
+%================================================================================%
+ 
+
+
+Question 3.6
+
+A dice is thrown 5 times. Calculate the probability of
+i.
+  Obtaining exactly one six
+
+
+ii)    Obtaining at least one six
+bi.
+  Calculate the (theoretical) mean and variance of the number of sixes obtained?
+
+
+
+P(x=k)=nkpk(1-p)n-k
+
+
+ 
+
+
+
+Part 1 
+
+
+P(x=1)=51(16)1(56)4
+
+
+51=5!1!4!= 5
+
+
+P(x=1)= 5(16)1(56)4= 0.401 
+
+
+%================================================================================%
+ 
+
+Part 2
+
+
+obtaining at least one head is complement of obtaining zero heads
+
+
+P(x1)= 1 - p(x=0)
+
+
+
+P(x=0)=50(16)0(56)5
+
+
+50=5!0!5!= 1
+
+
+P(x1)= 1- 0.401 =0.599 
+
+%================================================================================%
+
+ 
+
+Question 3.7
+
+A doctor treating a patient issues a prescription for antibiotics and provides for two repeat prescriptions. The probability that the infection will be cleared by the first prescription is p1 =0.6. 
+
+
+The probability that successive treatments are successful, given that previous prescriptions were not successful are p2 = 0.5, p3 = 0.4. 
+
+
+Calculate the probability that
+
+         i) the patient is still infected after the third prescription
+
+         ii) the patient is cured by the second prescription.
+
+
+
+ 
+
+Solution
+
+
+P(need 2nd) =P(Fc) = 1-P(F) =0.4
+
+
+P(need 3rd) =P(Sc|Fc) =P(Sc)P(Fc) = 0.50.4 = 0.2
+
+
+P(not cured) =P(Tc| need 2nd ) =P(Tc)P(Sc)P(Fc)= 0.60.50.4 = 0.12
+
+
+P(2nd cured) = P(S)P(Fc) = 0.50.4 = 0.2
+
+
+
+
+Alternative solution
+
+[ lets use cohort of 1000 patients ]
+
+ 
+
+probability that a person is cured after first prescription         P[F]                = 0.6  [600 patients]
+
+probability that a person is still infected after first prescription   P[Fc]             = 1-0.6 = 0.4  [400 patients]
+
+
+[400 patients will need second prescription]
+
+
+probability that a person is cured after second prescription     P[S]                    = 0.5  [200 patients]
+
+probability that a person is still infected after second prescription  P[Sc]              = 1-0.5 = 0.5  [200 patients]
+
+
+[200 patients will need third prescription. 800 patients now cured]
+
+
+probability that a person is cured after third prescription          P[T]               = 0.4  [80 patients]
+
+probability that a person is still infected after third prescription      P[Tc]          = 1-0.4 = 0.6  [120 patients]
+
+
+[120 patients will need treatment. 880 patients now cured]
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+ 
+
+Question 4.1 
+
+The gestation period of horses is approximately normally distributed with a mean of 337 days and a standard deviation of 4.5 days. 
+
+
+Estimate the probability that the gestation period is
+
+
+
+i)       greater than 340 days
+
+ii)      less than 330 days
+
+iii)     between 335 and 345 days. 
+
+iv)     What gestation period is surpassed by 2.5% of the population?
+
+
+
+ 
+
+X: Gestation period of horses
+
+
+P(X340)= 0.2524        [Z=0.66]
+
+P(X330)= 0.0599    
+
+P(335X345)= 0.6339
+
+
+Find Xo such that  P(XX0)= 0.025
+
+    
+
+Xo = 345.82    [ANS]
+
+ 
+
+
+
+--------------------------------------------------------------------------------
+
+
+ 
+
+Question 4.2 
+
+The length of the jump of an athlete has a normal distribution with mean 7m and standard deviation 0.1m. 
+
+
+
+1.
+Calculate the probability that he jumps at least 7.15m
+
+2.
+Calculate the probability that he jumps between 6.9 and 7.05m
+
+3.
+Find the probability that if he jumps 3 times all the jumps will be less than 7.15m (assume the lengths of the jumps are independent and use the answer to first part.  
+
+
+
+
+= 7.00 m = 0.1 m
+
+
+Part 1. Determine P(X7.15)                Zo=Xo-=7.15 - 70.1=0.150.10=1.5
+
+From tables P(Z1.5) = 0.0668          Therefore P(X7.15) = 0.0668 [ANS]
+
+
+ 
+
+
+Part 2. Determine P(6.9X7.15)
+
+
+P(6.9X7.15) = 1 - P(X6.9 ) - P(X7.05 )
+
+
+P(X7.05 ) = P(Z0.5 ) = 0.3085   
+
+
+P(X6.90 ) = P(Z-1 )= P(Z1 ) = 0.1586
+
+
+P(6.9X7.15) = 0.5328         [ANS]
+
+
+Part 3. :             P(X7.15) = 0.9332        Probability = (0.9332)2= 0.8126
+
+
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+
+
