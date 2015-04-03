@@ -1,0 +1,71 @@
+
+%Page 69
+
+%----------------------------------------%
+\begin{frame}
+\frametitle{Probability}
+\Large
+Two dice A and B are cast. What is the probability of getting
+\begin{itemize}
+\item[1] a total of 2 or a total of 6?
+\item[2] a total greater than 9?
+\item[3] a total which is three times as great as other possible totals?
+\end{itemize}
+
+\end{frame}
+%----------------------------------------%
+
+\begin{frame}
+\frametitle{Probability}
+\Large
+
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+\phantom{space}	& \phantom{sp} 1\phantom{sp}	&\phantom{sp} 2\phantom{sp}&\phantom{sp} 3\phantom{sp}	&\phantom{sp} 4	\phantom{sp}&\phantom{sp} 5 \phantom{sp}&\phantom{sp}6	\phantom{sp}\\ \hline	\hline
+1	&	2	&	3	&	4	&	5	&	6	&	7	 \\ \hline	
+2	&	3	&	4	&	5	&	6	&	7	&	8	 \\ \hline	
+3	&	4	&	5	&	6	&	7	&	8	&	9	 \\ \hline	
+4	&	5	&	6	&	7	&	8	&	9	&	10	 \\ \hline	
+5	&	6	&	7	&	8	&	9	&	10	&	11	 \\ \hline	
+6	&	7	&	8	&	9	&	10	&	11	&	12	 \\ \hline	
+\end{tabular}
+\end{center}
+
+\end{frame}
+%----------------------------------------%
+\begin{frame}
+\frametitle{Probability}
+\Large
+Part 1) A total of 2 or 6
+
+\[ E_1 = \{ (1,1) ,(1,5), (5,1), (4,2), (2,4), (3,3) \}  \]
+
+\[ P(E_1)  = \frac{6}{36} \]
+
+\end{frame}
+%----------------------------------------%
+\begin{frame}
+\frametitle{Probability}
+\Large
+Part 2) A total greater than 9 
+
+\[ E_2 = \{ (4,6) , (5,5), (6,4), (6,5), (6,6), (3,3)\}  \]
+
+\[ P(E_2)  = \frac{6}{36} \]
+
+\end{frame}
+%----------------------------------------%
+\begin{frame}
+\frametitle{Probability}
+\Large
+Part 3) A total which is three times as great as other possible totals. \\
+
+These totals are 6, 9 and 12.
+
+\[ E_3 = \{ (1,5) , (2,4), (4,2), (1,5), (3,3), (6,3), (4,5) (5,4) , (6,6) \}  \]
+
+\[ P(E_3)  = \frac{10}{36} \]
+
+\end{frame}
+%----------------------------------------%

@@ -1,0 +1,134 @@
+
+
+\documentclass{beamer}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section{Basic Definitions of probability}
+%---------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{Probability}
+\Large
+\begin{itemize}
+\item The symbol P is used to designate the probability of an event. Thus P(A) denotes the probability that event
+A will occur in a single observation or experiment.
+
+\item The smallest value that a probability statement can have is 0 (indicating the event is impossible) and the
+largest value it can have is 1 (indicating the event is certain to occur). 
+\item Thus, in general:
+$0 	\leq P(A) \leq 1$
+\end{itemize}
+\end{frame}
+
+%---------------------------------------------------------------------------------%
+\begin{frame} 
+\frametitle{Mutually exclusive events}
+\Large
+\begin{itemize}
+\item In a given observation or experiment, an event must either occur or not occur. \item Therefore, the sum of the
+probability of occurrence plus the probability of nonoccurrence always equals 1. \item Thus, where $A^{\prime}$ indicates the nonoccurrence of event A, we have
+$P(A) + P(A^{c}) =  1$
+\end{itemize}
+\end{frame}
+%---------------------------------------------------------------------------------%
+\begin{frame} 
+\frametitle{Mutually exclusive events}
+\Large
+\begin{itemize}
+\item 
+Two or more events are mutually exclusive, or disjoint, if they cannot occur together. That is, the occurrence
+of one event automatically precludes the occurrence of the other event (or events). 
+\item For instance, suppose we
+consider the two possible events ``ace" and ``king" with respect to a card being drawn from a deck of playing
+cards. 
+\item These two events are mutually exclusive, because any given card cannot be both an ace and a king.
+\item Two or more events are nonexclusive when it is possible for them to occur together.
+\end{itemize} 
+\end{frame}
+%---------------------------------------------------------------------------------%
+\begin{frame} 
+\Large
+\begin{itemize}
+\item Note that this definition does not indicate that such events must necessarily always occur jointly. For instance, suppose we consider the two possible events ``ace" and ``spade". 
+\item These events are not mutually exclusive, because a given card can be both an ace and a spade; however, it does not follow that every ace is a spade or every spade is an ace.
+\end{itemize}
+\end{frame}
+%---------------------------------------------------------------------------------%
+\begin{frame}
+\frametitle{General rule of addition}
+\begin{itemize}
+\item For events that are not mutually exclusive, the probability of the joint occurrence of the two events is
+subtracted from the sum of the simple probabilities of the two events. We can represent the probability of joint
+occurrence by P(A and B).\item  In the language of set theory this is called the intersection of A and B and the
+probability is designated by P(A and B).  Thus, the rule of addition for events that are not mutually exclusive is
+\[ P(A \mbox{ or }B) = P(A)+ P(B) - P(A \mbox{ and }B)\]
+\end{itemize}
+\end{frame}
+%---------------------------------------------------------------------------------%
+\begin{frame} 
+\frametitle{Example}
+\Large
+When drawing a card from a deck of playing cards, the events ``ace" and ``spade" are not mutually
+exclusive. The probability of drawing an ace (A) or spade (S) (or both) in a single draw is
+\begin{eqnarray} P(A \mbox{ or }B) &=& P(A) + P(S) - P(A \mbox{ and }B)\\ &=& 4/52 + 13/52 -1/52 \\&=& 16/52 \\
+&=& \textbf{4/13} 
+\end{eqnarray}
+\end{frame}
+%---------------------------------------------------------------------------------%
+\section*{Independent events}
+\begin{frame}
+\Large
+\begin{itemize}
+\item Two events are independent when the occurrence or nonoccurrence of one event has no effect on the
+probability of occurrence of the other event. 
+
+\item Two events are dependent when the occurrence or nonoccurrence
+of one event does affect the probability of occurrence of the other event.
+\end{itemize}
+
+\end{frame}
+%---------------------------------------------------------------------------------%
+
+
+\section*{Conceptual approaches}
+\begin{frame}
+\Large
+\begin{itemize}
+\item Historically, three different conceptual approaches have been developed for defining probability and for
+determining probability values: the classical, relative frequency, and subjective approaches.\item If N(A) possible elementary outcomes are favorable to event A,
+N(S) possible outcomes are included in the sample space, and all the elementary outcomes are equally likely and
+mutually exclusive, then the probability that event A will occur is
+\[P(A) = \frac{N(A)}{N(S)}\]
+\end{itemize}
+\end{frame}
+\begin{frame} \frametitle{Examples}
+\Large
+When a fair dice is thrown, what are the possible outcomes? There are 6 possible outcomes. 
+
+The dice can role any number between one and six. Each outcome is equally likely. The probability of each outcome is 1/6.
+\end{frame}
+%---------------------------------------------------------------------------------%
+\begin{frame} 
+
+\Large
+In a well-shuffled deck of cards which contains 4 aces and 48 other cards, the probability of an ace (A)
+being obtained on a single draw is;
+\[ P(A)= N(A)/ N(S) = 4/52 = 1/13 \]
+\end{frame}
+%---------------------------------------------------------------------------------%
+\begin{frame} 
+
+\frametitle{Bayes theorem}
+\Large
+In its simplest algebraic form, Bayes theorem is concerned with determining the conditional probability of
+event A given that event B has occurred. 
+
+The general form of Bayes theorem is
+\[ P(A|B) =
+\frac{P(A \mbox{ and }B)}{P(B)} \]
+\end{frame}
+%---------------------------------------------------------------------------------%
+\end{document}
