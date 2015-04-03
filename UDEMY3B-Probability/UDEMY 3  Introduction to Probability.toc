@@ -1,2 +1,0 @@
-\beamer@endinputifotherversion {3.26pt}
-\beamer@sectionintoc {1}{Basic Definitions of probability}{1}{0}{1}

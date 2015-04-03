@@ -1,8 +1,0 @@
-Section 1 : Introduction to Statistics
-Section 2 : Descriptive Statistics
-Section 3 : Introduction to Probability
-Section 4 : Probability Distributions
-Section 5 : Bivariate Data Analysis (Linear Regression and Correlation)
-New Course
-Confidence Intervals and Hypothesis Testing
-Non Parametrics Methods
