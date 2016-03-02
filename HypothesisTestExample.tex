@@ -1,6 +1,677 @@
 MA4413 Statistics for Computing
  
 Lecture Notes 11 : Hypothesis Testing
+
+MA4302 Revision Class 2
+Thursday 13:00 - 14:00 Lecture -   FB028
+ 
+Hypothesis Testing 
+Important Considerations
+ 
+1) Sample size n
+ 
+    Is it large or small?        "small" less than or equal to thirty.
+ 
+2) Significance level 
+ 
+    95% confidence means = 0.05
+    99% confidence means = 0.01
+ 
+3) Number of tails in procedure
+    
+    Procedures are either one tailed or two tailed.  k=1 or 2
+    Confidennce intervals are always two tailed.
+ 
+4) Standard Error Formula
+ 
+    Back of exam paper
+ 
+5) Tables to use
+    
+    Table 3 - Normal "Z" Distribution
+    Table 7 - student's "t" Distribution
+    Table 8 - Chi Square Distribution
+ 
+6) Degrees of freedom
+    
+    notation is sometimes 
+    
+    Large samples    df = 
+    Small samples    df = n-1
+    
+    Chi-Square        df = (r-1)x(c-1)
+                 r  = number of rows
+                 c =  number of columns
+              
+7) Hypothesis tests usually have the following format.
+ 
+Step 1 : Formally state the null and alternative hypotheses
+Step 2 : Determine the test statistic
+Step 3 : Determine the critical value
+Step 4 : Decision Rule
+ 
+8) Hypothesis testing using p-values
+ 
+If asked to use p-value, we have a slightly diffferent approach.
+The first two steps are the same as in note 7.
+  
+
+Step A : Formally state the null and alternative hypotheses
+
+Step B : Determine the test statistic
+Step C : Determine the p-value
+Step D : Decision Rule for p-values.
+ 
+9)  What is a p-value?
+ 
+P-Value = P(Z|TS|)   TS: Test Statistic
+ 
+P-value  is found from Murdoch Barnes Tables 3
+ 
+For example, if the test statistic is 1.96, then the p-value is 0.025
+ 
+10) How to interpret the p-value
+ 
+    (see previous notes)
+ 
+ is the significance value
+ 
+k is the number of tails
+
+If the p-value is less than k, we reject the null hypothesis.
+If the p-value is greater than k, we reject the null hypothesis.
+ 
+11) The general structure of a test statistic
+ 
+TS =Observed Value-Null ValueStd. Error 
+ 
+12) General Structure of a Confidence Interval
+
+ 
+
+ 
+Quantiles are compute the same way as critical values.
+ 
+ 
+Question 2 part b
+ 
+A study of 1000 randomly chosen adults indicated that 450 had been to the cinema at least once in the previous year.
+ 
+A cinema wants to test the hypothesis that 50% of all Irish adults have been to the cinema in the last year.
+ 
+Calculate the p-value for such a test and draw the appropriate conclusion.
+ 
+Discussion: Based on this sample, we estimate the proportion to be 0.45  (i.e. 45%)
+ 
+p= 0.45
+ 
+Step A : Formally state the null and alternative hypotheses
+ 
+p : true proportion of Irish adults who have been to the cinema in the last year.
+ 
+Null Hypothesis               Ho:p = 0.50        True proportion is 50%
+ 
+Alternative Hypothesis      Ha:p 0.50        True proportion is not 50%.
+ 
+ 
+N.B. This is a two-tailed procedure.
+ 
+ 
+Step B : Compute the test statistic.
+ 
+Remember the general structure of a test statistic
+ 
+TS =Observed Value-Null ValueStd. Error 
+ 
+ 
+ 
+From the formulae
+ 
+We have to compute the standard error for a proportion. 
+ 
+( From formulae at back of exam paper)
+ 
+ S.E.(p) =p(1-p)n=0.450.551000= 0.0157
+ 
+ 
+ 
+ 
+ 
+ 
+Step 3: Calculate p-value
+ 
+P-value is found from Murdoch Barnes Tables 3 ( Normal distribution)
+ 
+Absolute value  |-3.18| =3.18
+ 
+P-Value = 
+ 
+ 
+P(Z3.18) = 0.00074
+ 
+ 
+Step 4: Interpret the p-value to make a decision.
+ 
+The significance level is 5%.  The procedure is a two tailed test.
+ 
+ 
+[ Black Board ]
+ 
+ 
+Question 4 part a - Paired T test
+The weight of 6 individuals (in kgs) was observed before and after a diet regime (diet given below)
+Compute the mean difference and standard deviation of the differences.
+ 
+Remark : Sample size n= 6
+ 
+Person
+A
+B
+C
+D
+E
+F
+Weight Before
+89
+79
+106
+92
+88
+98
+Weight After
+87
+76
+105
+92
+84
+96
+Difference
+2
+3
+1
+0
+4
+2
+ 
+ 
+Before we start, we need to compute the average difference and the standard deviations of the differences. 
+ 
+ 
+
+Sample Mean:           x=xin      
+ 
+ 
+What is the mean difference d
+ 
+  
+d=din=2+3+1+0+4+26= 2
+  
+ 
+ 
+Standard Deviation:           Sx=(xi-x)2n-1      
+ 
+
+Person
+A
+B
+C
+D
+E
+F
+di
+2
+3
+1
+0
+4
+2
+di-d
+0
+1
+-1
+-2
+2
+0
+(di-d)2
+0
+1
+1
+4
+4
+0
+ 
+ Sx=(di-d)26-1=( 0 + 1 +1 +4 +4 +0)6-1
+ 
+ Sd=105=2 
+ 
+Now we are ready to perform our hypothesis test.
+ 
+
+Step1 : Formally state the null and alternative hypotheses
+ 
+d : true difference in weight before and after the diet regime 
+ 
+Null Hypothesis               Ho:d = 0        True difference is zero
+ 
+Alternative Hypothesis      Ha:d 0       True difference is not zero 
+ 
+Remark: This is a two tailed test
+ 
+ 
+Step 2 : Compute the test statistic.
+ 
+
+Remember the general structure of a test statistic
+ 
+TS =Observed Value-Null ValueStd. Error 
+ 
+ 
+ 
+From the formulae
+ 
+We have to compute the standard error for a sample mean. 
+ 
+( From formulae at back of exam paper)
+ 
+ S.E.(d) =Sdn=26= 0.5773 
+ 
+ 
+ 
+ 
+ 
+Step 3 :  Determine the Critical Value
+ 
+Small sample (group is less than 30).
+(Population variance is unknown.)
+ 
+Use t distribution with n-1 degrees of Freedom.
+ 
+We use Murdoch Barnes Table 7 (Student T distribution)
+ 
+Significance levels is 1%.  This is a two tailed test.
+ 
+[Blackboard]
+ 
+ 
+Critical Value is 2.571
+ 
+ 
+Step 4 : Decision
+ 
+
+[Blackboard]
+ 
+Is the test statistic in the acceptance region or the rejection region?
+ 
+It is in the rejection region. We reject the null hypothesis. The diet does work.
+ 
+  
+ 
+Question 5 Part b : Confidence interval for the difference in means of two samples.
+ 
+b) The heights of 100 Americans and 50 Spaniards were observed.
+ The mean and standard deviation of the heights of a sample according to nationality are given below
+ 
+ 
+Number
+Mean
+Std. Dev.
+American
+100
+172
+13
+Spanish
+50
+167
+12
+ 
+i)        Calculate a 99% confidence interval for the difference between the mean height of all americans
+and the mean height of all spaniards.(7 males)
+ 
+General Structure of a Confidence Interval
+ 
+
+
+ 
+            
+Observed difference
+ 
+let X denote the heights of americans    X= 172
+let Y denote the heights of spaniards     Y= 167
+ 
+The difference in the mean of weights X-Y= 5
+ 
+Quantile
+ 
+Large sample (both groups are greater than 30).
+ 
+Population variance is unknown.
+ 
+Use t distribution with  degrees of Freedom.
+ 
+ 
+Confidence level is 99%. Therefore significance levels is 1%.
+Remark : Confidence intervals are always two tailed procedures.
+ 
+ 
+Column = k =0.012= 0.005
+
+ 
+Murdoch Barnes table 7
+
+ 
+	Row: df =  
+	Column = 0.005
+ 
+    Quantile =  2.576 
+ 
+ 
+Stardard Error
+  
+ 
+
+ 
+ 
+
+  
+Confidence Interval is therefore
+ 
+99% CI = 5(2.5762.137) 
+ 
+ 
+Part (ii)
+Based on this confidence interval, test the hypothesis that on average male students are 6kgs heavier than female students.
+State your hypotheses clearly. What is the significance level of this test?   (3 marks)
+ 
+ 
+Null :                 True difference between means is zero
+ 
+Alternative:         True difference between means is not zero
+ 
+Or alternatively
+ 
+Null :              H0:X-Y= 0   True difference between means is zero
+ 
+Alternative:         True difference between means is not zero
+ 
+ 
+ 
+Since the null value, 0 is inside the confidence interval  .
+ 
+This means that the true difference of means could be zero.
+ 
+We do not reject the null hypothesis at a significance level of 1%.
+ 
+ 
+Question 4b  
+Chi-square test for independence and Probability [10 Marks]
+
+This question consists of two parts
+    
+    Basic Probability
+    Chi Square Hypothesis test
+ 
+Lets look at the table first
+ 
+Important points from the table
+ 
+1) There are 120 students , 60 male and 60 female
+ 
+2) There are three programmes
+ 
+	1) Maths - with room for 30 students
+	2) Equine studies - with room for 30 students
+	3) Chemistry - with room for 60 students.
+
+Let us assume that there a male and female student are equally likely to enter each program. (This is the null hypothesis).
+
+We would expect the each program to have the following compositions.
+
+	1) Maths - would have 15 male and 15 female students (each year on average)
+	2) Equine studies - would have 15 male and 15 female students (each year on average)
+	3) Chemistry -would have 30 male and 30 female students (each year on average)
+ 
+
+Probability
+Observed Values
+
+
+Maths
+Eq. Studies
+Chemistry
+Sum
+Male
+20
+10
+30
+60
+Female
+10
+20
+30
+60
+Sum
+30
+30
+60
+120
+
+What is the probability that a randomly chosen person from the sample is an equine student?
+ 
+There are 120 students altogether, 30 of those are equine science students.
+
+P(Eq) =30120= 0.25
+
+Given that a student is female, what is the probability that that she is an equine science student.
+
+P(Eq |F) =P(EqandF)P(F)=20/12060/120= 0.33
+ 
+ 
+Chi Square Test 
+Replace the question marks with the expected number of observations
+in a cell under the nulll hypothesis that the choice of course doesnt depend on gender.
+
+Expected Values ( under null hypothesis)
+
+
+Maths
+Eq. Studies
+Chemistry
+Sum
+Male
+15
+15
+30
+60
+Female
+15
+15
+30
+60
+Sum
+30
+30
+60
+120
+
+
+ 
+Hypothesis Test
+ 
+Step 1:  Formally write out null and alternative hypothesis
+ 
+ 
+    Gender and Choice of College coure are independent of each other.
+ 
+    Gender and Choice of College coure are not independent of each other.
+ 
+ 
+Step 2: Test Statistic
+ 
+We use a special Test statistic for this test.
+ 
+For each of the six subgroups, perform the following calculation.
+ 
+        (nij-eij)2eij
+ 
+    nij : observed number for subgroup
+    eij : expected number for subgroup
+ 
+Add up all these terms.
+ 
+ T=(20-15)215+(10-15)215+(10-15)215+(20-15)215+(30-30)230+(30-30)230
+ 
+ 
+ T= 1.667 + 1.667 +1.667 +1.667 +0 +0 
+ 
+ 
+ T = 6.6667 
+ 
+ 
+Step 3: Test Statistic
+ 
+Murdoch Barnes Table 8
+ 
+Significance level is 5%
+Number of tails is 2
+degrees of freedom = (2-1)(3-1) = 1 x 2 = 2
+ 
+ 
+
+
+
+
+
+0.025
+
+
+1
+
+
+
+
+
+
+2
+
+
+7.378
+
+
+3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+Critical value is 7.378
+ 
+Step 4 Decision Rule
+ 
+Is the Test statistic greater than the Critical value
+ 
+is 6.6667 > 7.378
+ 
+No! We fail to reject the null hypothesis.
+ 
+We do not have enough evidence to say that there is a relationship between gender and college courses.
+ 
+ 
+ 
+ 
+ 
+ 
+Question 5b : Simple Linear Regression
+
+ 
+part i
+Use the above table, give the equation of the regression line expressing pressure as a function of volume
+ 
+Intercept estimate :	 70.048
+Slope estimate :         -7.402
+ 
+Regression line  : Pres.= 70.048 - 7.402Vol. 
+
+Pres.  is the pressure estimated from the model for a certain volume. 
+ 
+ 
+
+ 
+part ii
+ 
+According to the model, what is the average effect on pressure resulting from an increase in volume of one cubic metre.
+ 
+ 
+For every increase of one cubic metre in volume, the pressure is estimate to decrease by -7.402  bars.
+
+ 
+Part iii
+ 
+Using this model, estimate the air pressure when the slope is 5 metres cubed.
+ 
+		33.038 bars.
+ 
+Part iv
+ 
+The observation if the air pressure at a volume of 5 cubic metres was 19.87 bars.
+ 
+Calculate the residual from the regression model corresponding to this observation
+ 
+Residual = Estimate - Observered value = 30.038 - 19.87
+ 
+Residual = 13.168 
+ 
+Part v: Hypothesis test on the slope.
+ 
+ 
+If the true value of the slope is zero, then there is no relationship between volume and pressure.
+ 
+(i.e. Null hypothesis means that Pressure doesnt depend on volume).
+ 
+ 
+The null and alternative hypotheses are as follows
+ 
+Ho:1= 0  	 The true value of the slope is zero
+ 
+ 
+		The true value of the slope is not zero
+ 
+ 
+Let us assume a significance value of 5% (0.05). Also, this hypothesis is a two tailed test. 
+ 
+If the p-value (referred to by SPSS as the "sig.") is greater than 0.025, we fail to reject the null hypothesis. We can not rightly contradict the statement that the true slope is zero.
+ 
+If the p-value is less than 0.025, we reject the null hypothesis.
+ 
+We reject the null hypothesis, accepting the alternative hypothesis that the true slope is not zero.
+ 
+(If the true slope is not zero, there two variable are not independent of each other).
+ 
+Here the p-value is very very low ("sig"  is 0.000). It is less than our threshold of 0.025. Therefore we reject the null hypothesis.
+ 
+Part vi
+ 
+ 
+Briefly explain why the  use of linear regression to describe pressure as a funciton of voumen is inappropriate.
+ 
+Looking at the scatterplot, we can clearly see that the relationship between pressure and volume is curved (i.e. not linear). 
+ 
+Therefore linear regression is not an appropriate analysis for this data.
+ 
+  
+ 
+
 %========================================================================% 
 Sample mean
 Sample proportion
