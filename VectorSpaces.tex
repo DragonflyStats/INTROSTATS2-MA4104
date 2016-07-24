@@ -1,0 +1,805 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage{epsfig}
+\usepackage{subfigure}
+%\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{amsthm}
+%\usepackage[dvips]{graphicx}
+\usepackage{natbib}
+\bibliographystyle{chicago}
+\usepackage{vmargin}
+% left top textwidth textheight headheight
+% headsep footheight footskip
+\setmargins{3.0cm}{2.5cm}{15.5 cm}{22cm}{0.5cm}{0cm}{1cm}{1cm}
+\renewcommand{\baselinestretch}{1.5}
+\pagenumbering{arabic}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{ill}[theorem]{Example}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{axiom}{Axiom}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{notation}{Notation}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+\newtheorem{example}{Example}[section]
+\renewcommand{\thenotation}{}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\title{Research notes: linear mixed effects models}
+\author{ } \date{ }
+
+
+\begin{document}
+\author{Kevin O'Brien}
+\title{Spring 2011}
+
+\addcontentsline{toc}{section}{Bibliography}
+\newpage
+\section*{Question 6}
+{\Large
+\[ A = \left(
+\begin{array}{ccc}
+1 & 1 & 0 \\
+0 & 0 & 1 \\
+0 & -2 & -3
+\end{array} \right) \]
+\begin{itemize}
+\item Last Class - We found the Eigenvalues of A
+\item Characteristic Equation $(\lambda - 1)(\lambda + 1)(\lambda + 2)=0$
+\item Eigenvalues $\lambda = \{-1,-2,1\}$
+\item To find Eigenspaces
+\item (Tutorial 6 Question 5 is a good example for this question)
+\end{itemize}
+
+
+\[ A = \left(
+\begin{array}{ccc}
+1 & -1/3 & 0 \\
+0 & 2/3 & 1 \\
+0 & -2/3 & -3
+\end{array} \right) \]
+
+\newpage
+\begin{itemize}
+\item Find the Eigenspaces :
+ Solve $(\lambda I -A)e=0$
+\item $(\lambda I -A)$ is computed below. First $\lambda =-2$
+
+\[
+\left(
+\begin{array}{ccc}
+-2 & 0  & 0  \\
+ 0 & -2  & 0  \\
+ 0 &  0 & -2
+\end{array}
+\right) -
+\left(
+\begin{array}{ccc}
+1 & 1  & 0  \\
+ 0 & 0  & 1  \\
+ 0 &  -2 & -3
+\end{array}
+\right) = \left(\begin{array}{ccc}
+-3 & -1 & 0 \\
+0 & -2 & -1 \\
+0 & 2 & 1
+\end{array} \right)\]
+\end{itemize}
+
+\newpage
+{\Large
+\begin{itemize}
+\item The Eigenspace weightings are the solutions to the following. (you can let $e_1$ = 1, then re-weight if necessary)
+
+\[\left(\begin{array}{ccc}
+-3 & -1 & 0 \\
+0 & -2 & -1 \\
+0 & 2 & 1
+\end{array} \right)
+\left(\begin{array}{c}
+e_1 \\
+e_2 \\
+e_3
+\end{array} \right) = \left(\begin{array}{c}
+0 \\
+0 \\
+0
+\end{array} \right)\]
+\item The solution is $e_1=1$, $e_2=-3$ $e_3=6$
+
+\item For $\lambda =-1$ and $\lambda =1$. The matrices are
+
+\[\left(\begin{array}{ccc}
+-3 & -1 & 0 \\
+0 & -2 & -1 \\
+0 & 2 & 1
+\end{array} \right) \left(\begin{array}{c}
+e_1 \\
+e_2 \\
+e_3
+\end{array} \right) = \left(\begin{array}{c}
+0 \\
+0 \\
+0
+\end{array} \right)\]
+
+\[
+\left(\begin{array}{ccc}
+-3 & -1 & 0 \\
+0 & -2 & -1 \\
+0 & 2 & 1
+\end{array} \right)\left(\begin{array}{c}
+e_1 \\
+e_2 \\
+e_3
+\end{array} \right) = \left(\begin{array}{c}
+0 \\
+0 \\
+0
+\end{array} \right)\]
+
+\item The P matrix is therefore
+\[
+\left(\begin{array}{ccc}
+1 & -1 & 1 \\
+-3 & 2 & 0 \\
+6 & -2 & 0
+\end{array} \right) \]
+\end{itemize}
+}
+
+
+
+
+\newpage
+%----------------------------------- %
+{\Large
+\begin{itemize}
+
+\item Normalising the columns
+\[
+\left(\begin{array}{ccc}
+1/ \sqrt{46} & -1/\sqrt{9} & 1/\sqrt{1} \\
+-3/ \sqrt{46} & 2/\sqrt{9} & 0/\sqrt{1} \\
+6/ \sqrt{46} & -2/\sqrt{9} & 0/\sqrt{1} \\
+\end{array} \right)=
+\left(\begin{array}{ccc}
+0.147 & -0.333 & 1 \\
+-0.442 & 0.666 & 0 \\
+0.885 & -0.666 & 0
+\end{array} \right) \]
+
+\item Normalization : divide each element by magnitude of column vector ($ \sqrt{1^2 +(-3)^2 +6^2} =\sqrt{46}$)
+
+\end{itemize}
+}
+
+\newpage
+{\Large
+
+\[ \left(
+  \begin{array}{c}
+    \dot{x}_1 \\
+    \dot{x}_2 \\
+    \dot{x}_3 \\
+  \end{array}
+\right)\left(
+\begin{array}{ccc}
+1 &1 &0\\
+0 &0& 1\\
+0 &-2& -3\\
+ \end{array}
+       \right)
+        \left( \begin{array}{c}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+  \end{array}
+\right)\]
+
+Boundary conditions
+
+\[ X(0) = \left( \begin{array}{c}
+    1 \\
+    1 \\
+    0 \\
+  \end{array}
+\right)\]
+
+Linear Transformation
+\[ \left(
+  \begin{array}{c}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+  \end{array}
+\right)\left(
+\begin{array}{ccc}
+\left(\begin{array}{ccc}
+1/ \sqrt{46} & -1/3 & 1 \\
+-3/ \sqrt{46} & 2/3 & 0 \\
+6/ \sqrt{46} & -2/3 & 0 \\
+\end{array} \right)
+ \end{array}
+       \right)
+        \left( \begin{array}{c}
+    \hat{x}_1 \\
+    \hat{x}_2 \\
+    \hat{x}_3 \\
+  \end{array}
+\right)\]
+
+
+}
+
+\section*{Question 7}
+%----------------------------------------------------------------------------------------%
+
+\[ L = \left(\begin{array}{ccc}
+1&0&0\\
+X&1&0\\
+Y&Z&1\\
+\end{array}\right)\]
+
+\[ U = \left( \begin{array}{ccc}
+A&B&C\\
+0&D&E\\
+0&0&F\\
+\end{array}\right)\]
+
+\[ A = L U= \left(\begin{array}{ccc}
+A&B&C\\
+AX&BX+D&CX+E\\
+AY&BY+DZ&CY+EZ+F\\
+\end{array}\right)\]
+
+
+
+\begin{itemize}
+\item A=1
+\item B=-3
+\item C=1
+\item $AX=2 \therefore X=2$
+\item $BX+D=-5 \therefore D=1 ( \mbox{  Recall}BX=-6)$
+\item $AY=2 \therefore Y=2$
+\item $BY+DZ=2 (BY=-6. \therefore DZ = 4 \therefore Z=4)$
+\item $CX+E =4 $ Because $CX=2$ necessarily $E=2$
+\item $CY+EZ+F$  ($CY=2$, $EZ= 8$) therefore F=1
+\end{itemize}
+
+
+\[ A = L \times U=\left(\begin{array}{ccc}
+1&-3&1\\
+2&-5&4\\
+2&-2&11\\
+\end{array}\right) = \left(\begin{array}{ccc}
+1&0&0\\
+2&1&0\\
+2&4&1\\
+\end{array}\right)\left(\begin{array}{ccc}
+1&-3&1\\
+0&1&2\\
+0&0&1\\
+\end{array}\right)\]
+
+%----------------------------------------------------%
+{\Large
+\[ Ax = L \times U \times x = b\]
+
+Required to solve for x. Break it into two steps.
+\begin{itemize}
+\item Let Ux = Y
+\item Let Ly = B
+\end{itemize}
+
+Firstly, do the second one $Ly=B$.
+ 
+\[\left(\begin{array}{ccc}
+1&0&0\\
+2&1&0\\
+2&4&1\\
+\end{array}\right)
+\left( \begin{array}{c}
+y_1\\
+y_2\\
+y_3\\
+\end{array}\right)
+=\left( \begin{array}{c}
+0\\
+5\\
+22\\
+\end{array}\right)
+\]
+
+\[
+\left( \begin{array}{c}
+y_1\\
+2y_1+ y_2\\
+2y_1+ 4y_2+ y_3\\
+\end{array}\right) = \left( \begin{array}{c}
+0\\
+5\\
+22\\
+\end{array}\right) \]
+
+
+\[
+\left( \begin{array}{c}
+y_1\\
+y_2\\
+y_3\\
+\end{array}\right)
+=\left( \begin{array}{c}
+0\\
+5\\
+2\\
+\end{array}\right)\]
+
+
+
+}
+%----------------------------------------------------%
+\newpage
+{\Large
+Now do Ux=y to solve for x
+\[\left(\begin{array}{ccc}
+1&-3&1\\
+0&1&2\\
+0&0&1\\
+\end{array}\right)
+\left( \begin{array}{c}
+x_1\\
+x_2\\
+x_3\\
+\end{array}\right)
+=\left( \begin{array}{c}
+0\\
+5\\
+2\\
+\end{array}\right)
+\]
+
+
+\[
+\left( \begin{array}{c}
+x_1 - 3x_2+ x_3 \\
+x_2+ 2x_3\\
+x_3\\
+\end{array}\right) = \left( \begin{array}{c}
+0\\
+5\\
+2\\
+\end{array}\right) \]
+
+\[
+\left( \begin{array}{c}
+x_1\\
+x_2\\
+x_3\\
+\end{array}\right)
+=\left( \begin{array}{c}
+1\\
+1\\
+2\\
+\end{array}\right)\]
+
+}
+%----------------------------------------------------%
+\newpage
+{\Large
+\begin{itemize}
+\item Let $\|A\|$ represent the norm of A.
+\item The condition number is defined as $\|A\| \times \|A^{-1}\| $ 
+\item Condition number is the measure of how well  conditioned a matrix is. The smaller the value of $\kappa(A)$, the more accurate the solution of Ax=b
+\item Inverse of A found yesterday, using Elementary Row Operations.
+\item Can quickly compute the inverse of L and U by the same method.
+\item Recall $A^{-1} = (LU)^{-1} = U^{-1}L^{-1}$
+\end{itemize}
+
+
+\[A = \left(\begin{array}{ccc}
+1&-3&1\\
+2&-5&4\\
+2&-2&11\\
+\end{array}\right) \qquad A^{-1}=\left(\begin{array}{ccc}
+-47	&	31	&	-7	\\
+-14	&	9	&	-2	\\
+6	&	-4	&	1	\\
+\end{array}\right)\]
+
+\begin{itemize}
+\item $\|A\| = \mbox{Max} \{(1+|-3|+1, 2+|-5|+4, 2+|-2|+11  \} = \mbox{max} \{5,11,15 \}  = 15$
+\item $\|A^-1\| = \mbox{Max} \{(|-47|+ 31 + |-7|, |-14|+ 9 +|-2|, 6+|-4|+1  \} = \mbox{max} \{85,25,11 \} $
+\item $\kappa(A) = 15 \times 85 = 1275$
+\end{itemize}
+}
+%----------------------------------------------------%
+\newpage
+{\large
+\section*{Q7b - Inverting a Matrix}
+\[\left(\begin{array}{ccccccc}
+1	&	-3	&	1	&	:	&	1	&	0	&	0	\\
+2	&	-5	&	4	&	:	&	0	&	1	&	0	\\
+2	&	-2	&	11	&	:	&	0	&	0	&	1	\\
+\end{array}\right)
+	\begin{array}{c}
+  r1	\\
+			r2	\\
+			r3	\\
+ \end{array}\]
+		
+\bigskip														
+
+\[\left(\begin{array}{ccccccc}
+1	&	-3	&	1	&	:	&	1	&	0	&	0	\\
+0	&	1	&	2	&	:	&	-2	&	1	&	0	\\
+0	&	4	&	9	&	:	&	-2	&	0	&	1	\\
+\end{array}\right)
+	\begin{array}{c}
+r4=r1	\\
+r5=r2-2r1	\\
+r6=r3-2r1	\\
+ \end{array}\]		
+\bigskip														
+	
+\[\left(\begin{array}{ccccccc}
+1	&	0	&	7	&	:	&	-5	&	3	&	0	\\
+0	&	1	&	2	&	:	&	-2	&	1	&	0	\\
+0	&	0	&	1	&	:	&	6	&	-4	&	1	\\
+\end{array}\right)
+\begin{array}{c}
+r7=r4+3r5	\\
+r8=r5	\\
+r9=r6-4r5	\\
+\end{array}\]	
+\bigskip														
+																
+\[\left(\begin{array}{ccccccc}
+1	&	0	&	0	&	:	&	-47	&	31	&	-7	\\
+0	&	1	&	0	&	:	&	-14	&	9	&	-2	\\
+0	&	0	&	1	&	:	&	6	&	-4	&	1	\\
+\end{array}\right)
+\begin{array}{c}
+r10=r7-7r9	\\
+r11=r9-2r9	\\
+r12=r9	\\
+\end{array}\]	
+																	
+}
+%----------------------------------------------------%
+\newpage
+{\Large
+\section*{Question 4}
+\[a_o + a_1x + a_2x^2 = \alpha_1(1+2x) + \alpha_2(2x+x^2)+\alpha_3(4+2x-3X^2)\]
+
+\[=(\alpha_1+4\alpha_3) + (2\alpha_1 + 2\alpha_2 + 2\alpha_3)x + (\alpha_2-3\alpha_3)x^2\]
+
+\begin{itemize}
+\item $a_o =  \alpha_1+4\alpha_3$
+\item $a_1 = 2\alpha_1 + 2\alpha_2 + 2\alpha_3$
+\item $a_2 = \alpha_2-3\alpha_3$
+\end{itemize}
+
+\[\left(\begin{array}{ccc}
+ a_0\\
+ a_1\\
+ a_2\\
+\end{array}\right)= \left(\begin{array}{ccc}
+1 &0& 4\\
+2 &2& 2\\
+0 &1& -3\\
+\end{array}\right)
+\left( \begin{array}{ccc}
+ \alpha_1\\
+ \alpha_2\\
+ \alpha_3\\
+\end{array}\right)\]
+
+\[
+\left|\begin{array}{ccc}
+1 &0& 4\\
+2 &2& 2\\
+0 &1& -3\\
+\end{array}\right| =0? \mbox{Yes}\]
+}
+
+
+
+
+
+%------------------------------------------------%
+\newpage
+%Gram Schmidt Process
+%-http://www.math.hmc.edu/calculus/tutorials/gramschmidt/
+{ \Large
+\begin{itemize}
+\item To obtain an orthonormal basis for an inner product space V, use the Gram-Schmidt algorithm to construct an orthogonal basis. \item Then simply normalize each vector in the basis.
+\end{itemize}
+
+\[ w= \left[ \begin{array}{c}
+				\frac{\langle {\bf w},{\bf v}_1\rangle}{\| {\bf v}_1 \|^{2}}{\bf v}_1\\
+				\frac{\langle {\bf w},{\bf v}_2\rangle}{\| {\bf v}_2 \|^{2}}{\bf v}_2\\
+				\vdots\\
+				\frac{\langle {\bf w},{\bf v}_n\rangle}{\| {\bf v}_n \|^{2}}{\bf v}_n
+			\end{array} \right] \]
+			
+}	
+%---------------------------------------------- %
+\newpage
+{
+\Large
+\noindent \textbf{Part(a)} \\
+Let $P_1$ be the space of polynomials of degree at most one. Use the
+Gram-Schmidt process to transform the standard basis $\{1, x\}$ for $P_1$
+to an orthonormal one defined by the inner product
+\[ <p,q> = \sum_{i=1}^{5} p(x_i)q(x_i) \]
+
+
+where $x_1 = 0$, $x_2 = 1$, $x_3 = 2$, $x_4 = 3$, $x_5 = 4$.\\
+\bigskip
+\textbf{Part (b)} \\
+ Let f be a function on [0; 4], taking the value $y_i = f(x_i)$ at $x = x_i$; i =
+1, 2, 3, 4, 5 as given in the following table
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline  $y_i$ & $y_i$  \\
+\hline \hline  0 & 4  \\
+\hline  1 & 3  \\
+\hline  2 & 1  \\
+\hline  3 & 0  \\
+\hline  4 &-1  \\
+\hline
+\end{tabular}
+\end{center}
+
+
+Find the least squares approximation to f in $P_1$ using the inner product
+defined in part (a).
+}
+\newpage
+{\Large
+\begin{itemize}
+\item Step 1: Let ${\bf v}_1 = {\bf u}_1$.	
+			
+
+\item Step 2: Let \[ {\bf v}_2={\bf u}_2 - \mbox{proj}_{W_{1}}{\bf
+		u}_2 = {\bf u}_2 - \frac{\langle {\bf u}_2,{\bf v}_1\rangle}{\| {\bf v}_1 \|^{2}}{\bf v}_1\]
+		
+		where $W_1$ is the space spanned by ${\bf v}_1$, and
+		$\mbox{proj}_{W_{1}}{\bf u}_2$ is the orthogonal projection of ${\bf
+		u}_2$ on $W_1$.
+
+\item Step 3 Let \[ {\bf v}_3 = {\bf u}_3 -
+		\mbox{proj}_{W_{2}} {\bf u}_3 = {\bf u}_3- \frac{\langle
+		{\bf u}_3,{\bf v}_1\rangle}{\| {\bf v}_1 \|^{2}}{\bf v}_1 - \frac{\langle
+		{\bf u}_3,{\bf v}_2\rangle}{\| {\bf v}_2 \|^{2}}{\bf v}_2 \] where $W_2$ is
+		the space spanned by ${\bf v}_1$ and ${\bf v}_2$.		
+		
+\item Step 4 Let \[{\bf v}_4 = {\bf u}_4 -
+		\mbox{proj}_{W_{3}} {\bf u}_4 = {\bf u}_4- \frac{\langle
+		{\bf u}_4,{\bf v}_1\rangle}{\| {\bf v}_1 \|^{2}}{\bf v}_1 - \frac{\langle
+		{\bf u}_4,{\bf v}_2\rangle}{\| {\bf v}_2 \|^{2}}{\bf v}_2 - \frac{\langle
+		{\bf u}_4,{\bf v}_3\rangle}{\| {\bf v}_3 \|^{2}}{\bf v}_3\] where $W_3$ is
+		the space spanned by ${\bf v}_1, {\bf v}_2$ and ${\bf v}_3$.
+
+ $\vdots$
+\end{itemize}
+
+}
+
+%---------------------------------------------------- %
+\newpage
+%---------------------------------------------------- %
+{
+\Large
+
+\[ \mathbf{U}_1  = {\mathbf{V}_1 \over \|\mathbf{V}_1\|} \]
+
+\[\mathbf{V}_1 = 1\]
+
+ \[\|\mathbf{V}_1\| = \sqrt{<\mathbf{V}_1,\mathbf{V}_1>} = \sqrt{\sum_{i=1}^{5} \mathbf{V}_1 \times \mathbf{V}_1}\]
+
+ \[\|\mathbf{V}_1\|  = \sqrt{\sum_{i=1}^{5} (1)^2} = \sqrt{5}\]
+
+ \[ \mathbf{U}_1  = {\mathbf{V}_1 \over \|\mathbf{V}_1\|} = \frac{1}{\sqrt{5}} \]
+\newpage
+
+\begin{itemize}
+\item[Line 2A]
+\[ \mathbf{U}_2  = {\mathbf{V}_2 - <\mathbf{V}_2,\mathbf{U}_1>\mathbf{U}_1 \over \|\mathbf{V}_2 - <\mathbf{V}_2,\mathbf{U}_1>\mathbf{U}_1\|} \]
+\item[Line 2B]
+\[ <\mathbf{V}_2,\mathbf{U}_1> = \sum_{i=1}^{5}  \mathbf{V}_2 \times \mathbf{U}_1 = \sum_{i=1}^{5} \left(x_i \times \frac{1}{\sqrt{5}} \right) \]
+
+\item[Line 2C]
+\[ <\mathbf{V}_2,\mathbf{U}_1> =  \frac{0}{\sqrt{5}} + \frac{1}{\sqrt{5}} +\frac{2}{\sqrt{5}}+\frac{3}{\sqrt{5}}+\frac{4}{\sqrt{5}} = \frac{10}{\sqrt{5}} \]
+\item[Line 2D]
+\[ <\mathbf{V}_2,\mathbf{U}_1>\mathbf{U}_1 =    \frac{10}{\sqrt{5}} \times \frac{1}{\sqrt{5}} = 2\]
+\item[Line 2E]
+\[ \mathbf{V}_2 - <\mathbf{V}_2,\mathbf{U}_1>\mathbf{U}_1  =x - 2\]
+\item[Line 2F]
+\[ \|  \mathbf{V}_2 - <\mathbf{V}_2,\mathbf{U}_1>\mathbf{U}_1 \| = \sqrt{\sum_{i=1}^{5} (x-2)^2}  \]
+
+\item[Line 2G]
+\[ \sqrt{\sum_{i=1}^{5} (x-2)^2} = \sqrt{(0-2)^2 + (1-2)^2 + \ldots +(4-2)^2} \]
+
+\item[Line 2H]
+\[ \|  \mathbf{V}_2 - <\mathbf{V}_2,\mathbf{U}_1>\mathbf{U}_1 \| = \sqrt{10}  \]
+
+\item[Line 2I]
+\[ \mathbf{U}_2 =\frac{x-2}{\sqrt{10}}\]
+
+\item[Line 2J]
+\textbf{Orthonormal Basis }
+\[ \left\lbrace  \frac{1}{\sqrt{5}} ,\frac{x-2}{\sqrt{10}}  \right\rbrace \]
+
+
+\end{itemize}
+}
+
+\newpage
+{
+\Large
+
+\begin{itemize}
+\item[Line 3A]
+The best fit P(x) is given by
+ \[P^{*}(x) = <f,\mathbf{U}_1>\mathbf{U}_1+<f,\mathbf{U}_2>\mathbf{U}_2\]
+
+\item[Line 3B]
+\[<f,\mathbf{U}_1> = \sum_{i=1}^{5} f(x_i)\mathbf{U}_1 \]
+
+\item[Line 3C]
+\[<f,\mathbf{U}_1> = \frac{4}{\sqrt{5}} + \frac{3}{\sqrt{5}} + \ldots + \frac{-1}{\sqrt{5}} = \frac{7}{\sqrt{5}} \]
+
+\item[Line 3D]
+\[<f,\mathbf{U}_1>\mathbf{U}_1 =  \frac{7}{\sqrt{5}} \times \frac{1}{\sqrt{5}}  =7/5  =14/10 \]
+
+\item[Line 3E]
+\[<f,\mathbf{U}_2> = \sum_{i=1}^{5} f(x_i)\mathbf{U}_2 = \sum_{i=1}^{5} \frac{ f(x_i)\times (x_i-2)}{\sqrt{10}}  \]
+
+\item[Line 3F]
+\[ = \frac{ 4 (0-2)}{\sqrt{10}} + \frac{ 3 (1-2)}{\sqrt{10}} + \frac{ 1(2-2)}{\sqrt{10}}+ \frac{ 0(3-2)}{\sqrt{10}}+ \frac{ -1(4-2)}{\sqrt{10}}\]
+
+\item[Line 3G]
+\[<f,\mathbf{U}_2> = \frac{-13}{\sqrt{10}}\]
+
+\item[Line 3H]
+\[<f,\mathbf{U}_2>\mathbf{U}_2 = \frac{-13}{\sqrt{10}}\frac{  (x-2)}{\sqrt{10}} = \frac{-13x+26}{10}\]
+
+\item[Line 3I]
+\[ P^{*}(x) = \frac{14}{10}+  \frac{-13x+26}{10}  =\frac{-13x+40}{10}  \]
+\end{itemize}
+
+
+
+}
+
+\end{document}
+
+
+
+
+
+
+\end{document}
+			
+
+
+
+
+
+
+
+
+
+
+
+%-----------------------------------------------------------------------------------------------------%
+\newpage
+
+\subsection{Bendix Carstensen's data sets}
+\citet{bxc2008}describes the sampling method when discussing of a motivating example.Diabetes patients attending an outpatient clinic in Denmark have their $HbA_{1c}$ levels routinely measured at every visit.Venous and Capillary blood samples were obtained from all patients appearing at the clinic over two days.
+
+Samples were measured on four consecutive days on each machines, hence there are five analysis days.Carstensen notes that every machine was calibrated every day to  the manufacturers guidelines.
+
+
+\subsection{Limits of agreement for Carstensen's data}
+
+
+\citet{bxc2008} describes the calculation of the limits of agreement (with the inter-method bias implicit) for both data sets, based on his formulation;
+
+\[\hat{\alpha}_1 - \hat{\alpha}_2 \pm 2\sqrt{2\hat{\tau}^2 +\hat{\sigma}_1^2 +\hat{\sigma}_2^2 }.\]
+
+For the `Fat' data set, the inter-method bias is shown to be $0.045$. The limits of agreement are $(-0.23 , 0.32)$
+
+Carstensen demonstrates the use of the interaction term when computing the limits of agreement for the `Oximetry' data set. When the interaction term is omitted, the limits of agreement are $(-9.97, 14.81)$. Carstensen advises the inclusion of the interaction term for linked replicates, and hence the limits of agreement are recomputed as $(-12.18,17.12)$.
+
+
+%-----------------------------------------------------------------------------------------------------%
+\newpage
+
+\subsection{Limits of Agreement in LME models}
+\citet{bxc2008} uses LME models to determine the limits of agreement. Between-subject variation for method $m$ is given by $d^2_{m}$ and within-subject variation is given by $\lambda^2_{m}$.  \citet{BXC2008} remarks that for two methods $A$ and $B$, separate values of $d^2_{A}$ and $d^2_{B}$ cannot be estimated, only their average. Hence the assumption that $d_{x}= d_{y}= d$ is necessary. The between-subject variability $\boldsymbol{D}$ and within-subject variability $\boldsymbol{\Lambda}$ can be presented in matrix form,\[
+\boldsymbol{D} = \left(%
+\begin{array}{cc}
+   d^2_{A}& 0 \\
+  0 & d^2_{B} \\
+\end{array}%
+\right)=\left(%
+\begin{array}{cc}
+   d^2& 0 \\
+  0 & d^2\\
+\end{array}%
+\right),
+\hspace{1.5cm}
+\boldsymbol{\Lambda} = \left(%
+\begin{array}{cc}
+   \lambda^2_{A}& 0 \\
+  0 & \lambda^2_{B} \\
+\end{array}%
+\right).
+\]
+
+The variance for method $m$ is $d^2_{m}+\lambda^2_{m}$. Limits of agreement are determined using the standard deviation of the case-wise differences between the sets of measurements by two methods $A$ and $B$, given by
+\begin{equation}
+\mbox{var} (y_{A}-y_{B}) = 2d^2 + \lambda^2_{A}+ \lambda^2_{B}.
+\end{equation}
+Importantly the covariance terms in both variability matrices are zero, and no covariance component is present.
+
+
+\citet{roy} has demonstrated a methodology whereby $d^2_{A}$ and $d^2_{B}$ can be estimated separately. Also covariance terms are present in both $\boldsymbol{D}$ and $\boldsymbol{\Lambda}$. Using Roy's methodology, the variance of the differences is
+\begin{equation}
+\mbox{var} (y_{iA}-y_{iB})= d^2_{A} + \lambda^2_{B} + d^2_{A} + \lambda^2_{B} - 2(d_{AB} + \lambda_{AB})
+\end{equation}
+All of these terms are given or determinable in computer output.
+The limits of agreement can therefore be evaluated using
+\begin{equation}
+\bar{y_{A}}-\bar{y_{B}} \pm 1.96 \times \sqrt{ \sigma^2_{A} + \sigma^2_{B}  - 2(\sigma_{AB})}.
+\end{equation}
+
+For Carstensen's `fat' data, the limits of agreement computed using Roy's
+method are consistent with the estimates given by \citet{BXC2008}; $0.044884  \pm 1.96 \times  0.1373979 = (-0.224,  0.314).$
+
+
+%-----------------------------------------------------------------------------------------------------%
+\newpage
+
+\subsection{Repeatability}
+Barnhart emphasizes the importance of repeatability as part of an overall method comparison study. Before there can be good agreement between two methods, a method must have good agreement with itself. The coefficient of repeatability , as proposed by \citet{BA99} is an important feature of both Carstensen's and Roy's methodologies. The coefficient is calculated from the residual standard deviation (i.e. $1.96 \times \sqrt{2} \times \sigma_m$ = $2.83 \sigma_m$).
+
+%-----------------------------------------------------------------------------------------------------%
+\newpage
+\section{Hamlett and Lam}
+The methodology proposed by \citet{Roy2009} is largely based on \citet{hamlett}, which in turn follows on from \citet{lam}.
+
+%Lam 99
+%In many cases, repeated observation are collected from each subject in sequence  and/or longitudinally.
+
+%Hamlett
+%Hamlett re-analyses the data of lam et al to generalize their model to cover other settings not covered by the Lam %method.
+
+
+%-----------------------------------------------------------------------------------------------------%
+\newpage
+\subsection{Roy's variability tests}
+Variability tests proposed by \citet{Roy2009} affords the opportunity to expand upon Carstensen's approach.
+
+The first test allows of the comparison the begin-subject variability of two methods. Similarly, the second test
+assesses the within-subject variability of two methods. A third test is a test that compares the overall variability of the two methods.
+
+The tests are implemented by fitting a specific LME model, and three variations thereof, to the data. These three variant models introduce equality constraints that act null hypothesis cases.
+
+Other important aspects of the method comparison study are consequent. The limits of agreement are computed using the results of the first model.
+
+
+
+
+%-----------------------------------------------------------------------------------------------------%
+\bibliography{transferbib}
+\end{document} 

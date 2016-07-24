@@ -1,0 +1,164 @@
+%---------------------------------------------------------%
+\begin{frame}
+\[(3x + 5)/(1 - 2x)^2\] can be decomposed in the form
+\[ \frac{3x + 5}{(1-2x)^2} = \frac{A}{(1-2x)^2} + \frac{B}{(1-2x)}. \]
+Clearing denominators shows that 3x + 5 = A + B(1 - 2x). 
+
+\end{frame}
+%---------------------------------------------------------%
+\begin{frame}
+Expanding and equating the coefficients of powers of x gives
+
+5 = A + B and 3x = -2Bx
+
+Solving for A and B yields A = 13/2 and B = -3/2. Hence,
+
+
+\[  \frac{3x + 5}{(1-2x)^2} = \frac{13/2}{(1-2x)^2} + \frac{-3/2}{(1-2x)}. \]
+\end{frame}
+%---------------------------------------------------------%
+
+
+
+
+
+
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+
+Example 1[edit]
+\[ f(x)=\frac{1}{x^2+2x-3} \]
+Here, the denominator splits into two distinct linear factors:
+q(x)=x^2+2x-3=(x+3)(x-1)
+so we have the partial fraction decomposition
+f(x)=\frac{1}{x^2+2x-3} =\frac{A}{x+3}+\frac{B}{x-1}
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+Multiplying through by x2 + 2x - 3, we have the polynomial identity
+\[ 1=A(x-1)+B(x+3) \]
+Substituting x = -3 into this equation gives A = -1/4, and substituting x = 1 gives B = 1/4, so that
+\[f(x) =\frac{1}{x^2+2x-3} =\frac{1}{4}\left(\frac{-1}{x+3}+\frac{1}{x-1}\right) \]
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+
+Example 2
+\[f(x)=\frac{x^3+16}{x^3-4x^2+8x}\]
+After long-division, we have
+\[ f(x)=1+\frac{4x^2-8x+16}{x^3-4x^2+8x}=1+\frac{4x^2-8x+16}{x(x^2-4x+8)} \]
+Since (-4)2 - 4(8) = -16 < 0, x2 - 4x + 8 is irreducible, and so
+\[ \frac{4x^2-8x+16}{x(x^2-4x+8)}=\frac{A}{x}+\frac{Bx+C}{x^2-4x+8} \]
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+Multiplying through by x3 - 4x2 + 8x, we have the polynomial identity
+\[ 4x^2-8x+16 = A(x^2-4x+8)+(Bx+C)x \]
+Taking x = 0, we see that 16 = 8A, so A = 2. 
+
+Comparing the x2 coefficients, we see that 4 = A + B = 2 + B, so B = 2. 
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+Comparing linear coefficients, we see that -8 = -4A + C = -8 + C, so C = 0. Altogether,
+\[ f(x)=1+2\left(\frac{1}{x}+\frac{x}{x^2-4x+8}\right)  \]
+The following example illustrates almost all the "tricks" one would need to use short of consulting a computer algebra system.
+\end{frame}
+%-----------------------------------------------------------------%
+\begin{frame}
+Example 3
+f(x)=\frac{x^9-2x^6+2x^5-7x^4+13x^3-11x^2+12x-4}{x^7-3x^6+5x^5-7x^4+7x^3-5x^2+3x-1}
+After long-division and factoring the denominator, we have
+\[ f(x)=x^2+3x+4+\frac{2x^6-4x^5+5x^4-3x^3+x^2+3x}{(x-1)^3(x^2+1)^2} \]
+
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+
+The partial fraction decomposition takes the form
+\[ \frac{2x^6-4x^5+5x^4-3x^3+x^2+3x}{(x-1)^3(x^2+1)^2}=\frac{A}{x-1}+\frac{B}{(x-1)^2}+\frac{C}{(x-1)^3}+\frac{Dx+E}{x^2+1}+\frac{Fx+G}{(x^2+1)^2} \]
+Multiplying through by (x - 1)3(x2 + 1)2 we have the polynomial identity
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+
+\begin{align}
+& {} \quad 2x^6-4x^5+5x^4-3x^3+x^2+3x \\
+& =A(x-1)^2(x^2+1)^2+B(x-1)(x^2+1)^2+C(x^2+1)^2+(Dx+E)(x-1)^3(x^2+1)+(Fx+G)(x-1)^3
+\end{align}
+Taking x = 1 gives 4 = 4C, so C = 1. Similarly, taking x = i gives 2 + 2i = (Fi + G)(2 + 2i), so Fi + G = 1, so F = 0 and G = 1 by equating real and imaginary parts. With C = G = 1 and F = 0, taking x = 0 we get A - B + 1 - E - 1 = 0, thus E = A - B.
+We now have the identity
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+
+\begin{align}
+ & {} 2x^6-4x^5+5x^4-3x^3+x^2+3x \\
+ & = A(x-1)^2(x^2+1)^2+B(x-1)(x^2+1)^2+(x^2+1)^2+(Dx+(A-B))(x-1)^3(x^2+1)+(x-1)^3 \\
+ & = A((x-1)^2(x^2+1)^2 + (x-1)^3(x^2+1)) + B((x-1)(x^2+1) - (x-1)^3(x^2+1)) + (x^2+1)^2 + Dx(x-1)^3(x^2+1)+(x-1)^3
+\end{align}
+Expanding and sorting by exponents of x we get
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+
+\begin{align}
+ & {} 2 x^6 -4 x^5 +5 x^4 -3 x^3 + x^2 +3 x \\
+ & = (A + D) x^6 + (-A - 3D) x^5 + (2B + 4D + 1) x^4 + (-2B - 4D + 1) x^3 + (-A + 2B + 3D - 1) x^2 + (A - 2B - D + 3) x 
+
+\end{align}
+We can now compare the coefficients and see that
+\end{frame}
+%----------------------------------------------------------------- 
+\begin{frame}
+\frametitle{Partial Fractions}
+
+\begin{align}
+ A + D &=& 2  \\
+ -A - 3D &=&  -4 \\
+2B + 4D + 1 &=& 5 \\
+-2B - 4D + 1 &=& -3 \\
+-A + 2B + 3D - 1 &=& 1 \\
+A - 2B - D + 3 &=& 3 ,
+\end{align}
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+with A = 2 - D and -A -3 D =-4 we get A = D = 1 and so B = 0, furthermore is C = 1, E = A - B = 1, F = 0 and G = 1.
+The partial fraction decomposition of ƒ(x) is thus
+f(x)=x^2+3x+4+\frac{1}{(x-1)} + \frac{1}{(x - 1)^3} + \frac{x + 1}{x^2+1}+\frac{1}{(x^2+1)^2}.
+Alternatively, instead of expanding, one can obtain other linear dependences on the coefficients computing 
+some derivatives at x=1 and at x=i in the above polynomial identity. 
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+(To this end, recall that the derivative at x=a of (x-a)mp(x) vanishes if m > 1 and it is just p(a) if m=1.) Thus, for instance the first derivative at x=1 gives
+ 2\cdot6-4\cdot5+5\cdot4-3\cdot3+2+3   = A\cdot(0+0) + B\cdot( 2+ 0) + 8 + D\cdot0 
+that is 8 = 2B + 8 so B=0.
+Example 4 (residue method)[edit]
+ f(z)=\frac{z^{2}-5}{(z^2-1)(z^2+1)}=\frac{z^{2}-5}{(z+1)(z-1)(z+i)(z-i)}
+\end{frame}
+%-----------------------------------------------------------------
+\begin{frame}
+\frametitle{Partial Fractions}
+Thus, f(z) can be decomposed into rational functions whose denominators are z+1, z-1, z+i, z-i. Since each term is of power one, -1, 1, -i and i are simple poles.
+Hence, the residues associated with each pole, given by
+\[
+\frac{P(z_i)}{Q'(z_i)} = \frac{z_i^2 - 5}{4z_i^3}\]
+are
+\[ 1, -1, \tfrac{3i}{2}, -\tfrac{3i}{2}\]
+respectively, and
+\[ f(z)=\frac{1}{z+1}-\frac{1}{z-1}+\frac{3i}{2}\frac{1}{z+i}-\frac{3i}{2}\frac{1}{z-i}\]
+
+\end{frame}

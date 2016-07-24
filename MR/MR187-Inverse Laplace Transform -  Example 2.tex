@@ -1,0 +1,67 @@
+
+\documentclass{beamer}
+\title{A Tiny Example}
+\author{Kevin O'Brien}
+\date{June 15, 2005}
+\begin{document}
+\maketitle
+%---------------------------------------------------------------%
+\begin{frame}
+\frametitle{Inverse Laplace Transforms} 
+
+Compute the inverse Laplace transform of the following expression:
+{
+\large
+\[ F(s) = \frac{s+3}{s^2+3s+2} \]
+
+}\end{frame}
+%---------------------------------------------------------------%
+\begin{frame}
+\frametitle{Inverse Laplace Transforms} 
+{
+\large
+\[ F(s) = \frac{s+3}{s^2+3s+2} \]
+}
+Step 1: Factorize the denominator:
+
+{
+\large
+\[s^2+3s+2 = (s+2)(s+1)\]
+}
+
+\end{frame}
+%----------------------------------
+\begin{frame}
+\frametitle{Inverse Laplace Transforms} 
+Re-expressing the function:
+{
+\large
+\[ F(s) = \frac{s+3}{(s+2)(s+1)} \]
+}
+
+Split into two separate terms:
+{
+\large
+\[ F(s) = \frac{s}{(s+2)(s+1)} + \frac{3}{(s+2)(s+1)} \]
+}
+
+\end{frame}
+%----------------------------------
+\begin{frame}
+\frametitle{Inverse Laplace Transforms} 
+\vspace{-0.5cm}
+Re-expressing the function:
+{
+\large
+\[ F(s) = \frac{s+3}{(s+2)(s+1)} \]
+}
+Split into two separate terms:
+{
+\large
+\[ F(s) = \frac{s}{(s+2)(s+1)} + \frac{3}{(s+2)(s+1)} \]
+}
+\\
+\vspace{1cm}
+(We will call these terms $F_1(s)$ and $F_2(s)$ respectively. )
+\end{frame}
+\end{document}

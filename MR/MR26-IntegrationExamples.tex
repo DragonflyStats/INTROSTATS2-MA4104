@@ -1,0 +1,229 @@
+\documentclass{beamer}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{amssymb}
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------%
+\begin{frame}{Outline}
+  \tableofcontents
+
+\end{frame}
+%-----------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+%Part 1
+\section{Part 1 : Integration ($x ln(x)$) }
+
+
+\begin{frame}{Integration by Parts }{Example 1}
+
+
+  \begin{itemize}
+  \item
+    Use \texttt{itemize} a lot.
+  \item
+    Use very short sentences or short phrases.
+  \end{itemize}
+
+\end{frame}
+
+%--------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+\section{Part 2 : Integration ($e^{3x}dx$) }
+%Page 213
+\begin{frame}{Integration by Parts}{Example 2}
+\Large
+{
+\LARGE
+\[ \int x\;e^{3x}\;dx \]
+}
+\end{frame}
+
+%--------------------------------------------------------------------------------%
+\begin{frame}{Integration by Parts}{Example 2}
+\Large
+
+\begin{itemize}
+\item Let $u$ = $x$
+\item Let $dv$ = $e^{3x}dx$
+\end{itemize}
+
+\end{frame}
+%--------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+\section{Part 3 : Integration ($ln(x)$) }
+
+\begin{frame}{Integration by Parts}{Example 3}
+\Large
+Integrate the following expression:
+{
+\LARGE
+\[ \int ln(x)\;dx \]
+}
+
+\end{frame}
+\end{document}
+%--------------------------------------------------------------------------------%
+\begin{frame}{Integration by Parts}{Example 3}
+
+\Large
+We can write the expression as a product of two values by inserting a value of 1.
+{
+\LARGE
+\[ \int ln(x)\;dx  = \int 1. ln(x)\;dx \]
+}
+
+We can now apply the \textit{integration by parts} technique to solve this expression.
+%\[ I = \int u\;dv = uv - \int v\;du\]
+
+\end{frame}
+%--------------------------------------------------------------------------------%
+\begin{frame}{Integration by Parts}{Example 3}
+\Large
+\[ \int ln(x)\;dx  = \int 1. ln(x)\;dx \]
+
+\[ \mbox{Integral} = \int u\;dv = uv - \int v\;du\]
+
+\begin{itemize}
+\item $ u = ln(x)$
+\item $ dv = 1.dx$
+\end{itemize}
+
+\end{frame}
+
+
+
+%--------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+\section{Part 4 : Integration ($tan^{-1}(x)$)  }
+
+\begin{frame}{Integration by Parts - Example 4}
+{
+\LARGE
+\[ \int tan^{-1}(x)\;dx \]
+}
+\end{frame}
+
+%--------------------------------------------------------------------------------%
+
+\begin{frame}{Integration by Parts - Example 4}
+
+\large
+We can write the expression as a product of two values by inserting a value of 1.
+
+{
+\LARGE
+\[ \int tan^{-1}(x)\;dx  = \int 1. tan^{-1}(x)\;dx \]
+}
+\end{frame}
+%--------------------------------------------------------------------------------%
+\begin{frame}{Integration by Parts - Example 4}
+\Large
+We can now apply the \textit{integration by parts} technique to solve this expression.
+\[ I = \int udv = uv - \int vdu\]
+
+\begin{itemize}
+\item $ u = tan^{-1}(x)$
+\item $ dv = 1.dx$
+\end{itemize}
+
+\end{frame}
+
+
+%--------------------------------------------------------------------------------%
+\begin{frame}{Integration by Parts - Example 4}
+\Large
+\textbf{Calculations}
+$u =tan^{-1}(x)$
+\LARGE
+\[ \frac{du}{dx} = \frac{1}{1+x^2} \]
+
+\[ du = \frac{1}{1+x^2}dx  \]
+
+\end{frame}
+
+%--------------------------------------------------------------------------------%
+\begin{frame}{Integration by Parts - Example 4}
+\Large
+\textbf{Calculations}
+$dv = 1.dv$
+\LARGE
+\[ dv = 1.dx \]
+
+\[ \int dv = \int 1 dx  \]
+
+\[v=x\]
+\end{frame}
+
+%--------------------------------------------------------------------------------%
+%--------------------------------------------------------------------------------%
+\section{Part 5 : Integration ($x(ln x )^2)$ )}
+%---------------------------%
+\begin{frame}{Integration By Parts}{Example 5}
+% Slide 5A
+\Large
+Integrate the following expression
+
+{
+\LARGE
+\[ \int x(ln x )^2\;dx \]
+}
+\end{frame}
+\end{document}
+%--------------------------------------------------------------------------------%
+
+\begin{frame}{Integration By Parts}{Example 5}
+% Slide 5B
+\Large
+\textbf{Integration by Parts}
+\begin{itemize}
+\item Let $u$ = ln(x)^2$
+\item Differentiate $u$ to find $du$
+\item Let $dv$ = $xdx$
+\item Integrate $dv$ to find $v$
+\end{itemize}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------%
+\begin{frame}{Integration By Parts}{Example 5}
+\Large
+% Slide 5C
+\textbf{Integration by Parts}
+
+{
+\LARGE
+\[ u = ln(x)^2\]
+}
+
+\begin{itemize}
+\item Use the chain rule to find this derivative.
+
+\item Inner function
+\[ \frac{d\;ln(x)}{dx} = \frac{1}{x} \]
+
+\item Outer function
+\[ \frac{d\;ln(x)^2}{d\;ln(x)} = 2 ln(x) \]
+
+\end{itemize}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------%
+%-------------------------------------------------------------------------------%
+\begin{frame}{End Slide.}
+\large
+{\Large
+End Slide
+}
+
+\end{frame}
+\end{document}
+
+
