@@ -1,0 +1,372 @@
+
+
+
+
+Chapter 10
+\chapter{OTHER PROBABILITY DISTRIBUTIONS}
+
+0/ The Multinomial Distribution
+8/ The Hypergeometric Distribution
+V The uhitehh Distribution
+8/ The Cauchy Distribution
+8/ The Gamma Distribution
+8/ The Beta Distribution
+V The Chi-Square Distribution
+8/ Student’s t Distribution
+0/ The F Distribution
+8/ Relationships Among Chi-Square, t,
+and F Distributions
+1 1 7
+
+%%- Copyright 2001 by the McGraW-Hill Companies, Inc. Click Hem for Terms of Use
+%%- 118 PROBABILITY AND STATISTICS
+%===========================================================================================%
+\section{The Multinomial Distribution}
+Suppose that events Al, A2,..., Ak are mutually exclusive, and can occur
+with respective probabilities pl, p2,  pk wherepl +p2+ ~-»+pk+ l. If
+X1, X2,  Xk are the random variables, respectively, giving the number
+of times that A1, A2,..., Ak occur in a total ofn trials, so that XI + X2 +
+ X, = n, then
+P(X1: "i»X2 :"2»-~-’X1< : "U : %P1n'P;k "'1'/ilk (1)
+n1.n2.-»-n,,.
+Where nl + n2 + --- nk= n, is thejoint probability function for the random
+variables X1, X2,  Xk.
+This distribution, which is a generalization of the binomial distribution, is called the multinomial distribution since the equation above is the general term in the multinomial expansion of (pl +p2+ < - pk)”.
+%===========================================================================================%
+\section{The Hypergeometric Distribution}
+Suppose that a box contains b blue marbles and r red marbles. Let us
+perform rt trials of an experiment in which a marble is chosen at ran-
+dom, its color observed, and then the marble is put back in the box. This
+type of experiment is often referred to as sampling with replacement, In
+such a case, if X is the random variable denoting the number of blue
+marbles chosen (successes) in n trials, then using the binomial distribu-
+tion we see that the probability of exactly x successes is
+n barn-.t
+P(X=x)= ,1 , x=O,l,...,n (2)
+x (b+r)
+sincep=b/(b+r),q=l—p=r/(b+r).
+
+\section{CHAPTER 10; Other Probability Distributions 119}
+If We modify the above so that sampling is without replacement,
+i.e., the marbles are not replaced after being chosen, then
+x n — x
+("I ' J
+P(X = x) = 7 , x = max(O, n — r),m, mir1(n,b) (3)
+b + r
+n
+This is the hypergeumetric distribution. 
+The mean and variance for this distribution are
+_ nb 2_ nbr(b+r—n)
+”'b+r’ 6 _(b+r)2(b+r—l) (4)
+
+
+If we let the total number of blue and red marbles be N, While the
+proportions of blue and red marbles are p and q = 1 — p, respectively,
+then
+_ b _£ _ ' _L
+P b+r N’ q b+r N or 1,_1\/P, r=1\/q
+This leads us to the following
+x —x
+(””l l
+P(X = x) = L (5)
+ii]
+N_
+/1=np, a2=@1\‘]Z_l") <6)
+2=‘
+E
+
+
+%% 120 PROBABILITY AND STATISTICS
+Note that as N a <><> (or N is large when compared with rt), these
+two formulas reduce to the following
+P<X = x> =  <7)
+H = rm. 6* =np<1 (8)
+
+Notice that this is the same as the mean and variance for the bino-
+mial distribution. The results are just what We would expect, since for
+large N, sampling without replacement is practically identical to sam-
+pling with replacement.
+\subsection{Example 10.1} 
+A box contains 6 blue marbles and 4 red marbles. An experiment is performed in which a marble is chosen at random and its
+color is observed, but the marble is not replaced. Find the probability that after 5 trials of the experiment, 3 blue marbles will have been chosen.
+The number of different Ways of selecting 3 blue marbles out of 6
+6
+marbles is (33 . The number of different ways of selecting the remaining
+4 .
+2 marbles out of the 4 red marbles is 2 . Therefore, the number of dif-
+6 4
+ferent samples containing 3 blue marbles and 2 red marbles is {JKZJ .
+Now the total number of different Ways of selecting 5 marbles out
+l0
+of the 10 marbles (6 + 4) in the box is £5  Therefore, the required
+probability is given by
+
+
+%%- CHAPTER 10: Other Probability Distributions 121
+['3] 2‘
+%===========================================================================%
+\section{The Uniform Distribution}
+A random variable X is said to be uniformly distributed in a S x S b if
+its density function is
+I/(12-0) aSxSb
+f(X)={ 0 (9)
+otherwise
+and the distribution is called a uniform distribution.
+
+The distribution function is given by
+O x<a
+F(x)=P(X£)c)= (x—a)/(b—a) a§x<b (IO)
+1 x2b
+The mean and variance arc, respectively
+,u=i(a+b), <r2=i(b—a)2 (11)
+2 12
+%========================================================================%
+\section{The Cauchy Distribution}
+A random variable X is said to be Cauchy distributed, or to have the
+Cauchy distribution, if the density function of X is
+
+
+
+122 PROBABILITY AND STATISTICS
+'( FL (),_s° oo
+f x 7[(X2+a2) a> <1t< (12)
+The density function is symmetrical about x = O so that its median
+is zero. However, the mean and variance do not exist.
+%--------------------------------------------------------------%
+\subsection{The Gamma Distribution}
+A random variable X is said to have the gamma distribution, or to be
+gamma distributed, if the density function is
+a—I —x/B
+X €
+x > 0
+f(,() = Bal-(Or) (ot,[3 > O) (I3)
+0 x S O
+Where F(0t) is the gamma function (see Appendix A). The mean and
+variance are given by
+,u = 0c,B 0'2 = oz/72 (I4)
+%--------------------------------------------------------------%
+\subsection{The Beta Distribution}
+A random variable is said t0 have the beta distribution, or to be beta distributed, if the density function is
+exu—1(l—x)ﬁ—l 0 < x <1
+f(X) : B(0t,l3)
+O otherwise (01, B > O) (15)
+
+
+
+%% CHAPTER 10; Other Probability Distributions 123
+where B(0r, ﬁi) is the beta function (see Appendix A), In view of the rela-
+tion between the beta and gamma functions, the beta distribution can
+also be deﬁned by the density function
+Lmx“'l(1—x)p" ()<x<l
+ﬁx) I F(0<)F(l3) (16)
+O otherwise
+where 0t, B are positive. The mean and variance are
+=i gm (17)
+H a+ﬁ’ G (06+ﬁ)2(06+B+l)
+For zx > l, B > 1 there is a unique mode at the value
+05-1
+= 7 18
+xlT\OKl€ a+B_2 ( )
+%--------------------------------------------------------------%
+\subsection{The Chi-Square Distribution}
+Let X1, X2, ...,XV be v independent normally distributed random vari-
+ables with mean zero and variance one. Consider the random variable
+X2:X§+X§+--»+X§ (19)
+Where X2 is called chi square. Then we can show that for all x 2 O,
+
+
+
+124 PROBABILITY AND STATISTICS
+P(Xz§x): {u</2>le /» du (20)
+and P(X2 £ x) = O for x > 0.
+The distribution above is called the chi-square distribution, and v is
+called the number 0f degrees 0f freedom. The distribution deﬁned above
+has corresponding density function given by
+l tv/2)—1 1-/2
+V/2 X e x > O
+ﬁx): 2 l“(v/2) (21)
+O XSO
+It is seen that the chi-square distribution is a special case of the
+gamma distribution with 0: = v/ 2 and ﬁ = 2. Therefore,
+/1 = v, 0'2 = 2v (22)
+For large v (v 2 30), we can show that \/2X2 7 1/2v 71 is very near-
+ly normally distributed with mean 0 and variance one.
+Three theorems that Will be useful in later work are as follows:
+\subsection*{Theorem 10-1:} Let X1, X2,  XV be independent normally random
+variables With mean 0 and variance 1. Then X2 = X? +
+X§ +  + Xf is chi square distributed with v degrees of
+freedom.
+\subsection*{Theorem 10-2:} Let U], U2, ..., Uk be independent random variables
+that are chi square distributed with vl, v2,  vk
+degrees of freedom, respectively. Then their sum W =
+U‘ + U2 +»--U,‘ is chi square distributed with v| + v2 +
+~~-vk degrees of freedom.
+
+
+
+CHAPTER 10; Other Probability Distributions 125
+\subsection*{Theorem 10-3:} Let V1 and V2 be independent random variables.
+Suppose that V1 is chi square distributed with vl
+degrees of freedom while V = V1 = V2 is chi square
+distributed with v degrees of freedom, where v > v|,
+Then V, is chi square distributed with v — vl degrees
+of freedom.
+
+In connection with the chi-square distribution, the I distribution, the F distribution, and others, it is common in statistical work to use the same symbol for both the random variable and a value of the random variable. Therefore, percentile values of the chi-square distribution for v degrees of freedom are denoted by Xi“, , or brieﬂy Xi, if v is under-
+stood, and not by XI“, or xp. (See Appendix D.) This is an ambiguous
+notation, and the reader should use care with it, especially when chang-
+ing variables in density functions.
+
+\subsubsection{Example 10.2.} The graph of the chi-square distribution wizth E
+degrees of freedom is shown in Figure 10-1. Find the values for Xi » X2
+for which the shaded area on the right = 0.05 and the total shaded area
+= 0,05.
+zf xi z’
+Figure 10-1
+
+
+
+126 PROBABILITY AND STATISTICS
+If the shaded area on the right is 0.05, then the area to the left of X; is
+(1 — 0.05) = 0.95, and Xg represents the 95“ percentile, X395.
+Referring to the table in Appendix D, proceed downward under
+the column headed v until entry 5 is reached. Then proceed right to the
+column headed X395. The result, 11.1, is the required value of 12.
+Secondly, since the distribution is not symmetric, there are many
+values for which the total shaded area : 0.05. For example, the right-
+handed shaded area could be 0.04 while the left-handed area is 0.01. It
+is customary, however, unless otherwise speciﬁed, to choose the two
+areas equal. In this case, then, each area : 0.025.
+1f the shaded area on the right is 0.025, the area to the left of Xi is
+1 — 0.025 = 0.975 and Xg represents the 97.5"‘ percentile X5975 , which
+from Appendix D is 12.8.
+Similarly, if the shaded area on the left is 0.025, the area to the left
+of Xf is 0.025 and X? represents the 2.5"‘ percentile, X3 025 , which
+equals 0.831.
+Therefore, the values are 0.831 and 12.8.
+Student’s t Distribution
+If a random variable has the density function
+ 2 —(v+|)/2
+f(;):%(1+Lj —><><r<<» (23)
+M rial V
+it is said to have the Student's r distribution, briefly the I distribution,
+with v degrees of freedom. If v is large (v 2 30), the graph off(z) close-
+ly approximates the normal curve, as indicated in Figure 10-2.
+
+
+
+CHAPTER 10: Other Probability Distributions 127
+I0)
+M Normal
+\
+v-4
+v-l
+02 X
+0|
+-r s-a .; . ". ;“.,
+Figure 10-2
+Percentile values of the t distribution for v degrees of freedom
+are denoted by rm or brieﬂy tp if v is understood. For a table giving
+such values, see Appendix C, Since the I distribution is symmetrical,
+tl_p = —tp; for example, £05 = -1095.
+For the t distribution we have
+ii=0 and a2=i (1/>2) <24)
+v — 2
+The following theorem is important in later Work.
+Theorem 10-4: Let Yand Z be independent random variables, where
+Y is normally distributed with mean O and variance l
+While Z is chi square distributed With v degrees of
+freedom. Then the random variable
+TIL
+\Z/v (25)
+has the t distribution with v degrees of freedom.
+
+
+
+128 PROBABILITY AND STATISTICS
+Example 10.3. The graph of Student’s t distribution with 9 degrees
+of freedom is shown in Figure l0-3. Find the value of tl for which the
+shaded area on the right = 0405 and the total unshaded area = O99.
+-1, I,
+Figure 10-3
+If the shaded area on the right is O05, then the area to the left of I1 is (1
+— O05) = 0095, and 1| represents the 95th percentile, 10.95. Referring to
+the table in Appendix C, proceed downward under the column headed v
+until entry 9 is reached. Then proceed right to the column headed I035.
+The result 1.83 is the required value of t4
+Next, if the total unshaded area is 0.99, then the total shaded area
+is (l — O99) = 0.01, and the shaded area to the right is 0.01 / 2 = 0.005.
+From the table we ﬁnd tn 995 = 3.25.
+%--------------------------------------------------------------%
+\subsection{The F Distribution}
+A random variable is said to have the F distribution (named after R. A‘
+Fisher) with vl and v2 degrees nffreedom if its density function is given
+by
+F vl +v2
+MVP/iv;/2u<»',/21-1(v2 + VIu)—<»\,+\@>/z u > 0
+f(u) =  (26)
+O u S 0
+
+
+
+Percentile
+are denoted by
+CHAPTER 10; Other Probability Distributions 129
+values of the F distribution for v], v2 degrees of freedom
+FWN2, or brieﬂy Fp if vl and v2 are understood.
+For a table giving such values in the case where p = 0.95 and p =
+0.99, see Appendix E.
+The mean
+and variance are given, respectively, by
+2v§(v + V2 +2)
+=£ 2 a 2:‘? 27
+ll V2_2 (v2>) an G ‘/|(Vz_4)(V2_2)2 ( )
+The distribution has a unique mode at the value
+v —2 v
+  ‘V->2) <28>
+The following theorems are important in later Work.
+Theorem 11-5
+Theorem 10-6:
+: Let VI and V2 be independent random variables that
+are chi square distributed with vl and v2 degrees of
+freedom, respectively. Then the random variable
+V  (29)
+V2/V2
+has the F distribution with vl and v2 degrees of free-
+dom.
+l
+F-  = — 00>
+I P ‘ 
+
+
+
+130 PROBABILITY AND STATISTICS
+bution are all valid for large sample
+Remember
+While specially used with small sam-
+ples, Student‘s tdistribution, the chi-
+square distribution, and the F distri-
+sizes as well.
+Relationships Among Chi-Square,
+t, and F Distributions
+Theorem 10-7: n_,,v,_\, : l§_(,,,m (31)
+2
+Theorem 10-s= 1r,,v,,,,<, =  <32)
+V
+Example 10.4. Verify Theorem I0-7 by showing that I395 = t§_975 .
+Compare the entries in the ﬁrst column of the FM5 table in Appendix E
+with those in the t distribution under toms. We see that
+161 = (12471)2’ 18,5 = (4t3O)Z, 10t1 =(3.18)2, 7.71=(2t78)Z,etct,
+which provides the required veriﬁcation.
+Example 10.5. Verify Theorem I0-8 forp = 0.99.
+Compare the entries in the last row of the F 0.99 table in Appendix E (cor-
+responding to vz = w) with the entries under X3 99 in Appendix D. Then
+we see that
+
+
+
+CHAPTER 10: Other Probability Distributions 131
+6.63: 6'63, 4.61: 9'21, 3.78: U3, 3.32:13'3, etc.,
+1 2 3 4
+which provides the required veriﬁcation.
+

@@ -1,0 +1,105 @@
+\underline{\documentclass{beamer}
+
+\usepackage{default}
+
+\begin{document}
+\underline{}
+%====================================================================================================================== %
+\begin{frame}
+Where the Bernoulli Distribution asks the question of "Will this single event succeed?" the Binomial is associated with the question "Out of a given number of trials, how many will succeed?" Some example questions that are modeled with a Binomial distribution are:
+
+Out of ten tosses, how many times will this coin land heads?
+From the children born in a given hospital on a given day, how many of them will be girls?
+How many students in a given classroom will have green eyes?
+How many mosquitos, out of a swarm, will die when sprayed with insecticide?
+
+\end{frame}
+%====================================================================================================================== %
+\begin{frame}
+	
+The relation between the Bernoulli and Binomial distributions is intuitive: The Binomial distribution is composed of multiple Bernoulli trials. We conduct n repeated experiments where the probability of success is given by the parameter p and add up the number of successes. This number of successes is represented by the random variable X. The value of X is then between 0 and n.
+
+When a random variable X has a Binomial Distribution with parameters p and n we write it as X ~ Bin(n,p) or X ~ B(n,p) and the probability mass function is given by the equation:
+
+P\left[X = k\right] = \begin{cases} {n \choose k} p^k \left(1-p\right)^{n-k}\ & 0 \le k \le n \\ 0 & \mbox{otherwise} \end{cases} \quad 0 \leq p \leq 1, \quad n \in \mathbb{N}
+where {n \choose k}={n! \over k!(n-k)!}
+
+\end{frame}
+%====================================================================================================================== %
+\begin{frame}
+	
+For a refresher on factorials (n!), go back to the Refresher Course earlier in this wiki book.
+
+An example[edit]
+Let's walk through a simple example of the Binomial distribution. We're going to use some pretty small numbers because factorials can be hard to compute. (Few basic calculators even feature them!) We are going to ask five random people if they believe there is life on other planets. We are going to assume in this example that we know 30% of people believe this to be true. We want to ask the question: "How many people will say they believe in extraterrestrial life?" Actually, we want to be more specific than that: "What is the probability that exactly 2 people will say they believe in extraterrestrial life?"
+\end{frame}
+%====================================================================================================================== %
+\begin{frame}
+	
+We know all the values that we need to plug into the equation. The number of people asked, n=5. The probability of any given person answering "yes", p=0.3. (Remember, I said that 30% of people believe in life on other planets!) Finally, we're asking for the probability that exactly 2 people answer "yes" so k=2. This yields the equation:
+
+P \left[X = 2 \right] = {5 \choose 2} \cdot {{0.3^2 \cdot} {\left( 1 - 0.3 \right)^{3}}} = {10} \cdot {{0.3^2} \cdot {\left( 1-0.3 \right)^{3}}} = 0.3087 since {5 \choose 2}={5! \over 2! \cdot 3!}={5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 \over (2 \cdot 1) \cdot (3 \cdot 2 \cdot 1)}={120 \over 12}=10
+Here are the probabilities for all the possible values of X. You can get these values by replacing the k=2 in the above equation with all values from 0 to 5.
+
+
+
+Value for k	Probability f(k)
+0	0.16807
+1	0.36015
+2	0.30870
+3	0.13230
+4	0.02835
+5	0.00243
+What can we learn from these results? Well, first of all we'll see that it's just a little more likely that only one person will confess to believing in life on other planets. There's a distinct chance (about 17%) that nobody will believe it, and there's only a 0.24% (a little over 2 in 1000) that all five people will be believers.
+\end{frame}
+%====================================================================================================================== %
+\begin{frame}
+Explanation of the equation[edit]
+Take the above example. Let's consider each of the five people one by one.
+
+The probability that any one person believes in extraterrestrial life is 30%, or 0.3. So the probability that any two people both believe in extraterrestrial life is 0.3 squared. Similarly, the probability that any one person does not believe in extraterrestrial life is 70%, or 0.7, so the probability that any three people do not believe in extraterrestrial life is 0.7 cubed.
+
+Now, for two out of five people to believe in extraterrestrial life, two conditions must be satisfied: two people believe in extraterrestrial life, and three do not. The probability of two out of five people believing in extraterrestrial life would thus appear to be 0.3 squared (two believers) times 0.7 cubed (three non-believers), or 0.03087.
+
+However, in doing this, we are only considering the case whereby the first two selected people are believers. How do we consider cases such as that in which the third and fifth people are believers, which would also mean a total of two believers out of five?
+
+The answer lies in combinatorics. Bearing in mind that the probability that the first two out of five people believe in extraterrestrial life is 0.03087, we note that there are C(5,2), or 10, ways of selecting a set of two people from out of a set of five, i.e. there are ten ways of considering two people out of the five to be the "first two". This is why we multiply by C(n,k). The probability of having any two of the five people be believers is ten times 0.03087, or 0.3087.
+%================================================================================================== %
+Mean[edit]
+The mean can be derived as follow.
+
+\operatorname{E}[X] = \sum_i f(x_i)  \cdot x_i = \sum_{x=0}^n  {n \choose x} p^x \left(1-p\right)^{n-x}  \cdot  x
+\operatorname{E}[X] = \sum_{x=0}^n  {n! \over x!(n-x)!} p^x \left(1-p\right)^{n-x} x
+\operatorname{E}[X] = {n! \over 0!(n-0)!} p^0 \left(1-p\right)^{n-0}  \cdot 0 + \sum_{x=1}^n  {n! \over x!(n-x)!} p^x \left(1-p\right)^{n-x} x
+\operatorname{E}[X] = 0 + \sum_{x=1}^n  {n(n-1)! \over x(x-1)!(n-x)!} p  \cdot p^{x-1} \left(1-p\right)^{n-x} x
+\operatorname{E}[X] = np\sum_{x=1}^n  {(n-1)! \over (x-1)!(n-x)!} p^{x-1} \left(1-p\right)^{n-x}
+Now let w=x-1 and m=n-1. We see that m-w=n-x. We can now rewrite the summation as
+
+\operatorname{E}[X] = np \left[\sum_{w=0}^m  {m! \over w!(m-w)!} p^{w} \left(1-p\right)^{m-w}\right]
+We now see that the summation is the sum over the complete pmf of a binomial random variable distributed Bin(m, p). This is equal to 1 (and can be easily verified using the Binomial theorem). Therefore, we have
+
+\operatorname{E}[X] = np \left[1\right]=np
+Variance[edit]
+We derive the variance using the following formula:
+
+\operatorname{Var}[X] = \operatorname{E}[X^2] - (\operatorname{E}[X])^2.
+We have already calculated E[X] above, so now we will calculate E[X2] and then return to this variance formula:
+
+\operatorname{E}[X^2] = \sum_i f(x_i) \cdot x^2
+
+= \sum_{x=0}^n x^2 \cdot {n\choose x}p^x(1-p)^{n-x}.
+We can use our experience gained above in deriving the mean. We use the same definitions of m and w.
+
+\operatorname{E}[X^2] = \sum_{x=0}^n  {n! \over x!(n-x)!} p^x \left(1-p\right)^{n-x} x^2
+\operatorname{E}[X^2] = 0 + \sum_{x=1}^n  {n! \over x!(n-x)!} p^x \left(1-p\right)^{n-x} x^2
+\operatorname{E}[X^2] = np\sum_{x=1}^n  {(n-1)! \over (x-1)!(n-x)!} p^{x-1} \left(1-p\right)^{n-x}x
+\operatorname{E}[X^2] = np \sum_{w=0}^m  {m\choose w} p^{w} \left(1-p\right)^{m-w}(w+1)
+\operatorname{E}[X^2] = np \left[\sum_{w=0}^m  {m\choose w} p^{w} \left(1-p\right)^{m-w}w+\sum_{w=0}^m {m\choose w} p^{w} \left(1-p\right)^{m-w} \right] 
+The first sum is identical in form to the one we calculated in the Mean (above). It sums to mp. The second sum is 1.
+
+\operatorname{E}[X^2] = np \cdot ( mp + 1) = np((n-1)p + 1) = np(np - p + 1).
+Using this result in the expression for the variance, along with the Mean (E(X) = np), we get
+
+\operatorname{Var}(X) = \operatorname{E}[X^2] - (\operatorname{E}[X])^2 = np(np - p + 1) - (np)^2 = np(1-p).
+\end{document}
+}

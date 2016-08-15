@@ -1,0 +1,485 @@
+
+Chapter 9
+\chapter{CURVE FITTING, REGRESSION AND CORRELATION}
+IN THIS CHAPTER:
+l/ Cun/e Fitting
+l/ Regression
+0/ The Method of Least Squares
+0/ The Least-Squares Line
+l/ The Least-Squares Regression Line
+in Terms of Sample Variances
+and Covariance
+0/ Standard Error of Estimate
+l/ The Linear Correlation Coefﬁcient
+l/ Generalized Correlation Coefﬁcient
+0/ Correlation and Dependence
+
+%%9 9
+%%Copyright 2001 by the McGraW-Hill Companies, Inc. Click Hem for Terms of Use
+
+
+%%-100 PROBABILITY AND STATISTICS
+\section{Curve Fitting}
+Very often in practice a relationship is found
+to exist between two (or more) variables, and one wishes to express this relationship
+in mathematical form by determining an equation connecting the variables.
+
+A ﬁrst step is the collection of data showing corresponding values of the variables. For example, suppose x and y denote, respectively, the height and weight of an adult male. Then a sample of n individuals
+would reveal the heights x , x ,  x and the corresponding weights y
+l Z 11 1‘
+y2,..., yn.
+A next step is to plot the points (xpyl), (x2,yZ),..., (xwyn) on a rec-
+tangular coordinate system. The resulting set of points is sometimes
+called a scatter diagram.
+%================================================================================%
+From the scatter diagram it is often possible to visualize a smooth
+curve approximating the data. Such a curve is called an approximating
+curve. In Figure 9-1, for example, the data appear to be approximated
+well by :1 straight line, and We say that a linear relationship exists
+between the variables. In Figure 9-2, however, although a relationship
+exists between the variables, it is not a linear relationship and so we call
+it a nonlinear relationship. In Figure 9-3 there appears to be no rela-
+tionship between the variables.
+.V
+X
+Figure 9-1
+
+
+
+CHAPTER 9: Cun/e Fitting, Regression, and Correlation 101
+,.
+.." '°
+I
+Figure 9-2
+Y
+- -',
+~ _ ,*-
+: - ,
+X
+Figure 9-3
+The general problem of ﬁnding equations approximating curves
+that ﬁt given sets of data is called carve ﬁtting, In practice the type of
+equation is often suggested from the scatter diagram. For Figure 9-1 we
+could use a straight line:
+\[y = a + bx\]
+while for Figure 9-2 We could try a parabola or quadratic curve:
+\[y = a + bx + cx^2\]
+For the purposes of this book, we will only concem ourselves with
+the data sets exhibiting a linear relationship.
+
+%==========================================================================
+%%- 102 PROBABILITY AND STATISTICS
+Sometimes it helps to plot scatter diagrams in terms of transformed
+variables. For example, if log y V84 log x leads to a straight line, we
+would try log y = a + bx as an equation for the approximating curve.
+\section{Regression}
+One of the main purposes of curve ﬁtting is to esti~ K
+mate one of the variables (the dependent variable) from the other (the independent variable). The ‘
+. . . 6 . Q1
+process of estimation is often referred to as a 5'“
+regression. If y is to be estimated from x by means
+of some equation, we call the equation a regression
+equation 0f y on x and the corresponding curve a
+regression curve of y on x. Since we are only con-
+sidering the linear case, we can call this the regres-
+sion line ofy on x.
+
+\section{The Method of Least Squares}
+Generally, more than one curve of a given type will appear to ﬁt a set of
+data. To avoid individual judgment in constructing lines, parzibolas, or
+other approximating curves, it is necessary to agree on a deﬁnition of a
+“best-ﬁtting line," “best~ﬁtting parabola," etc.
+
+To motivate a possible deﬁnition, consider Figure 9-4 in which the
+data points are (xl,y1),...,(x”,y"). For a given value ofx, say xi, there will
+be a difference between the value yl and the corresponding value as
+determined by the curve C. We denote the difference by dl, which is
+sometimes referred to as a deviation error, or residual and may be pos-
+itive, negative, or zero, Similarly, corresponding values x2,  m, We
+obtain the deviations dz ,..,, dn.
+
+
+
+CHAPTER 9: Cun/e Fitting, Regression, and Correlation 103
+Y
+(X... y.)
+. d. C
+(Xi - Yi) .
+dl J1 . 0
+(~‘:- 1'1)
+x
+Figure 9-4
+A measure of the ﬁt of the curve C to the set of data is provided by
+the quantity dlz +11% +~-11,? . If this is small, the ﬁt is good; if it is large,
+the ﬁt is bad. We therefore make the following deﬁnition.
+%================================================================================%
+Deﬁnition Of all curves in a given family of curves approximating a set of n data points, a curve having the property
+that
+dig +d22 +~~d3= a minimum
+
+is called a best-ﬁtting curve in the family.
+A curve having this property is said to ﬁt the data in the least-
+squares sense and is called a least-squares regression curve, or simply
+a least-squares curve. A line having this property is called a least-
+squares line; a parabola that has this property is called a least-squares
+parabola; etc.
+It is customary to employ the new deﬁnition when x is the inde-
+pendent variable and y is the dependent variable. If x is the dependent
+variable, the deﬁnition is modiﬁed by considering horizontal deviations
+instead of vertical deviations, which amounts to interchanging the x and 
+y axes. 
+
+%===============================================================================%
+%%-104 PROBABILITY AND STATISTICSThese two deﬁnitions lead in general to two different least-
+squares curves. Unless otherwise speciﬁed we shall consider y the
+dependent and x the independent variable
+
+You Need to Know I
+It is possible to define another least-squares curve by
+considering perpendicular distances from the data points
+to the curve instead of either vertical or horizontal dis-
+tances. However, this is not used very often.
+\subsection{The Least-Squares Line}
+By using the above deﬁnition, we can show that the least~squares line
+approximating the set of points (xl,yl),...,(x",_y") has the equation
+y=a+bx (1)
+where the constants a and b are determined by solving simultaneously
+the equations
+2y=an+b2x
+2xy=a2x+bZx2 (2)
+Which are called the rmrmal equations for the least~squares line. Note
+rt n
+that We have for brevity used Z)‘ ,  instead of Zyj , Zhjyjo
+/=1 ,'=1
+%=============================================================================%
+%%-CHAPTER 9: Cun/e Fitting, Regression, and Correlation 105
+
+The normal equation (2) is easily remembered by observing that the
+ﬁrst equation can be obtained formally by summing on both sides of (I),
+While the second equation is obtained formally by ﬁrst multiplying both
+sides of (1) by x and then summing. Of course, this is not a derivation
+of the normal equations but only a means for remembering them.
+The values of a and b obtained from (Z) are given by
+g=(Zy)(2x*)—( mi ,,;2X»<2X>i2y>@
+»2x1~< t ~2»*—<2X>2
+The result for I: can also be written as
+MM
+><>-<
+b=a2(""7)(”_y) <4)
+Ea -if
+Here, as usual, a bar indicates mean, e.g, J? = (Ex)/n . Division
+of both sides of the ﬁrst normal equation in (2) by n yields
+y=a+1»? (5)
+If desired, we can ﬁrst ﬁnd b from (3) or (4) and then use (5) to ﬁnd
+a = Y — bi. This is equivalent to writing the least-squares line as
+.v—>*=h<x-r> or y_y=g2g;x*jg)§y)<X_z) <6)
+The result (6) shows that the constant h, which is the slope of the
+line (I), is the fundamental constant in determining the line. From (6) it
+is also seen that the least~squares line passes through the point (Ii),
+which is called the centroid or center of gravity of the data.
+
+%=========================================================================%
+%%-106 PROBABILITY AND STATISTICS
+The slope b of the regression line is independent of the origin of the
+coordinates. This means that if we make the transformation (often
+called a translation of axes) given by
+x=x'+h y=y'+k (7)
+where h and k are any constants, then b is also given by
+b I "E/Y’-(Zr’)(§;r’) I Zo — my -2?) (8)
+112')/2 —(2x’) 2(x'—X')
+Where x, y have simply been replaced by x’, y’ [for this reason we say
+that b is invariant under the transformation (7)]. It should be noted,
+however, that a, which determines the intercept on the x axis, does
+depend on the origin (and so is not invariant).
+In the particular case where It = Z, k = y , (8) simpliﬁes to
+x'y’
+1; = Ln (9)
+Ex
+The results (8) and (9) are often useful in simplifying the labor
+involved in obtaining the leasbsquares line,
+The above remarks also hold for the regression line of x on y. The
+results are formally obtained by simply interchanging X and y. For
+example, the least-squares regression line ofx on y is
+x_i=Z(X*?)(y—i) J
+e2(y_y)2 (y ,) <10)
+It should be noted that in general (10) is not the same as (6).
+
+
+%%-CHAPTER 9: Cun/e Fitting, Regression, and Correlation 107
+Remember
+You should try to ﬁnd the equation for the regression line if and only if your data set has a linear relationship.
+
+Example 9.1. Table 9-1 shows the respective heights x and y of a sample of 12 fathers and their oldest sons. Find the least-squares regression line of y on x.
+
+Table 9-l
+Hcighhofhlherlinches) 65 63 67 64 68 62
+HcightyofSon(inches) 68 66 68 65 69 66
+Heightx0fFather(inches) 70 66 68 67 69 71
+Hci5hlyofSon(inchcs) 68 65 71 67 68 70
+
+The regression line ofy on x is given by y = ax + b are obtained by solving the normal equations
+Z)i=an+b2x and 2/cy=a2‘x+b2;x2
+
+The sums are computed as follows:
+
+
+
+108 PROBABILITY AND STATISTICS
+Tabl
+‘<
+1
+x
+‘Y
+.v’
+Q 0~<!\o\0\a~a~0\o\
+4225
+3969
+4489
+4096
+4624
+3844
+4900
+4356
+4624
+4489
+4761
+5041
+4420
+4158
+4556
+4l60
+4692
+4092
+4760
+4290
+4828
+4489
+4692
+4970
+4624
+4356
+4624
+4225
+4761
+4356
+4624
+4225
+5041
+4489
+4624
+4900
+Z;-soo {Fan §1'=s3.41s Zxy=54,l07 Z,/==s4s49
+l2a + 8006
+00476, s
+800a + 53,4181:
+For Wh1Ch We ﬁnd a = 35 82 and b =
+1s the equatlon for the regression line,
+v-
+h
+Usmg these sums, the normal equations become
+The sample vanances and covariance of x and y are given by
+107
+0 that y = 35.82 + 0.476):
+The Least-Squares Regression Line in Terms
+of Sample Var|ances and Covariance
+X-x -*2 -- --
+S I s :(y y)‘ LIEU X)(y y) (U)
+
+%%--CHAPTER 9: Cun/e Fitting, Regression, and Correlation 109
+
+In terms of these, the least-squares regression lines of y on x and 1
+on _v can be written, respectively, as
+9, H
+».~:_
+» %
+<1»;
+y—§= (x—JY) and x—)?: (y—_y_') (12)
+if we formally deﬁne the sample correlation cueﬁcient by
+sh.
+r = —' (13)
+sxs‘,
+then (12) can be written
+Ly: (X_i) and §i=,@ (14)
+sy sx sx s‘,
+In view of the fact that (x — Y)/si and (y — )7")/sy are standardized
+sample values or standard scores, the results in (14) provide a simple
+Way of remembering the regression lines. It is clear that the two lines in
+(I4) are different unless r = il, in which case all sample points lie in a
+line and there is perfect linear correlation and regression.
+It is also of interest to note that if the two regression lines (14) are
+written as y = ax + b, 1 = c + dy, respectively, then
+lid = r2 (I5)
+Up to now we have not considered the precise signiﬁcance of the
+correlation coefficient but have only deﬁned it formally in terms of the
+variances a.nd covariance
+
+%=====================================================================%
+
+%%- 110 PROBABILITY AND STATISTICS
+\section{Standard Error of Estimate}
+If We let ym denote the estimated value of y for a given value of x, as
+obtained from the regression curve of y on x, then a measure of the scat-
+ter about the regression curve is supplied by the quantity
+Sm :  ([6)
+n
+which is called the standard error of estimate y on x. Since
+2(y—ym)2 = zdz , as used in the deﬁnition we saw earlier, we see
+that out of all possible regression curves the least-squares curve has the
+smallest standard error of estimate.
+In the case of a regression line ym = a + bx, with a and b given by
+(2), we have
+x3Y=2y2_a€y—b2xy (17)
+Of
+Z<y—,»*>* —bZ<x—2><y—r>
+S§—,\' = g <18)
+We can also express six for the least~squares regression line in
+terms of variance and correlation coefﬁcient as
+Sf" = .g§(1- r2) (19)
+from which it incidentally follows as a corollary that r2 5 l, i,e., —l 5 r
+£1.
+
+%%-CHAPTER 9: Cun/e Fitting, Regression, and Correlation 1 1 1
+
+The standard error of estimate has properties analogous to those of
+standard deviation. For example, if we construct pairs of lines parallel
+to the regression line of y on x at respective vertical distances sm, and
+Zsw, and 3s“ from it, We should ﬁnd if n is large enough that there
+would be included between these pairs of lines about 68\%, 95\%, and
+99.7\% of the sample points, respectively.
+
+Just as there is an unbiased estimate of population variance given
+by f2 = nsz/(n — l), so there is an unbiased estimate of the square of the
+standard error of estimate. This is given by fix = nffu /(n — 2). For this
+reason some statisticians prefer to give (16) with n — 2 instead of n in
+the denominator.
+The above remarks are easily modiﬁed for the regression line ofx
+on y (in which case the standard error of estimate is denoted by sm) or
+for nonlinear or multiple regression.
+The Linear Correlation Coefficient
+Up to now we have deﬁned the correlation coefﬁcient formally by (13)
+but have not examined its signiﬁcance. In attempting to do this, let us
+note that from (19) and the deﬁnitions of sm and sv, we have
+i V 2
+r2 :1_ Zo >15/2 (20)
+2 (y - .v)
+Now we can show that
+Z<y—v>2 = 2(,v—>1»,,)2 + Em, —i>2 <21)
+
+
+%==================================================================%
+%%- 112 PROBABILITY AND STATISTICS
+The quantity on the left of (21) is called the total variation. The ﬁrst
+sum on the right of (21) is then called the unexplained variation, while
+the second sum is called the explained variation. This terminology aris-
+es because the deviations y — ym behave in a random or unpredictable
+manner while the deviations ym — Y are explained by the least-squares
+regression line and so tend to follow a deﬁnite pattern. It follows from
+(20) and (21) that
+Eon, — W
+r2 = +2 = explained variation
+2 (y _ y ) total variation (22)
+Therefore, r2 can be interpreted as the fraction
+of the total variation that is explained by the least- _ 
+squares regression line. In other words, r measures  ’;
+how well the least-squares regression line ﬁts the ‘$3, Q
+sample data. If the total variation is all explained
+by the regression line, i.e,, r2 = l or r = il , we say
+that there is a perfect linear correlation (and in
+such case also perfect linear regression). On the
+other hand, if the total variation is all unexplained, then the explained
+variation is zero and so r : 0. In practice the quantity rl , sometimes call
+the coeﬂicient ofdetermination, lies between O and l.
+The correlation coefﬁcient can be computed from either of the
+results
+mi: Zo-i>o—,v> (23)
+W» \/2(x—>?)2\/2(y—§)2
+01’
+Zo W
+'2 I  = explained variation
+Z (y _ y ) total variation (24)
+
+
+%==============================================================================%
+%%- CHAPTER 9: Curve Fitting, Regression, and Correlation 1 13
+which for linear regression are equivalent. The formula (23) is often
+referred to as the product-momenrfurmula for linear regression.
+Formulas equivalent to those above, which are often used in prac-
+tice, are
+, = "ZW"(Z*)(Z>‘) (25)
+t/w2#—(2»)’1i»2ﬁ—(2i)21
+and
+r = a 5‘ ii <26)
+vo’ — i’><>»2 —§2>
+If We use the transformation on (7), We ﬁnd
+ aw-<2x'><2y'> (2,,
+\/MEX" —(2»<')21i"2y"—(Z>")21
+which shows that r is invariant under a translation of axes. In particular,
+ifh :;?, k : Y, (27) becomes
+r =  (28)
+i/(2X”)(2>"’)
+which is often useful in computation.
+The linear correlation coefﬁcient may be positive or negative. If r
+is positive, y tends to increase with x (the slope of the least-squares
+regression line is positive) while if r is negative, y tends to decrease
+with x (the slope is negative). The sign is automatically taken into
+account if we use the result (23), (Z5), (26), (27), or (28). However, if
+we use (24) to obtain r, we must apply the proper sign.
+
+%=============================================================================================%
+%%-114 PROBABILITY AND STATISTICS
+\section{Generalized Correlation Coefficient}
+The deﬁnition (23) [or any equivalent forms (25) through (28)] for the
+correlation coefﬁcient involves only sample values x, y. Consequently,
+it yields the same number for all forms of regression curves and is use-
+less as a measure of ﬁt, except in the case of linear regression, where it
+happens to coincide with (24). However, the latter deﬁnition, i.e.,
+2 2(yen _ y)2
+r = +2 explained variation
+2 (Y 7 y ) total variation (29)
+does reﬂect the form of the regression curve (via the ym) and so is suit-
+able as the deﬁnition of a generalized correlation coefﬁcient r. We use
+(29) to obtain nonlinear correlation coefﬁcients (Which measure how
+Well a nonlinear regression curve ﬁts the data) or, by appropriate gen-
+eralization, multiple correlation coeﬂicients. The connection (I9)
+between the correlation coefﬁcient and the standard error of estimate
+holds as well for nonlinear correlation.
+Example 9.2. Find the coefﬁcient of determination and the coefﬁ-
+cient of correlation from Example 8.2.
+Recall that the correlation of determination is r2 :
+r2 = explained variation: 1922 = 0.4938
+total variation 3892
+The coefﬁcient of correlation is simply r.
+r2 = ix/04938 = 10,7027
+
+%%--CHAPTER 9: Cun/e Fitting, Regression, and Correlation 115
+Since the variable ym increases as x increases (i.e., the slope of the
+regression line is positive), the correlation is positive, and we therefore
+write r = 0.7027, or r = 0.70 to two signiﬁcant ﬁgures.
+
+Since a correlation coefﬁcient merely measures how well a given
+regression curve (or surface) ﬁts sample data, it is clearly senseless to
+use a linear correlation coefﬁcient where the data is nonlinear. Suppose,
+however, that one does apply (23) to nonlinear data and obtains a value
+that is numerically considerably less than 1. Then the conclusion to be
+drawn is not that there is little correlation (a conclusion sometimes
+reached by those unfamiliar with the fundamentals of correlation theo-
+ry) but that there is little linear correlationl There may be in fact a large
+nonlinear correlation.
+%-----------------------------------------------------------------------------%
+\subsection{Correlation and Dependence}
+Whenever two random variables X and Y have a nonzero correlation
+coefﬁcient, r, we know that they are dependent in the probability sense.
+Furthermore, we can use an equation of the form (6) to predict the value
+of Y from the value of X4
+You Need to Know /
+It is important to realize that “correlation” and “depen-
+dence” in the above sense do not necessarily imply a
+direct causation interdependence of X and Y
+
+
+%%- 1 16 PROBABILITY AND STATISTICS
+\subsection{Example 9.3.} 
+If X represents teachers’ salaries over the years while Y represents the amount of crime, the correlation coefﬁcient may be dif-
+ferent from zero and We may be able to ﬁnd a regression line predicting
+one variable from the other. But we would hardly be Willing to say that
+there is a direct interdependence between X and Y

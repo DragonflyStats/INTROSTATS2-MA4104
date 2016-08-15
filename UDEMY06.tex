@@ -1,0 +1,469 @@
+
+\chapter{SAMPLING THEORY}
+%%CHAPTER.
+\begin{itemize}
+\item Population and Sample
+\item Sampling
+\item Random Samples, Random Numbers
+\item Population Parameters
+\item Sample Statistics
+\item Sampling Distributions
+\item The Sample Mean
+\item Sampling Distribution of Means
+\item Sampling Distribution of Proportions
+\item Sampling Distribution of Differences and Sums
+\item The Sample Variance
+\item Frequency Distributions
+\item Relative Frequency Distributions
+\end{itemize}
+
+%% Page 58
+%% Copyright 2001 by the McGraW-Hill Companies, Inc. 
+
+%=============================================================================================================== %
+
+
+CHAPTER 6; Sampling Theory 59
+\subsection{Population and Sample}
+Often in practice we are interested in drawing valid conclusions about a
+large group of individuals or objects. Instead of examining the entire group, called the population, which may be difﬁcult or impossible to do, we may examine only a small part of this population, which is called a
+sample. We do this with the aim of inferring certain facts about the population from results found in a sample, a process known as statistical inference. The process of obtaining samples is called sampling.
+
+Example 6.1. We may wish to draw conclusions about the percentage of defective bolts 
+produced in a factory during a given 6-day ‘c.\ @ I
+week by examining 20 bolts each day produced
+
+at various times during the day. In this case all bolts produced during the week comprise the population, while the 120 selected bolts consti-
+tute a sample.
+%=============================================================================================================== %
+
+Several things should be noted. First, the word population does not
+necessarily have the same meaning as in everyday language, such as
+“the population of Shreveport is 180,000." Second, the word population
+is often used to denote the observations or measurements rather than
+individuals or objects. Third, the population can be ﬁnite or inﬁnite,
+with the number being called the population size, usually denoted by N.
+Similarly, the number in the sample is called the sample size, denoted
+by n, and is generally ﬁnite.
+%-----------------------------------------------------%
+\section{Sampling}
+%=============================================================================================================== %
+
+If we draw an object from an urn, we have the choice of replacing or not
+replacing the object into the urn before we draw again. In the ﬁrst case
+a particular object can come up again and again, whereas in the second
+it can come up only once. Sampling where each member of a popula-
+tion may be chosen more than once is called sampling with replacement,
+while sampling where each member cannot be chosen more than once
+is called sampling without replacement.
+
+
+
+%%- 60 PROBABILITY AND STATISTICS
+\subsection{You Need to Know}
+A finite population that is sampled with replacement can theoretically be considered inﬁnite since samples of any size can be drawn without exhausting the population. For
+most practical purposes, sampling from a ﬁnite population that is very large can be considered as sampling from an
+inﬁnite population.
+
+%=============================================================================================================== %
+
+\section{Random Samples, Random Numbers}
+
+Clearly, the reliability of conclusions drawn concerning a population depends on whether the sample is properly chosen so as to represent the
+population sufﬁciently well, and one of the important problems of statistical inference is just how to choose a sample.
+One way to do this for ﬁnite populations is to make sure that each member of the population has the same chance of being in the sample,
+which is often called a random sample. Random sampling can be accomplished for relatively small populations by drawing lots, or equiv-
+alently, by using a table of random numbers (Appendix G) specially
+constructed for such purposes.
+
+Because inference from sample to population cannot be certain, we must use the language of probability in any statement of conclusions.
+%=============================================================================================================== %
+\section{Population Parameters}
+A population is considered to be known when We know the probability
+distribution ﬂx) (probability function or density function) of the associ-
+ated random variable X. For instance, in Example 6.], ifX is a random
+variable whose values are the number of defective bolts found during 21
+given 6-day week, then X has probability distribution ﬂx).
+
+%%-CHAPTER 6; Sampling Theory 61
+
+If, for example, X is normally distributed, we say that the popula-
+tion is normally distributed or that we have a normal population. Similarly, if X is binomially distributed, we say that the population is
+binomiully distributed or that we have a binomial population. There will be certain quantities that appear inf(x), such as it and o
+in the case of the normal distribution orp in the case of the binomial distribution, Other quantities such as the median, mode, and skewness can
+then be determined in terms of these. All such quantities are often called
+population parameters.
+
+Remember
+When we are given the population so thatwe know f(x), then the population parameters are also known.
+
+An important problem that arises when the probability distribution fix) of the population is not known precisely, although we may have some idea of, or at least be able to make some hypothesis concerning,
+is the general behavior of f(x). For example, we may have some reason
+to suppose that a particular population is normally distributed. In that
+case we may not know one or both of the values u and o‘ and so we might wish to draw statistical inferences about them.
+%=============================================================================================================== %
+
+\section{Sample Statistics}
+We can take random samples from the population and then use these samples to obtain values that serve to estimate and test hypothesis about
+the population parameters.
+
+By way of illustration, let us consider an example where we wish
+to draw conclusions about the heights of 12,000 adult students by exam-
+ining only lO0 students selected from the population. In this case, X can
+be a random variable whose values are the various heights. To obtain a
+sample of size 100, we must ﬁrst choose one individual at random from
+
+%%=62 PROBABILITY AND STATISTICS
+
+the population, This individual can have any one value, say xl, of the various possible heights, and we can call xl the value of a random variable XI, where the subscript l is used since it corresponds to the ﬁrst individual chosen. Similarly, we choose the second individual for the sample, who can have any one of the values xz of the possible heights, and xz
+can be taken as the value of a random variable X2. We can continue this process up to X100 since the sample is size 100. For simplicity let us assume that the sampling is with replacement so that the same individ-
+ual could conceivably be chosen more than once. In this case, since the
+sample size is much smaller than the population size, sampling without
+replacement would give practically the same results as sampling with
+replacement,
+
+In the general case a sample of size n would be described by the
+values x1,xZ,  X” of the random variables XI, X2,  X” 4 In this case
+of sampling with replacement, XI, X2, ..., Xn would be independent,
+identically distributed random variables having probability function
+f(x)i Their joint distribution would then be
+P(X| = xi, X2 = xZ,..., X” = m) =f(X|)f(x2)---f(x”)
+%=============================================================================================================== %
+
+Any quantity obtained from a sample for the purpose of estimating a
+population parameter is called a sample statistic. Mathematically, a sam-
+ple statistic for a sample of size n can be deﬁned as a function of the ran-
+dom variables Xl, X2, A47, X”, i.e. g(X|,.,.,Xn). The function g(X|,...,X”)
+is another random variable, whose values can be represented by
+g(x1,...,m).
+
+%%- CHAPTER 6; Sampling Theory 63
+* Note!
+
+The word statistic is often used for the random variables or for its values, the particular sense being clear from the context.
+In general, corresponding to each population parameter there will be a statistic computed from the sample. Usually the method for obtaining this statistic from the sample is similar to that for obtaining the
+parameter from a ﬁnite population, since a sample consists of a ﬁnite set
+of values. As We shall see, however, this may not always produce the
+“best estimate,” and one of the important problems of sampling theory
+is to decide how to form the proper sample statistic that will be estimate
+a given population parameter. Such problems are considered later.
+Where possible we shall use Greek letters, such as pt or G for val-
+ues of population parameters, and Roman letters, m, s, etc., for values
+corresponding to sample statistics,
+%=============================================================================================================== %
+
+\section{Sampling Distributions}
+As We have seen, a sample statistic that is computed from Xl,..., X” is a
+function of these random variables and is therefore itself a random van-
+able. The probability distribution of a sample statistic is often called the
+sampling distribution of the statistic.
+Alternatively, we can consider all possible sample of size n that can
+be drawn from the population, and for each sample We compute the sta-
+tistic. In this manner We obtain the distribution of the statistic, which is
+its sampling distribution.
+For a sampling distribution, we can of course compute a mean,
+variance, standard deviation, etc, The standard deviation is sometimes
+also called the standard error.
+
+
+%=============================================================================================================== %
+%% 64 PROBABILITY AND STATISTICS
+\subsection{The Sample Mean}
+Let X I , X2,..., X” denote the independent, identically distributed, random
+variables for a random sample of size n as described above. Then the
+mean Qf the sample or sample mean is a random variable deﬁned by
+i X X ...X
+X: 1+ 2n+ I1 (1)
+Ifxl,x2,...,x" denote the values obtained in a particular sample of size n,
+then the mean for that sample is denoted by
+_ +. +---
+)  (2)
+Vl
+%=============================================================================================================== %
+
+\subsection{Sampling Distribution of Means}
+Let ﬂx) be the probability distribution of some given population from
+which we draw a sample of size n. Then it isnatural to look for the prob-
+ability distribution of the sample statistics X , which is called the sum»
+pling distribution for the sample mean, or the sampling distribution of
+mean. The following theorems are important in this connection.
+Theorem 6-1: The mean of the sampling distribution of means,
+denoted by /LY, is given by
+E0?) = Hy = u <3)
+where pt is the mean of the population.
+
+%%-CHAPTER 6; Sampling Theory 65
+Theorem 6-1 states that the expected value of the sample mean is
+the population mean.
+Theorem 6-2:
+Theorem 6-3:
+If a population is inﬁnite and the sampling is random
+or if the population is ﬁnite and sampling is with
+replacement, then the variance of the sampling distri-
+bution of means, denoted by 0'; , is given by
+_ 2 02
+E[ X - l = 03 = f
+( M X n (y
+Where <52 is the variance of the population.
+If the population is of size N, if sampling is without
+replacement, and if the sample size is n £ N, then the
+previous equation is replaced by
+2 0'2 N—n
+“Y =  <5>
+while pi is from Theorem 6-1.
+Note that Theorem 6-3 is basically the same as 6-2 as N % w.
+Theorem 6-4:
+Theorem 6-5:
+If the population from which samples are taken is
+normally distributed with mean pt and variance 62,
+then the sample mean is normally distributed with
+mean p and variance <52 /n.
+Suppose that the population from which samples are
+taken has a probability distribution with mean rt and
+variance 62, that is not necessarily a normal distribu-
+tion. Then the standardized variable associated with
+Y, given by
+_ X—#
+Z1;/5 (6)
+
+
+
+66 PROBABILITY AND STATISTICS
+is asymptotically normal, i.e.,
+lim P(Z5 Z) = j “'1” du (7)
+ﬂ%°°
+>1
+§|_
+x'—~
+N
+Theorem 6-5 is a consequence of t_he central limit theorem. It is
+assumed here that the population is inﬁnite or that sampling is with
+replacement. Otherwise, the above is correct if we replace 0'/ \/Z in
+%=============================================================================================================== %
+
+Theorem 6~5 by (7% as given in Theorem 6-3.
+
+\subsection{Example 6.2.}
+Five hundred ball bearings have a mean weight of 5.02 oz and a standard deviation of 0.30 oz. Find the probability that a
+random sample of I00 ball bearings chosen from this group will have a
+combined weight of more than 510 oz.
+For the sampling distribution of means, pi = ,u = 5.02 oz, and
+N—n O30 500-100
+o'Y=%\l:=f, —=o.027.
+N — 1 1 00 500 — l
+The combined Weight will exceed 510 oz if the mean weight of the 100
+bearings exceeds 5.10 oz.
+5.10 in standard units :  = 296
+0.027
+we
+Figure 6- 1
+
+
+%%--CHAPTER 6: Sampling Theory 67
+Required Probability = (area to the right of Z = 2.96)
+= (area to the right of z = 0) —
+(area between z = 0 and Z = 2.96)
+= 0.5 — 0.4985 = 0.0015
+Therefore, there are only 3 chances in 2000 of picking a sample of 100
+ball bearings with a combined weight exceeding 510 oz.
+Sampling Distribution of Proportions
+Suppose that a population is inﬁnite and binomially distributed, with p
+and q = I —p being the respective probabilities that any given member
+exhibits or does not exhibit of a certain property. For example, the pop»
+ulation may be all possible tosses of a fair coin, in which the probabili-
+ty of the event heads is p = 1/2.
+%=============================================================================================================== %
+
+Consider all possible samples of size n drawn from this population,
+and for each sample determine the statistic that is the proportion P of
+successes. In the case of the coin, P would be the proportion of heads
+turning up in rt tosses. Then we obtain a sampling distribution whose
+mean up and standard deviation op are given by
+.uP=[I 6P= =1  <8>
+which can be obtained using Theorem 5-l and Theorem 5-2, respec-
+tively, by placing tt =p, 6 = \/Fqi .
+For large values of n (n 2 30), the sampling distribution is very
+nearly a normal distribution, as is seen from Theorem 6»5.
+For ﬁnite populations in which sampling is without replacement,
+the equation for UP given above, is replaced by 0'; as given by Theorem
+6-3witho= X/E1]
+
+%%-68 PROBABILITY AND STATISTICS
+Note that the equations for up and GP are obtained most easily on divid-
+ing by n the mean and standard deviation (np and 1 npq ) of the bino-
+mial distribution.
+
+\section{Sampling Distribution of Differences and Sums}
+Suppose that we are given two populations. For
+each sample of size nl drawn from the ﬁrst popu- - K 
+lation, let us compute a statistic SI. This yields a 
+sampling distribution for S1 whose mean and stan- ‘)2
+dard deviation we denote by /ls] and 0'5‘ , respec-
+tively, Similarly for each sample of size n2 drawn
+from the second population, let us compute a statistic S2 whose mean
+and standard deviation are /.13‘ and 0'3! , respectively.
+Taking all possible combinations of these samples from the two
+populations, we can obtain a distribution of the differences, S1 — S2,
+which is called the sampling distribution ofdiﬂérences of the statistics.
+The mean and standard deviation of this sampling distribution, denoted
+respectively by |uS‘_5: and USFSZ , are given by
+lis,-sl : lls, _ #52 Gs,-$1 : w 0%, + ‘Ti: (9)
+provided that the samples chosen do not in any way depend on each
+other, i.e,, the samples are independent (in other words, the random
+variables S I and S2 are independent).
+%=============================================================================================================== %
+
+If, for example, Si and S2 are the sample means from two populations, denoted by X I, X Z, respectively, then the sampling distribution of the differences of means is given for inﬁnite populations with mean and
+standard deviation pl, 61 and uz, oz, respectively, by
+%=============================================================================================================== %
+
+
+
+CHAPTER 6; Sampling Theory 69
+llr,-rs = "rt ' #71 = #1‘ P1 (10)
+2 2
+_ 2 2 _ Gt 0'2
+“wit -\1"ri+“r.1 _\ ,,1+ n2 (11)
+and
+using Theorems 6-l and 6-2. This result also holds for ﬁnite populations
+if sampling is done with replacement. The standardized variable
+Z=(Y1“Y2)“(ll1“ll2) (12)
+m
+n1 n2
+in that case is very nearly normally distributed if nl and n2 are large
+(nl, nz 2 30). Similar results can be obtained for inﬁnite populations in
+which sampling is Without replacement by using Theorems 6-1 and 6-3.
+Corresponding results can be obtained for sampling distributions of
+differences of proportions from two binnmially distributed populations
+With parameters pl, ql and p2, qz, respectively. In this case, S1 and S2
+correspond to the proportion of successes PI and P2, whose mean and
+standard deviation of their difference is given by
+#P,4=:=#P,’.ulJ2=P|’P2 (13)
+and
+o',,\_,,2=~crf,‘ +o'f,Z = %+% (I4)
+n] n2
+
+%%-70 PROBABILITY AND STATISTICS
+Instead of taking differences of statistics, we sometimes are inter-
+ested in the sum of statistics. In that case, the sampling distribution of
+the sum of statistics S1 and S2 has mean and standard deviation given by
+.l1s,+sZ : lls, ‘Hus; °'s,+s2 : i ‘Ti, +01%; (15)
+assuming the samples are independent. Results similar to /LYVYG and
+63;, can then be obtained.
+%=============================================================================================================== %
+
+\subsection{Example 6.3.}
+It has been found that 2% of the tools produced by a
+cenain machine are defective. What is the probability that in a shipment
+of 400 such tools, 3% or more Will prove defective?
+_ _ _ pq_ 0.02(O.98)_0.l4_
+,u,,_p_0.02 and 0'?» 7» W—T0.007
+Using the correction for discrete variables, 1/(Zn) = 1/800 =
+0.00125, we have (0.03 — 0.00125) in standard units =
+  : 115
+0,007
+Required probability = (area under normal curve to right of
+z = 1.25)
+= 0.1056
+If We had not used the correction, We would have obtained 0.0764.
+
+%=========================================================================%
+%%-CHAPTER 6: Sampling Theory 71
+\section{The Sample Variance}
+IfXl, X2, A47, X“ denote the random variables for a sample of size n, then
+the random variable giving the variance of the sample or the sample
+variance is deﬁned by
+_2 _2 _2
+S2:(X,—X) +(X2—)i) +~-+(X,,—X) (16)
+Now in Theorem 6-1 we found that E0?) : /1, and it would be nice
+if we could also have E(S2) : 0'2. Whenever the expected value of a sta-
+tistic is equal to the corresponding population parameter, we call the sta-
+tistic an unbiased estimator, and the value an unbiased estimate, of this
+parameter. It turns out, however, that
+E<s’>=#S1=”T”aZ <17)
+which is very nearly 0'2 only for large values of n (say, n 2 30). The
+desired unbiased estimator is deﬁned by
+§2= ,, S2:(X1—)?)2+(X2—Y)2+~~+(Xn—Y)Z (18)
+n—l n—l
+so that
+E(S2) = 0'1 (19)
+
+
+
+%%- 72 PROBABILITY AND STATISTICS
+Because of this, some statisticians choose to deﬁne the sample vari-
+ance by §2 rather than S2 and they simply replace n by n - 1 in the
+denominator of the deﬁnition of S2 because by doing this, many later
+results are simpliﬁed,
+%=============================================================================================================== %
+
+\section{Frequency Distributions}
+If a sample (or even a population) is large, it is difﬁcult to observe the various characteristics or to compute statistics such as mean or standard deviation. For this reason it is useful to organize or group the raw data. As an illustration, suppose that a sample consists of the heights of 100 male students at XYZ University. We arrange the data into classes or
+categories and determine the number of individuals belonging to each class, called the class frequency. The resulting arrangement, Table 6-1, is called a frequency distribution or frequency table, Table 6-1 Heights of 100 Male Students at XYZ 
+
+University
+Height Number of
+(inches) Students
+60-62 5
+63-65 I8
+6&68 42
+69-7l 27
+72-74 3
+The ﬁrst class or category, for example, consists of heights from 60
+to 62 inches, indicated by 60—62, which is called class interval. Since 5
+students have heights belonging to this class, the corresponding class
+frequency is 5. Since a height that is recorded as 60 inches is actually
+between 59.5 and 60.5 inches while one recorded as 62 inches is actu-
+ally between 61.5 and 62.5 inches, we could just as well have recorded
+
+%%-CHAPTER 6: Sampling Theory 73
+the class interval as 59.5 — 62.5. The next
+class interval would then be 62.5 — 65.5, etc.
+
+In the class interval 59.5 — 62.5, the numbers 59.5 and 62.5 are often called class boundaries. The width of the jth class interval, denoted by cj, which is usually the same for all classes (in which
+case it is denoted by c), is the difference between the upper and lower
+class boundaries. In this case, c : 62.5 — 59.5 = 3.
+
+The midpoint of the class interval, which can be taken as represen-
+tative of the class, is called the class mark. In Table 6.1 the class mark
+corresponding to the class interval 60-62 is 61.
+
+A graph for the frequency distribution can be supplied by a histogram, as shown in the ﬁgure below, or by a polygon graph (oftencalled a frequency polygon) connecting the midpoints of the tops in the
+histogram. It is of interest that the shape of the graph seems to indicate that the sample is drawn from a population of heights that is normally distributed.
+%=============================================================================================================== %
+
+ol'sn|d:nL1(fmqucm:y)
+8 S 8
+. _‘
+,.’
+1
+;r”\
+I X
+I \
+I
+\
+\
+I
+» ~
+5| at an 67 10 1; re
+Height (inches)
+No.
+3
+Figure 6-2
+Relative Frequency Distributions
+If in Table 6.1 we recorded the relative frequency or percentage rather
+than the number of students in each class, the result would be a relative
+
+%%-74 PROBABILITY AND STATISTICS
+or percentage frequency distribution. For example, the relative or per-
+centage frequency corresponding to the class 63—65 is 18/100 or 18%.
+The corresponding histogram is similar to that in Figure 6-l except that
+the vertical axis is relative frequency instead of frequency. The sum of
+the rectangular areas is then 1, or 100%.
+We can consider a relative frequency as a probability distribution in
+which probabilities are replaced by relative frequencies. Since relative
+frequencies can be thought of as empirical probabilities, relative fre-
+quency distributions are known as empirical probability distributions.
+
+
+

@@ -1,0 +1,75 @@
+\documentclass{beamer}
+
+\usepackage{default}
+
+\begin{document}
+%=============================================================================== %
+\begin{frame}
+Bernoulli Distribution: The coin toss[edit]
+
+There is no more basic random event than the flipping of a coin. Heads or tails. It's as simple as you can get! The "Bernoulli Trial" refers to a single event which can have one of two possible outcomes with a fixed probability of each occurring. You can describe these events as "yes or no" questions. For example:
+
+%============================================================================================== %
+Will the coin land heads?
+Will the newborn child be a girl?
+Are a random person's eyes green?
+Will a mosquito die after the area was sprayed with insecticide?
+Will a potential customer decide to buy my product?
+Will a citizen vote for a specific candidate?
+Is an employee going to vote pro-union?
+Will this person be abducted by aliens in their lifetime?
+The Bernoulli Distribution has one controlling parameter: the probability of success. A "fair coin" or an experiment where success and failure are equally likely will have a probability of 0.5 (50%). Typically the variable p is used to represent this parameter.
+
+If a random variable X is distributed with a Bernoulli Distribution with a parameter p we write its probability mass function as:
+
+%================================================================================================ %
+f(x) = \begin{cases}p, & \mbox{if } x = 1\\1-p, & \mbox{if } x = 0\end{cases}\quad 0\leq p \leq 1
+Where the event X=1 represents the "yes."
+
+This distribution may seem trivial, but it is still a very important building block in probability. The Binomial distribution extends the Bernoulli distribution to encompass multiple "yes" or "no" cases with a fixed probability. Take a close look at the examples cited above. Some similar questions will be presented in the next section which might give an understanding of how these distributions are related.
+
+Mean[edit]
+The mean (E[X]) can be derived:
+
+\operatorname{E}[X] = \sum_i f(x_i) \cdot x_i
+\operatorname{E}[X]  = p \cdot 1 + (1-p) \cdot 0
+\operatorname{E}[X]= p \,
+Variance
+\operatorname{Var}(X) = \operatorname{E}[(X-\operatorname{E}[X])^2] = \sum_i f(x_i)  \cdot (x_i - \operatorname{E}[X])^2
+\operatorname{Var}(X)= p \cdot (1-p)^2 + (1-p) \cdot (0-p)^2 
+\operatorname{Var}(X)= [p(1-p) + p^2](1-p) \,
+\operatorname{Var}(X)= p(1-p) \,
+%============================================================================================= %
+Bernoulli
+Parameters	0<p<1, p\in\R
+Support	k=\{0,1\}\,
+PMF	
+\begin{cases}
+	q=(1-p) & \text{for }k=0 \\ p & \text{for }k=1
+\end{cases}
+
+CDF	
+\begin{cases}
+	0 & \text{for }k<0 \\ q & \text{for }0\leq k<1 \\ 1 & \text{for }k\geq 1
+\end{cases}
+
+Mean	p\,
+Median	\begin{cases}
+	0 & \text{if } q > p\\
+	0.5 & \text{if } q=p\\
+	1 & \text{if } q<p
+\end{cases}
+Mode	\begin{cases}
+	0 & \text{if } q > p\\
+	0, 1 & \text{if } q=p\\
+	1 & \text{if } q < p
+\end{cases}
+Variance	p(1-p)\,
+Skewness	\frac{q-p}{\sqrt{pq}}
+Ex. kurtosis	\frac{1-6pq}{pq}
+Entropy	-q\ln(q)-p\ln(p)\,
+MGF	q+pe^t\,
+CF	q+pe^{it}\,
+PGF	q+pz\,
+Fisher information	 \frac{1}{p(1-p)} 
+\end{document}

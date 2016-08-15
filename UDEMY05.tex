@@ -1,0 +1,456 @@
+%============================================================================================================ %
+\section*{Chapter 5-EXAMPLES OF RANDOM VARIABLES}
+
+\begin{itemize}
+\item Binomial Distribution
+\item Properties of Binomial Distributions
+\item The Normal Distribution
+\item Examples of the Normal Distribution
+\item Poisson Distributions
+\item Relationships between Binomial and
+Normal Distributions
+\item Relationships between Binomial and
+Poisson Distributions
+\item Relationships between Poisson and
+Normal Distributions
+\item Central Limit Theorem
+\item Law of Large Numbers
+\end{itemize}
+% % PAge 42
+% % - Copyright 2001 by the McGraW-Hill Companies, Inc. Click Hem for Terms of Use
+
+
+%%-CHAPTER 5: Examples of Random Variables 43
+%============================================================================================================================================== %
+\newpage
+\section*{Binomial Distribution}
+Suppose that we have an experiment such as tossing a coin or die repeatedly or choosing a %
+marble from an urn repeatedly. Each toss or selection is called a trial. In any single trial T‘
+there will be a probability associated with a particular event such as head on the coin, four
+on the die, or selection of a speciﬁc color marble. 
+%============================================================================================================================================== %
+\begin{itemize}
+\item In some cases this probability will not
+change from one trial to the next (as in tossing
+a coin or die), Such trials are then said to be independent and are often
+called Bernoulli trials after James Bernoulli who investigated them at
+the end of the seventeenth century,
+\item Let p be the probability that an event will happen in any single
+Bernoulli trial (called the probability ofsuccess). Then q = l —p is the
+probability that the event will fail to happen in any single trial (called
+the probability of failure).
+\end{itemize}
+
+ The probability that the event will happen
+exactly x times in n trials (i.e., x successes and n — x failures will occur)
+is given by the probability function
+f<x) = P(X= x) =£nj 1131"“ =,LP‘q"" (I)
+x x.(n—x)!
+where the random variable X denotes the number of successes in n tri-
+als andx= O, l,  n.
+%============================================================================================================================================== %
+
+\subsubsection*{Example 5.1. }
+The probability of getting exactly 2 heads in 6 tosses
+of a fair coin is
+2 b—2 2 4
+Wtilei ta I as ta 
+
+The discrete probability function f(x) is often called the binomial distri-
+bution since x = O, l, 2,  , n, it corresponds to successive terms in the
+binomial expansion
+
+
+% %- 44 PROBABILITY AND STATISTICS
+(q+p)i, =6/1 +[Uqn—1p+[;jq»—2p2 +.,.+pn = iﬂjpxqnq (2)
+><
+c
+The special case of a binomial distribution With n = l is also called the
+Bernoulli distribution.
+%=================================================================== %
+\subsection*{Properties of Binomial Distributions}
+As with other distributions, we would like to know the descriptive sta-
+tistics for the binomial distribution. They are as follows:
+Mean $\mu=np$
+Variance $\sigma^2 = np (1 — p)$
+Standard Deviation $\sigma = \sqrt{np(l — p)}$
+%============================================================================================================================================== %
+
+\subsubsection*{Example 5.2.} 
+Toss a fair coin 100 times, and count the number of
+heads that appear. Find the mean, variance, and standard deviation of
+this experiment.
+
+In 100 tosses of a fair coin, the expected or mean number of heads is
+\[ \mu = E(X) = 100 \times 0.5 = 50\]
+
+The variance is found to be
+\[ \sigma^2 = 100 \times 0.5 \times 0.5 = 25\]
+
+This means the standard deviation is
+
+\[ \sigma = \sqrt{100 \times 0.5 \times 0.5 } = sqrt{25} = \mbox{5 units}\]
+
+
+% % = CHAPTER 5; Examples of Random Variables 45
+%============================================================================================================================================== %
+\newpage
+\subsection*{The Normal Distribution}
+
+One of the most important examples of a continuous probability distribution is the normal distribution, sometimes called the Gaussian distribution. 
+The density function for this distribution is given by
+1 -(.t-nil/262
+= 7 — M < < cc 3
+f(X) (“[2-7; e x ( )
+
+where $\mu$ and $\sigma$ are the mean and standard deviation, respectively. The
+corresponding distribution function is given by
+F(x) = P(X s X) =   I e-(t._ll)2/26: dv (4)
+
+If X has the distribution function listed above, then we say that the
+random variable X is normally distributed with mean |.1 and variance 62.
+
+If we let Z be the random variable corresponding to the following
+Z3 (5)
+0'
+then Z is called the standard variable corresponding to X4 The mean or
+expected value of Z is O and the standard deviation is l. In such cases
+the density function for Z can be obtained from the deﬁnition of a nor-
+mal distribution by allowing /1 = 0 and 0'2 : 1, yielding
+/(Z) = ﬁe” <6)
+
+This is often referred to as the standard normal density functions
+The corresponding distribution function is given by
+
+
+
+% % - 46 PROBABILITY AND STATISTICS
+F(z) = P(ZS z)=* ‘” ” =e j “M du (7)
+Q _
+Fl
+Z._,.
+(B
+'§“
+N _
++
+Q _
+Fl
+O_..
+W
+We sometimes call the value z of the standardized variable Z the
+standard score.
+%======================================================== %
+A graph of the standard normal density function, sometimes called
+the standard normal curve, is shown in Figure 5-l. In this graph we
+have indicated the areas Within 1, 2, and 3 standard deviations of the
+mean (i.e., between z = -1 and +1, z = -2 and +2. Z = -3 and +3) as
+equal, respectively, to 68.27\%, 95.45\%, and 99.73\% of the total area,
+which is one. This means that
+\begin{verbatim}
+    P(—l szs l)=0.6827
+	P <—2 s z s 2) = 0.9545
+	P (-3 s zs 3) = 0.9973
+\end{verbatim}
+
+* Note!
+The normal distribution is very important! It will quite often
+come up in practice, so make sure you understand how to
+use this distribution.
+
+%========================================================================================================= %
+%%-CHAPTER 5: Examples of Random Variables 47
+1(1)
+it
+G
+|
+-1 -i -| n | 2 1 z
+~— osrm —-
+-——— 95.45%
+‘ 99. 73% :
+Figure 5-1
+%--------------------------------------%
+A table giving the areas under the curve bounded by the ordinates
+at z = O and any positive value of z is given in Appendix B. From this
+table the areas between any two ordinates can be found by using the
+symmetry of the curve about Z = O.
+
+%========================================================================================================= %
+
+\subsubsection*{Examples of the Normal Distribution}
+Since this distribution is so important, we will now run through a few
+examples of how to use the distribution.
+
+\subsubsection{Example 5.3.} 
+Find the area under the standard normal curve between Z = O and Z = 1.2,
+
+Using the table in Appendix B, proceed down the column marked
+Z until entry 1.2 is reached. Then proceed right to column marked O. The
+result, 0.3849, is the required area and represents the probability that Z
+is between O and 1,2. Therefore, P(O S Z S 1.2) = 0,3849.
+
+
+% % 48 PROBABILITY AND STATISTICS
+%============================================================================================================================================== %
+
+Example 5.4. Find the area under the standard normal curve
+between z = —0.46 and z : 2.21.
+I-O I-I1
+Figure 5-2
+Consider the following picture of the density curve.
+0.46 2 I
+- J
+Figure 5-3
+The required area can be broken down into two parts. First, the area
+between z = -0.46 and z = 0, and secondly, the area between Z = 0 and
+z=0andz=2.2I4
+%======================================================================================================================= %
+Since the nonnal curve is symmetric, the area between z = —O,46
+and Z = 0 is the same as the area between z = O and Z = Q46. Using
+Appendix B, we can see that this area is 0417721 In other words,
+P(-046 s z s 0 = P(0 s z s 046) : 01772
+%----------------------------------%
+Using Appendix B to ﬁnd the area between z = 0 and Z = 2.21 is
+found to be 0.4864 This means
+\[P(0 \leq Z \leq 2.21) = 0.4864\]
+This allows us to determine the required area as follows:
+
+%%-CHAPTER 5; Examples of Random Variables 49
+
+Total Area = (area between z = -0.46 and z = 0) +
+(area between z = O and z : 2.21)
+= 0.1722 + 0.4864
+= 0.6586
+Therefore P(%).46 S Z S 2.21) = 0.6636.
+\subsection{Example 5.5.} 
+The mean Weight of 500 male students at a certain
+college is 151 lb and the standard deviation is 15 lb. Assuming the
+weights are normally distributed, ﬁnd how many students weigh (a)
+between 120 and 155 lb, (b) more than 185 lb.
+(a) If weights are recorded to the nearest pound, then weights recorded
+as being between 120 and 155 lb can actually have any value from 119.5
+to 155.5 lb.
+We need to ﬁnd the standard scores for 119.5 and 155.5.
+119.5 lb in standard units : (119.5 -151)/15
+= -2.10
+155.5 1b in standard units = (155.5 —15l)/15
+= 0.30
+4.10 no
+Figure S-4
+
+%==================================================================================================================== %
+
+50 PROBABILITY AND STATISTICS
+\begin{verbatim}
+Required proportion of students
+= (area between z = —2.l0 and z = 030)
+= (area between z = -2.10 and z = O)
++ (area between z = 0 and Z = 0.30)
+= 0.4821 + 0.1179
+= 0.6000
+\end{verbatim}
+
+This means that of the 500 male students polled, 60% of them weigh
+between 120 and 155 1b. Then the number of students in this range is
+(500)(0A6000) = 300‘
+(b) Notice that students Weighing more than 185 lb must Weigh at least
+185.5 lb.
+185.5 lb in standard units = (185.5 — 151)/15
+: 2.30
+1J0
+%-----------------------------------------------------------------------------------%
+Figure 5-5
+Required proportion of students
+= (area to the right of z = 2.30)
+= (area to the right of z = 0)
+— (area between z = 0 and Z = 2.30)
+= 0,5 — 0,4893
+= 00107
+Then the number weighing more than 185 1b is (500)(0,0107) = 5.
+
+
+
+% % - CHAPTER 5; Examples of Random Variables 51
+If $W$ denotes the Weight of a student chosen at random, we can summarize the above results in terms of probability by writing
+P(119,5 2 W§155.5 = 0.6000 P(W2185.5)= 0.0107
+%============================================================================================================================================== %
+\subsection*{Poisson Distributions}
+
+LetX be a discrete random variable that can take on the values 0, 1, 2,. ..
+such that the probability function of X is given by
+x —?t
+f(x)=P(x=x)=}“—)6e_— x=O,1,2,... (8)
+Where K is a given positive constant. This distribution is called the
+Poisson distribution (after S, D. Poisson, who discovered it in the early
+part of the nineteenth century), and a random variable having this dis-
+tribution is said to be Poisson distributed,
+The values of the Poisson distribution can be obtained by using
+Appendix F, which gives values of fl for various values of 7».
+%============================================================================================================================================== %
+
+\subsection{Example 5.6.}
+If the probability that an individual will suffer a bad
+reaction from injection of a given serum is 0.001, determine the proba-
+bility that out of 2000 individuals, (a) exactly 3, (b) more than 2, indi-
+viduals will suffer a bad reaction.
+
+Let X denote the number of individuals suffering a bad reaction. X
+is Bernoulli distributed, but since bad reactions are assumed to be rare
+events, We can suppose that X is Poisson distributed, i.e,,
+.\ )-A
+P(X= x) = 1; where Z. = np = (2000)(0,00l) = 2
+
+%%-52 PROBABILITY AND STATISTICS
+
+(21)
+3 -2
+P<x=3>=%=0.1s0
+(b)
+P(X>2) = l—[P(X=0)+P(X=l)+P(X=2)]
+2024 2'e'2 22e'2
+= l— —+—+—
+0! l! 2!
+= l —5e‘2
+= 0.323
+An exact evaluation of the probabilities using the binomial distrib-
+ution would require much more labor.
+%----------------------------------------------------------------------------%
+\section{Relationships between Binomial and Normal Distributions}
+Ifn is large and if neither p nor q is too close to zero, the binomial dis-
+tribution can be closely approximated by a normal distribution with
+standardized random variable given by
+z = ixwp (9)
+\/ mm
+%=========================================================================================== %
+
+Here X is the random variable giving the number of successes in n Bernoulli trials and p is the probability of success. The approximation
+becomes better with increasing n and is exact in the limiting case. In
+practice, the approximation is very good if both np and nq are greater
+than 5. The fact that the binomial distribution approaches the normal
+distribution can be described by Writing
+
+%%-CHAPTER 5; Examples of Random Variables 53
+
+n—>~ , np
+- X’"P 1 I7 —|42/2
+limP aﬁaib =7 e du (10)
+l q l Pl
+
+In words, we say that the standardized random variable (X—np)/
+1 npq is asymptotically normal.
+
+\subsection{Example 5.7.} 
+Find the probability of getting between 3 and 6 heads inclusive in 10 tosses of a fair coin by using 
+\begin{itemize}
+\item[(a)] the binomial distribution 
+\item[(b)] the normal approximation to the binomial distribution.
+\end{itemize}
+(a) Let X have the random variable giving the number of heads that
+will turn up in 10 tosses. Then
+P<»<=»=(‘§]£%f(;)¥§ P<»~»=(‘§1<a‘@11;'%z
+5 5 6 4
+P<X=»;i*§)@> a  P<»<:@>;i*:)(;> ta 
+Then the required probability is
+P(3§X56)=%+£+%+$=0.7734
+(b) Treating the data as continuous, it follows that 3 to 6 heads can be
+considered 25 to 6.5 heads. Also, the mean and the variance for the
+binomial distribution is given by ,u=np=(l0)(%]=5 and
+if
+0' =1/npq =\/(10)[5X5) =1.5s.
+
+%%-54 PROBABILITY AND STATISTICS
+
+2.5 in standard units = 2'5 75 = —l .58
+1,58
+6.5 in standard units = 65-5 = 0.95
+1.58
+-I38 09$
+Figure 5-6
+Required probability = (area between z = —l.58 and z = 0.95)
+= (area between z = —l .58 and z = 0)
++ (area between z = 0 and Z = 0.95)
+= 0.4429 + 0.3289
+= 0.7718
+which compares very well with the true value 07734 obtained in part
+(a), The accuracy is even better for larger values of n.
+
+%==================================================================================%
+\section{Relationships between Binomial and Poisson Distributions}
+In the binomial distribution, if n is large while the probability p of
+occurrence of an event is close to zero, so that q = l — p is close to one,
+the event is called a rare event. In practice, We shall consider an event
+as rare if the number of trials is at least 50 (n 2 50) while np is less than
+5. For such cases, the binomial distribution is very closely approximat-
+ed by the Poisson distribution with /I = np. This is to be expected on
+
+%--CHAPTER 5; Examples of Random Variables 55
+comparing the equations for t_he means and
+variances for both distributions. By substituting /I = np, q = l and p = 0 into the equa-
+tions for the mean and variance of a bino-
+mial distribution, we get the results for the
+mean and variance for the Poisson distribu-
+tion.
+%================================================================================================ %
+\section{Relationships between Poisson and Normal Distributions}
+Since there is a relationship between the binomial and normal distribu-
+tions and between the binomial and Poisson distributions, we would
+expect that there should be a relation between the Poisson and normal
+distributions, This is in fact the case. We can show that if X is the fol-
+lowing Poisson random variable
+x —7t
+f<x>=’l—x% <11)
+and
+X-/I
+TT ('2)
+is the corresponding standardized random variable, then
+x /1 1 " ~
+1' P _L_b =: *“"2d 13
+K111 (a< W/I <1 27752 u ( )
+i.e., the Poisson distribution approaches the normal distribution as
+/I —> ><> or (X—/.1)/~/I is asymptotically normal.
+
+
+%=============================================================================================================== %
+%%-56 PROBABILITY AND STATISTICS
+\section{Central Limit Theorem}
+The similarities between the binomial, Poisson, and normal distributions naturally lead us to ask whether there are any other distributions besides the binomial and Poisson that have the normal distribution as
+the limiting case. The following remarkable theorem reveals that actually a large class of distributions have this property.
+Theorem 5-1: (Central Limit Theorem) Let X1, X2,..,, X" be inde-
+pendent random variables that are identically distrib-
+uted (i.e., all have the same probability function in the
+discrete case or density function in the continuous
+case) and have ﬁnite mean rt and variance ($2. Then if
+S"=X1+XZ+---+XH (n=l,Z,..,),
+b
+lim P(aSS"%l/JSb)=%{e'“'/2 du (I4)
+n—>><- 0' n \/21:
+that is, the random variable (Sn —n/1)/0"/Z , which
+is the standardized variable corresponding to S", is
+asymptotically normal.
+The theorem is also true under more general conditions; for exam-
+ple, it holds when X1, X2,  X“ are independent random variables with
+the same mean and the same variance but not necessarily identically
+distributed.
+\section{Law of Large Numbers}
+Theorem 5-2: (Law of Large Numbers) Let xl, xz,  m be mutu-
+ally independent random variables (discrete or con-
+tinuous), each having ﬁnite mean tt and variance <52.
+Then ifS" =X1 +X2+  +XH (n = 1, 2, ...),
+
+
+
+CHAPTER 5; Examples of Random Variables 57
+limP£S—”—p2ej=0 (15)
+n—>><» ll
+Since S"/n is the arithmetic mean of XI + X2 +  + X", this theo-
+rem states that the probability of the arithmetic mean Sn/n differing
+from its expected value |,t by more than 2 approaches zero as n —> <><>, A
+stronger result, which we might expect to be true, is that lim 3" /n : /1,
+Vl—>\><'
+but that is actually false. However, We can prove that 11m Sn /H = y
+Il~>>=
+with probability one. This result is often called the strong law of large
+numbers, and by contrast, that of Theorem 5-2 is called the weak law of
+large numbers
+%=============================================================================================================== %
+
+

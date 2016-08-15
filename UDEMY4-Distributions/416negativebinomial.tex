@@ -1,0 +1,69 @@
+\section{Negative Binomial Distribution}
+Just as the Bernoulli and the Binomial distribution are related in counting the number of successes in 1 or more trials, 
+Geometric and the Negative Binomial distribution are related in the number of trials needed to get 1 or more successes.
+
+%===============================================================%
+The Negative Binomial distribution refers to the probability of the number of times needed to do something until achieving a fixed number of desired results. For example:
+
+\begin{itemize}
+\item How many times will I throw a coin until it lands on heads for the 10th time?
+\item How many children will I have when I get my third daughter?
+\item How many cards will I have to draw from a pack until I get the second Joker?
+\end{itemize}
+
+Just like the Binomial Distribution, the Negative Binomial distribution has two controlling parameters: the probability of success p in any independent test and the desired number of successes m. If a random variable X has Negative Binomial distribution with parameters p and m, its probability mass function is:
+
+\[P(X=n) = {n-1 \choose m-1} p^m (1-p)^{n-m} \mbox{, for } n \ge m.\]
+\subsection{Example}
+A travelling salesman goes home if he has sold 3 encyclopedias that day. Some days he sells them quickly. Other days he's out till late in the evening. If on the average he sells an encyclopedia at one out of ten houses he approaches, what is the probability of returning home after having visited only 10 houses?
+
+\subsection{Answer:}
+
+The number of trials X is Negative Binomial distributed with parameters p=0.1 and m=3, hence:
+
+P(X=10) = {9 \choose 2} 0.1^3 0.9^7 = 0.0172186884.
+
+%===============================================================%
+\subsection{Mean}
+The mean can be derived as follows.
+
+\[\operatorname{E}[X] = \sum_i f(x_i)  \cdot x_i = \sum_{x=0}^\infin  {x+r-1 \choose r-1} p^x (1-p)^r  \cdot  x\]
+\[\operatorname{E}[X] = {0+r-1 \choose r-1} p^0 \left(1-p\right)^r  \cdot  0 +  \sum_{x=1}^\infin  {x+r-1 \choose r-1} p^x (1-p)^r  \cdot  x\]
+\[\operatorname{E}[X] = 0 +  \sum_{x=1}^\infin  {(x+r-1)! \over (r-1)!x!} p^x (1-p)^r  \cdot  x\]
+\[\operatorname{E}[X] = {rp \over 1-p}\sum_{x=1}^\infin  {(x+r-1)! \over r!(x-1)!} p^{x-1} (1-p)^{r+1}\]
+
+Now let s = r+1 and w=x-1 inside the summation.
+
+\[\operatorname{E}[X] = {rp \over 1-p}\sum_{w=0}^\infin  {(w+s-1)! \over (s-1)!w!} p^w (1-p)^s]\
+[\\operatorname{E}[X] = {rp \over 1-p}\sum_{w=0}^\infin  {w+s-1 \choose s-1} p^w (1-p)^s\]
+We see that the summation is the sum over a the complete pmf of a negative binomial random variable distributed NB(s,p), which is 1 (and can be verified by applying Newton's generalized binomial theorem).
+
+\[\operatorname{E}[X] = {rp \over 1-p}]\
+%===============================================================%
+\section{Variance}
+We derive the variance using the following formula:
+
+\[\operatorname{Var}[X] = \operatorname{E}[X^2] - (\operatorname{E}[X])^2\]
+We have already calculated E[X] above, so now we will calculate E[X2] and then return to this variance formula:
+
+\[\operatorname{E}[X^2] = \sum_i f(x_i) \cdot x^2]\
+
+\[= \sum_{x=0}^\infin {x+r-1 \choose r-1} p^x (1-p)^r \cdot x^2\]
+\[\operatorname{E}[X^2] = 0+\sum_{x=1}^\infin {x+r-1 \choose r-1} p^x (1-p)^r x^2\]
+\[\operatorname{E}[X^2] = \sum_{x=1}^\infin {(x+r-1)! \over (r-1)!x!} p^x (1-p)^r x^2\]
+\[\operatorname{E}[X^2] = {rp \over 1-p}\sum_{x=1}^\infin {(x+r-1)! \over r!(x-1)!} p^{x-1} (1-p)^{r+1} x\]
+Again, let let s = r+1 and w=x-1.
+
+\[\operatorname{E}[X^2] = {rp \over 1-p}\sum_{w=0}^\infin {(w+s-1)! \over (s-1)!w!} p^w (1-p)^s (w+1)\]
+%================================%
+\[\operatorname{E}[X^2] = {rp \over 1-p}\sum_{w=0}^\infin {w+s-1 \choose s-1} p^w (1-p)^s (w+1)]\
+\[\operatorname{E}[X^2] = {rp \over 1-p}\left[\sum_{w=0}^\infin {w+s-1 \choose s-1} p^w (1-p)^s w+\sum_{w=0}^\infin {w+s-1 \choose s-1} p^w (1-p)^s\right]\]
+The first summation is the mean of a negative binomial random variable distributed NB(s,p) and the second summation is the complete sum of that variable's pmf.
+\[\operatorname{E}[X^2] = {rp \over 1-p}\left[{sp \over 1-p}+1\right]\]
+\[\operatorname{E}[X^2] = {rp(1+rp) \over (1-p)^2}\]
+We now insert values into the original variance formula.
+
+\[\operatorname{Var}[X] = {rp(1+rp) \over (1-p)^2} - \left({rp \over 1-p}\right)^2\]
+\[\operatorname{Var}[X] = {rp \over (1-p)^2} \]
+
+\end{document}
