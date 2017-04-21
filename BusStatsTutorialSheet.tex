@@ -1,12 +1,5 @@
 MathsCast Series C : Probability
- 
 
-MathsCast C1 : Sample Spaces
-MathsCast C2 : Union, Intersection and Complement
-MathsCast C3 : Conditional Probability
-MathsCast C4 : Bayes Theorem
- 
-MathsCast C1 : Sample Spaces
 What is a sample space?
 What is a random experiment?
  
@@ -127,22 +120,7 @@ Solution: Given a mean score of 300 days and a standard deviation of 50 days, we
 
 We enter these values into the Normal Distribution Calculator and compute the cumulative probability. The answer is: P( X < 365) = 0.90. Hence, there is a 90% chance that a light bulb will burn out within 365 days.
 
-Normal Distribution Example 2
-Suppose scores on an IQ test are normally distributed. If the test has a mean of 100 and a standard deviation of 10, what is the probability that a person who takes the test will score between 90 and 110?
 
-Solution: Here, we want to know the probability that the test score falls between 90 and 110. The "trick" to solving this problem is to realize the following:
-P( 90 < X < 110 ) = P( X < 110 ) - P( X < 90 )
-We use the Normal Distribution Calculator to compute both probabilities on the right side of the above equation.
-To compute P( X < 110 ), we enter the following inputs into the calculator: The value of the normal random variable is 110, the mean is 100, and the standard deviation is 10. We find that P( X < 110 ) is 0.84.
-To compute P( X < 90 ), we enter the following inputs into the calculator: The value of the normal random variable is 90, the mean is 100, and the standard deviation is 10. We find that P( X < 90 ) is 0.16.
-
-We use these findings to compute our final answer as follows:
-P( 90 < X < 110 ) = P( X < 110 ) - P( X < 90 )
-P( 90 < X < 110 ) = 0.84 - 0.16
-P( 90 < X < 110 ) = 0.68
-Thus, about 68% of the test scores will fall between 90 and 110.
-
- 
 Standard Normal Distribution Table
 A standard normal distribution table shows a cumulative probability associated with a particular z-score. Table rows show the whole number and tenths place of the z-score. Table columns show the hundredths place. The cumulative probability (often from minus infinity to the z-score) appears in the cell of the table.
 For example, a section of the standard normal table is reproduced below. To find the cumulative probability of a z-score equal to -1.31, cross-reference the row of the table containing -1.3 with the column containing 0.01. The table shows that the probability that a standard normal random variable will be less than -1.31 is 0.0951; that is, P(Z < -1.31) = 0.0951.
@@ -249,22 +227,6 @@ Often, phenomena in the real world follow a normal (or near-normal) distribution
 Transform raw data. Usually, the raw data are not in the form of z-scores. They need to be transformed into z-scores, using the transformation equation presented earlier: z = (X - μ) / σ.
 Find probability. Once the data have been transformed into z-scores, you can use standard normal distribution tables, online calculators (e.g., Stat Trek's free normal distribution calculator), or handheld graphing calculators to find probabilities associated with the z-scores.
 The problem in the next section demonstrates the use of the normal distribution as a model for measurement.
-
-Problem 1
-Molly earned a score of 940 on a national achievement test. The mean test score was 850 with a standard deviation of 100. What proportion of students had a higher score than Molly? (Assume that test scores are normally distributed.)
-(A) 0.10 
-(B) 0.18 
-(C) 0.50 
-(D) 0.82 
-(E) 0.90
-Solution
-The correct answer is B. As part of the solution to this problem, we assume that test scores are normally distributed. In this way, we use the normal distribution as a model for measurement. Given an assumption of normality, the solution involves three steps.
-First, we transform Molly's test score into a z-score, using the z-score transformation equation. 
-
-z = (X - μ) / σ = (940 - 850) / 100 = 0.90
-Then, using an online calculator (e.g., Stat Trek's free normal distribution calculator), a handheld graphing calculator, or the standard normal distribution table, we find the cumulative probability associated with the z-score. In this case, we find P(Z < 0.90) = 0.8159.
-Therefore, the P(Z > 0.90) = 1 - P(Z < 0.90) = 1 - 0.8159 = 0.1841.
-Thus, we estimate that 18.41 percent of the students tested had a higher score than Molly.
 
 
 
@@ -615,74 +577,6 @@ n we use the standardisation formula to compute the probability.
 
 the standard deviation is computed as follows.
 
-
-Tutorial Sheet 4.3
-A sample of 300 households in a large town revealed that 183 have home computers.
-Construct a 95% confidence interval for the proportion of households with home computers in the whole town.
- 
-Sample size:         n =300 :  ( N.B. Large sample)
- 
-Estimate:             Sample proportion   
- 
-    (N.B. Percentages are easier to work with.)
- 
-t-value:           95% confidence , therefore  = 0.05
-                      two tailed procedure, therefore k = 2
-                      therefore column to use = 0.025
- 
-                      Large sample:  degrees of freedom =  i.e. bottom row
- 
-                      therefore t-value is 1.96                   
- 
- 
-Standard Error:  from Formulae     p(1-p)n       =61 \times 39}{300}        = 2.81%
- 
- 
-Confidence Interval : estimate(t-valuestd. error)
- 
-                            61%(1.962.81%) = 
- 
-
-
-
-Question 4.4 The average height of 100 Irish students was 1.72m and the variance 0.0144m2.
- 
-Calculate 95% and 99% confidence intervals for the average height of the population of Irish students.
- 
-Variance :  0.0144m2.    Standard deviation is therefore 0.12m
-estimate : sample mean  1.72m
-sample size : 100  (large sample)
- 
-t-values:   
-   95% confidence
-   significance = 0.05
-   two tailed procedure, therefore k = 2
-   therefore column to use = 0.025
- 
-   Large sample
-   degrees of freedom =  i.e. bottom row
- 
-  therefore t-value is 1.96
-       99% confidence ,
-       therefore  = 0.01
-       two tailed procedure, therefore k = 2
-       therefore column to use = 0.005
- 
-       Large sample
-       degrees of freedom =  i.e. bottom row
- 
-       therefore t-value is 2.576
-                      
-
-Standard Error (from Formulae)     sn        =0.12100       =0.012m
-95% Confidence Interval : estimate(t-valuestd. error)
- 
-                            1.72(1.960.012) =
- 
-
-99% Confidence Interval : estimate(t-valuestd. error)
- 
-                            1.72(2.5760.012) =
 
 
 
