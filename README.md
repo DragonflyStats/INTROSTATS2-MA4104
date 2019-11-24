@@ -1,4 +1,6 @@
-UDEMY-STATS
+R Workshop Development
 ===========
 
-UDEMY STATS SLIDES
+1. Time Series Analysis
+2. Monte Carlo 
+3. Bayesian Statistics
