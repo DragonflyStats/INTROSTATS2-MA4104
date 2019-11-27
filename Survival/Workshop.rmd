@@ -77,19 +77,14 @@ For the purposes of this workshop, we focus on a single event type, but the
 topic is wide and broadly applicable.
 
 
-### Workshop Materials
-
-All materials for this workshop is available in my standard GitHub repo:
-
-https://github.com/kaybenleroll/dublin_r_workshops
+### Textbook
 
 
 ![book cover](img/asaur_cover.jpg)
 
 
-The content of this workshop is partly based on the book "Applied Survival
-Analysis Using R" by Dirk F. Moore. The data from this book is available from
-CRAN via the package `asaur`.
+* The content of this workshop is based on the book "Applied Survival Analysis Using R" by Dirk F. Moore. 
+* The data from this book is available from CRAN via the package `asaur`.
 
 
 ### Example Datasets
