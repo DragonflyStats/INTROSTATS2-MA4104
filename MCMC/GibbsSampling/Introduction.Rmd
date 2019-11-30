@@ -20,6 +20,11 @@ The idea in Gibbs sampling is to generate posterior samples by sweeping through 
 
 Gibbs sampling generates a Markov chain of samples, each of which is correlated with nearby samples. 
 As a result, care must be taken if independent samples are desired. Generally, samples from the beginning of the chain (the burn-in period) may not accurately represent the desired distribution and are usually discarded. It has been shown, however, that using a longer chain instead (e.g. a chain that is n times as long as the initially considered chain using a thinning factor of n) leads to better estimates of the true posterior. 
+
+It can be shown that, after a suitable burn-in period, the remaining of the 1,000 draws are draws from the posterior distributions. These samples are *not* independent. The sequence of draws is a random walk in the posterior space and each step in the space depends on the previous position. Typically a thinning period will also be used (which is not done here). A thinning of 10 would mean that we keep every 10th draw. The idea being that each draw may be dependent on the previous draw, but not as dependent on the 10th previous draw.
+*https://www.r-bloggers.com/bayesian-simple-linear-regression-with-gibbs-sampling-in-r/*
+
+
 Thus, thinning should only be applied when time or computer memory are restricted.
 
 #### Implementation
