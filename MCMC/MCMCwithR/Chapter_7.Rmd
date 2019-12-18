@@ -1,0 +1,19 @@
+---
+title: "Chapter_7"
+author: "Kevin O Brien"
+date: "18 December 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+7. Gibbs Sampler
+
+7.1 Introduction
+
+7.6.1 Rao-Blackwellization
+7.6.2
+7.6.3
+7.6.4 Improper Priors

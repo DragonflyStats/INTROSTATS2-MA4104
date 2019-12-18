@@ -1,0 +1,28 @@
+---
+title: "MCMC with R"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+4 Controlling and Accelerating Convergence
+
+4.1 Introduction
+4.2 Monitoring Variation
+4.6 Rao-Blackwellization and Deconditioning
+
+4.7.2. Antithetic Variables
+4.7.3. Control Variates
+
+
+
+
+
+
+
+

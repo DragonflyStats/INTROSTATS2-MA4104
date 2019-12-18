@@ -1,0 +1,18 @@
+---
+title: "Chapter_6"
+author: "Kevin O Brien"
+date: "18 December 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+6. Metropolis Hastings Algorithms
+
+6.2 Markov Chain Theory
+6.3 Basic Metropolis-Hastings Algorithms
+6.4 A selection of candidates
+ 6.4.1. Random Walks
+ 6.4.2. Alternative Candidates

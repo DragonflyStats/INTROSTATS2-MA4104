@@ -1,0 +1,47 @@
+---
+title: "MCMC with R"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+2. Random Variable Generation
+
+2.1.1 Uniform Simulation
+
+2.2.1 A Normal Generator
+2.2.2 Discrete Distributions
+2.2.3 Mixture Representation
+2.3. Accept Reject Methods
+
+
+## 2.1 Uniform Simulation
+
+####  Page 41
+
+```{r}
+Nsim = 1000
+x = runif(Nsim)
+x1 = x[-Nsim]
+x2 = x[-1]
+par(mfrow = c(1,3))
+hist(x)
+plot(x1,x2)
+acf(x)
+```
+
+#### Page 45
+
+```{r}
+Nsim = 1000
+U = runif(Nsim)
+X = -log(U)
+Y = rexp(Nsim)
+par(mfrow = c(1,2))
+hist(X, freq = F, main = "Exp from Uniform")
+hist(Y, freq = F, main = "Exp from R")
+```
+
