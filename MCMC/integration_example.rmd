@@ -30,20 +30,21 @@ Example: Integrate function = ((sin(10x2))2sin(x))*x+0.1, from 0 to 1
 
 
 Generate dots uniformly distributed
+```{r}
 n = 5000
 x1 = runif(n, min =0 , max =1 )
 y1 = runif(n, min =0 , max =1 )
 plot(x1,y1,col='blue',pch=20)
 f <- function(x) ((sin(10*x^2))^2*sin(x))*x+0.1
 curve(f,0,1,n=100,col='red',lwd=5,add=TRUE)
-
+```
 
 
 
 Seperate the dots below the curve
 
 Hence, for a given x value, the y value must be less than the function value at the same point.
-n = 1000
+```{r}n = 1000
 x1 = runif(n, min =0 , max =1 )
 y1 = runif(n, min =0 , max =1 )
 f1 <- ((sin(10*x1^2))^2*sin(x1))*x1+0.1
@@ -52,13 +53,15 @@ points(x1[(y1 <= f1)],y1[(y1 <= f1)],col='blue',pch=20)
 
 f <- function(x) ((sin(10*x^2))^2*sin(x))*x+0.1
 curve(f,0,1,n=100,col='red',lwd=5,add=TRUE)
-
+```
 
 
 
 Counting the dots below the curve
 
 Area below the curve = dots below the curve / total dots
+
+```{r}
 # count dots above
 area_above = length(y1[(y1>f1)])
 
@@ -72,9 +75,10 @@ cat("Integrate function = ((sin(10*x^2))^2*sin(x))*x+0.1, from 0 to 1")
 ## Integrate function = ((sin(10*x^2))^2*sin(x))*x+0.1, from 0 to 1
 cat("Area under curve f (integrated from 0 to 1) =", area_below/n)
 ## Area under curve f (integrated from 0 to 1) = 0.234
-
+```
 
 Is it more accurate, if we throw more dots?
+```{r}
 n = 10000
 x1 = runif(n, min =0 , max =1 )
 y1 = runif(n, min =0 , max =1 )
@@ -95,9 +99,11 @@ cat("Integrate function = ((sin(10*x^2))^2*sin(x))*x+0.1, from 0 to 1")
 ## Integrate function = ((sin(10*x^2))^2*sin(x))*x+0.1, from 0 to 1
 cat("Area under curve f (integrated from 0 to 1) =", area_below/n)
 ## Area under curve f (integrated from 0 to 1) = 0.2377
+```
 
+#### Throw more dots!
 
-Throw more dots!
+```{r}
 n = 15000
 x1 = runif(n, min =0 , max =1 )
 y1 = runif(n, min =0 , max =1 )
@@ -118,4 +124,4 @@ cat("Integrate function = ((sin(10*x^2))^2*sin(x))*x+0.1, from 0 to 1")
 ## Integrate function = ((sin(10*x^2))^2*sin(x))*x+0.1, from 0 to 1
 cat("Area under curve f (integrated from 0 to 1) =", area_below/n)
 ## Area under curve f (integrated from 0 to 1) = 0.2416667
-   
+```   
