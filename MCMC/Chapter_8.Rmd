@@ -1,0 +1,11 @@
+8. Monitoring and Adaption of MCMC Algorithm
+
+The Coda R package
+
+
+8.4. Monitoring Convergence of Stationarity
+
+8.4. Monitoring Convergence of Averages
+
+
+8.5 Adaptive MCMC
