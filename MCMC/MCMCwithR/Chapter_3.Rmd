@@ -41,7 +41,11 @@ plot(x,y,type="l", ylim = range(cbind(y,z)), lwd = 2)
 lines(x,z,lty=2,col="sienna",lwd=2)
 ```
 
-## 3.3 importance sampling
+## 3.3 Importance Sampling
+
+Importance sampling is a general technique for estimating properties of a particular distribution, while only having samples generated from a different distribution than the distribution of interest. It is related to umbrella sampling in computational physics. 
+
+Depending on the application, the term may refer to the process of sampling from this alternative distribution, the process of inference, or both.
 
 # Example 3.5
 
@@ -49,14 +53,29 @@ lines(x,z,lty=2,col="sienna",lwd=2)
 
 #### Page 71
 
+```{r}
 Nsim = 1000
 y = rexp(Nsim) + 4.5
 weit = dnorm(y) / dexp(y - 4.5)
 plot(cumsum (weit)/1:Nsim,type="l")
 abline(a = pnorm(-4.5),b=0,col="red")
+```
 
+#### Page 72
 
-## Importance Sampling
+```{r}
+
+f = function(a,b){
+ exp( 2*(lgamma(a+b)-lgamma(a)-lgamma(b)) + a*log(0.3) + b*log(0.2)) 
+}
+
+aa = 1:150
+bb = 1:100
+
+post = outer(aa,bb,f)
+image(aa,bb,post,xlab=expression(alpha),ylab="")
+contour(aa,bb,post=add=T)
+```
 
 #### Page 73
 

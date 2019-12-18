@@ -11,10 +11,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The Coda R package
 
+## 8.1 Introduction
 
-8.4. Monitoring Convergence of Stationarity
+## 8.2 Monitoring what and why
 
-8.4. Monitoring Convergence of Averages
+## 8.3 Monitoring Convergence of Stationarity
 
+Graphical Diagnoses
+Nonparamteric Tests of stationarity
+Spectral Analysis
+
+## 8.4 Monitoring Convergence of Averages
 
 ## 8.5 Adaptive MCMC
+
+8.5.1 Cautions about adaptation
+8.5.2 The mcmc package
